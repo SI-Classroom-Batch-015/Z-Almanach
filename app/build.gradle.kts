@@ -67,27 +67,27 @@ dependencies {
     // Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
-    // Retrofit und Moshi für Netzwerkanfragen
+    // Retrofit zum Abrufen von Daten aus einem API Endpunkt | Moshi zur Konvertierung von JSON-Daten
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
     implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
 
-    // Coil
+    // Coil, um Bilder aus dem Internet zu Laden und anzuzeigen
     implementation("io.coil-kt:coil:2.5.0")
 
-    //Room
+    // Room, zur Loaklen Datenverarbeitung
     implementation("androidx.room:room-runtime:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
 
-    //Interceptor
+    // Interceptor, für die Protokollierung von Netzwerkanfragen und -antworten/zu Debugging-Zwecken
     implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
-    // ViewModel und LiveData
+    // ViewModel und LiveData-Komponenten zur Trennung von UI-Logik und Daten
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
 
-    // Coroutine für asynchrone Aufgaben
+    // Coroutines zur asynchronen Verarbeitung von Daten
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
     // RecyclerView-Bibliothek
@@ -96,6 +96,6 @@ dependencies {
     // Material Cardview
     implementation ("com.google.android.material:material:1.11.0")
 
-    // Macht eckiges rund
+    // Macht eckige Bilder mittels XML-Code rund
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 }
