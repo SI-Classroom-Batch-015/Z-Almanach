@@ -3,18 +3,22 @@
 
     <item
         android:id="@+id/homeFragment"
+        android:icon="@drawable/baseline_home_24"
         android:title="@string/home"/>
     <item
         android:id="@+id/dbzFragment"
+        android:icon="@drawable/baseline_sports_volleyball_24"
         android:title="@string/dbz"/>
     <item
-        android:id="@+id/dbzDetailFragment"
-        android:title="@string/dbz_detail"/>
+        android:enabled="false"
+        android:title="" />
     <item
         android:id="@+id/favoritsFragment"
+        android:icon="@drawable/baseline_favorite_border_24"
         android:title="@string/favorits"/>
     <item
         android:id="@+id/searchFragment"
+        android:icon="@drawable/baseline_search_24"
         android:title="@string/search"/>
 
 </menu>
