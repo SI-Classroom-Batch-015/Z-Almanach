@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mojopediadbzedition.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/dbzFragment"
+        android:name="com.example.mojopediadbzedition.ui.DbzFragment"
+        android:label="fragment_dbz"
+        tools:layout="@layout/fragment_dbz" />
+    <fragment
+        android:id="@+id/dbzDetailFragment"
+        android:name="com.example.mojopediadbzedition.ui.DbzDetailFragment"
+        android:label="fragment_dbz_detail"
+        tools:layout="@layout/fragment_dbz_detail" />
+    <fragment
+        android:id="@+id/favoritsFragment"
+        android:name="com.example.mojopediadbzedition.ui.FavoritsFragment"
+        android:label="fragment_favorits"
+        tools:layout="@layout/fragment_favorits" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.mojopediadbzedition.ui.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>
