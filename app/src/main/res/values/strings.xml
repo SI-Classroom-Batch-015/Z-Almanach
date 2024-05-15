@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MOJO`pedia DBZ Edition</string>
+    <string name="home">Home</string>
+    <string name="dbz">DBZ</string>
+    <string name="dbz_detail">DBZ Detail</string>
+    <string name="favorits">Favorits</string>
+    <string name="search">Search</string>
 </resources>

@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/homeFragment"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/dbzFragment"
+        android:title="@string/dbz"/>
+    <item
+        android:id="@+id/dbzDetailFragment"
+        android:title="@string/dbz_detail"/>
+    <item
+        android:id="@+id/favoritsFragment"
+        android:title="@string/favorits"/>
+    <item
+        android:id="@+id/searchFragment"
+        android:title="@string/search"/>
+
 </menu>
