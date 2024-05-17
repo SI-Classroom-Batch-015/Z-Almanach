@@ -14,12 +14,20 @@
         android:id="@+id/dbzFragment"
         android:name="com.example.mojopediadbzedition.ui.DbzFragment"
         android:label="fragment_dbz"
-        tools:layout="@layout/fragment_dbz" />
+        tools:layout="@layout/fragment_dbz" >
+        <action
+            android:id="@+id/action_dbzFragment_to_dbzDetailFragment"
+            app:destination="@id/dbzDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/dbzDetailFragment"
         android:name="com.example.mojopediadbzedition.ui.DbzDetailFragment"
         android:label="fragment_dbz_detail"
-        tools:layout="@layout/fragment_dbz_detail" />
+        tools:layout="@layout/fragment_dbz_detail" >
+        <action
+            android:id="@+id/action_dbzDetailFragment_to_dbzFragment"
+            app:destination="@id/dbzFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoritsFragment"
         android:name="com.example.mojopediadbzedition.ui.FavoritsFragment"
