@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Hier wird die Toolbar als Actionbar gesetzt
-        setSupportActionBar(findViewById(R.id.toolbar))
+        setSupportActionBar(binding.toolbar)
 
         // Verknüpft die Bottom-Navigation-Bar mit dem Navigation Controller des NavHost-Fragments
         val navHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
