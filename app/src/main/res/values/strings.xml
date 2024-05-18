@@ -9,5 +9,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="description_icon_app">App Icon</string>
-    <string name="description_imageButton_back">Zurück Pfeil</string>
+    <string name="description_imageButton_back">Damit Naviggieren Sie einen Screen zurück</string>
+    <string name="description_imageButton_menu">Damit wird das Menu geöffnet</string>
+    <string name="die_detailansicht_des_ausgew_hlten_charakters">Die Detailansicht des ausgewählten Charakters</string>
+    <string name="description">Description</string>
+    <string name="race">Race</string>
+    <string name="max_ki">Max. KI</string>
+    <string name="ki">Ki</string>
+    <string name="name">Name</string>
 </resources>
