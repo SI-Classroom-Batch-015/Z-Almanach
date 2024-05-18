@@ -1,14 +1,22 @@
 package com.example.mojopediadbzedition.data.model
 
+import com.squareup.moshi.Json
+
 class CharacterItem(
     val id: Int,
-    val name: String,
+
+    @Json(name = "name")
+    val characterName: String,
+
     val ki: String,
     val maxKi: String,
     val race: String,
     val gender: String,
     val description: String,
-    val image: String,
+
+    @Json(name = "image")
+    val characterImage: String,
+
     val affiliation: String,
     val deletedAt: String,
 )
