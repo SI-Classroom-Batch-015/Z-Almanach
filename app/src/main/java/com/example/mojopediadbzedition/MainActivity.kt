@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         // Verknüpft die Bottom-Navigation-Bar mit dem Navigation Controller des NavHost-Fragments
-        val navHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navHost =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         binding.bottomNavigationView.setupWithNavController(navHost.navController)
     }
 }

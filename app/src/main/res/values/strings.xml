@@ -8,7 +8,6 @@
     <string name="search">Search</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="description_imageButton_menu">Öffnet Navigationsmenu</string>
     <string name="description_icon_app">App Icon</string>
     <string name="description_imageButton_back">Zurück Pfeil</string>
 </resources>
