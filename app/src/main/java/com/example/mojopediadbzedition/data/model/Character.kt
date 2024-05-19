@@ -2,7 +2,7 @@ package com.example.mojopediadbzedition.data.model
 
 import com.squareup.moshi.Json
 
-class CharacterItem(
+class Character(
     val id: Int,
 
     @Json(name = "name")
@@ -17,6 +17,4 @@ class CharacterItem(
     @Json(name = "image")
     val characterImage: String,
 
-    val affiliation: String,
-    val deletedAt: String,
 )
