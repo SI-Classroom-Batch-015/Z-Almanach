@@ -1,8 +1,12 @@
 package com.example.mojopediadbzedition.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
+@Entity("character_table")
 class Character(
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
 
     @Json(name = "name")
