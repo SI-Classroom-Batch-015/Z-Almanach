@@ -27,6 +27,24 @@
         <action
             android:id="@+id/action_dbzDetailFragment_to_dbzFragment"
             app:destination="@id/dbzFragment" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="ki"
+            app:argType="string" />
+        <argument
+            android:name="maxKi"
+            app:argType="string" />
+        <argument
+            android:name="race"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/favoritsFragment"
