@@ -16,9 +16,11 @@ class Character(
     val maxKi: String,
     val race: String,
     val gender: String,
-    val description: String,
+
+    @Json(name = "description")
+    val descriptionSpain: String,
 
     @Json(name = "image")
     val characterImage: String,
 
-)
+    )
