@@ -7,9 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-// Die Konstante enthält die URL der API
 const val BASE_URL = "https://dragonball-api.com/api/"
-
 
 // Moshi konvertiert Serverantworten in Kotlin Objekte
 private val moshi = Moshi.Builder()
@@ -22,7 +20,7 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface DbzApiservice {
+interface DbzApiService {
 
     @GET("characters")
     suspend fun getCharacters(): Characters
@@ -30,5 +28,5 @@ interface DbzApiservice {
 
 // Das Objekt dient als Zugangspunkt für den Rest der App und stellt den API Service zur Verfügung
 object DbzApi {
-    val retrofitService: DbzApiservice by lazy { retrofit.create(DbzApiservice::class.java) }
+    val retrofitService: DbzApiService by lazy { retrofit.create(DbzApiService::class.java) }
 }
