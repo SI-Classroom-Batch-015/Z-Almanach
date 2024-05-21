@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import coil.load
+import com.example.mojopediadbzedition.R
 import com.example.mojopediadbzedition.databinding.FragmentDbzDetailBinding
 
 class DbzDetailFragment : Fragment() {
@@ -32,13 +34,23 @@ class DbzDetailFragment : Fragment() {
         val race = args.race
         val description = args.description
 
+        // Wenn vorhanden werden Daten angezeigt
         binding.apply {
-            ivCharacterImage.load(characterImage)
+            if (characterImage.isNullOrEmpty()) {
+                ivCharacterImage.setImageResource(R.drawable.error404)
+            } else {
+                ivCharacterImage.load(characterImage)
+            }
+
             tvCharacterName.text = characterName
             tvKi.text = ki
             tvMaxKi.text = maxKi
             tvRace.text = race
             tvDescription.text = description
+
+            if (characterName.isNullOrEmpty() || ki.isNullOrEmpty() || maxKi.isNullOrEmpty() || race.isNullOrEmpty() || description.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "Einige Charakterdaten sind nicht verfügbar", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
