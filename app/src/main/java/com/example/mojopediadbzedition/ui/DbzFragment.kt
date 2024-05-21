@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mojopediadbzedition.MainViewModel
 import com.example.mojopediadbzedition.adapter.DbzAdapter
 import com.example.mojopediadbzedition.databinding.FragmentDbzBinding
@@ -28,6 +29,10 @@ class DbzFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // LinearLayoutManager erstellen und der RecyclerView zuweisen
+        val layoutManager = LinearLayoutManager(requireContext())
+        binding.rvDbzFragment.layoutManager = layoutManager
 
         // Adapter Init und Konfiguriert samt Safe Args
         val adapter = DbzAdapter { character ->
