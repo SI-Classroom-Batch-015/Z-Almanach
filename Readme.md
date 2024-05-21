@@ -21,4 +21,4 @@
 19. fragment_dbz.xml ENNDLICH den app:layoutmanager gestzt
 20. Characters Datenklasse ENDLICH die Postmananwort richtig interpretiert und die @Json ano für nam=items gesetzt
 21. DbzFragment.kt den LinearLayoutManager erstellen und der RecyclerView zuweisen
-22. 
+22. CHECK Daten werden von der API richtig geladen und jeweils in den Fragmenten angezeigt
