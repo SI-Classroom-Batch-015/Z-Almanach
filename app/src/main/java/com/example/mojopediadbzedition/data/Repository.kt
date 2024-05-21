@@ -18,7 +18,7 @@ class Repository(
         get() = _characters
 
     // Fun die asyncron im Hintergrund laufen kann, ohne die UI zu blockieren
-    suspend fun refreshCharacters() {
+    suspend fun getCharacters() {
         withContext(Dispatchers.IO) {
             try {
                 val charactersResponse: Characters = api.retrofitService.getCharacters()
