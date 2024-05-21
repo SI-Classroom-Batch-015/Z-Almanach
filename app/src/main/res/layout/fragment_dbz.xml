@@ -18,11 +18,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:listitem="@layout/list_item_dbz" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_choiseCharacter"
+        tools:listitem="@layout/list_item_dbz"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_choiseCharacter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
