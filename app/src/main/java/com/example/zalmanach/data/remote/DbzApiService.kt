@@ -1,6 +1,6 @@
-package com.example.mojopediadbzedition.data.remote
+package com.example.zalmanach.data.remote
 
-import com.example.mojopediadbzedition.data.model.Characters
+import com.example.zalmanach.data.model.Characters
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit

@@ -1,21 +1,21 @@
-package com.example.mojopediadbzedition.ui
+package com.example.zalmanach.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.mojopediadbzedition.databinding.FragmentFavoritsBinding
+import com.example.zalmanach.databinding.FragmentSearchBinding
 
-class FavoritsFragment : Fragment() {
+class SearchFragment : Fragment() {
 
-    private lateinit var binding: FragmentFavoritsBinding
+    private lateinit var binding: FragmentSearchBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFavoritsBinding.inflate(inflater, container, false)
+        binding = FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

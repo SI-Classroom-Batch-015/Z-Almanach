@@ -1,4 +1,4 @@
-package com.example.mojopediadbzedition.ui
+package com.example.zalmanach.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import coil.load
-import com.example.mojopediadbzedition.R
-import com.example.mojopediadbzedition.databinding.FragmentDbzDetailBinding
+import com.example.zalmanach.R
+import com.example.zalmanach.databinding.FragmentDbzDetailBinding
 
 class DbzDetailFragment : Fragment() {
 

@@ -1,11 +1,11 @@
-package com.example.mojopediadbzedition.ui
+package com.example.zalmanach.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.mojopediadbzedition.databinding.FragmentHomeBinding
+import com.example.zalmanach.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 

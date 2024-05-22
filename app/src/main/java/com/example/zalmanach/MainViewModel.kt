@@ -1,4 +1,4 @@
-package com.example.mojopediadbzedition
+package com.example.zalmanach
 
 import android.app.Application
 import android.content.ContentValues
@@ -6,10 +6,10 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.mojopediadbzedition.data.Repository
-import com.example.mojopediadbzedition.data.local.CharacterDatabase
-import com.example.mojopediadbzedition.data.model.Character
-import com.example.mojopediadbzedition.data.remote.DbzApi
+import com.example.zalmanach.data.Repository
+import com.example.zalmanach.data.local.CharacterDatabase
+import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.data.remote.DbzApi
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {

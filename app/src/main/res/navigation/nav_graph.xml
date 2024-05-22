@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.mojopediadbzedition.ui.HomeFragment"
+        android:name="com.example.zalmanach.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/dbzFragment"
-        android:name="com.example.mojopediadbzedition.ui.DbzFragment"
+        android:name="com.example.zalmanach.ui.DbzFragment"
         android:label="fragment_dbz"
         tools:layout="@layout/fragment_dbz" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/dbzDetailFragment"
-        android:name="com.example.mojopediadbzedition.ui.DbzDetailFragment"
+        android:name="com.example.zalmanach.ui.DbzDetailFragment"
         android:label="fragment_dbz_detail"
         tools:layout="@layout/fragment_dbz_detail" >
         <action
@@ -48,12 +48,12 @@
     </fragment>
     <fragment
         android:id="@+id/favoritsFragment"
-        android:name="com.example.mojopediadbzedition.ui.FavoritsFragment"
+        android:name="com.example.zalmanach.ui.FavoritsFragment"
         android:label="fragment_favorits"
         tools:layout="@layout/fragment_favorits" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.mojopediadbzedition.ui.SearchFragment"
+        android:name="com.example.zalmanach.ui.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 </navigation>

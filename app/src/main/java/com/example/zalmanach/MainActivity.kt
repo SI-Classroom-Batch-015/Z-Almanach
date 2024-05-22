@@ -1,10 +1,10 @@
-package com.example.mojopediadbzedition
+package com.example.zalmanach
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.mojopediadbzedition.databinding.ActivityMainBinding
+import com.example.zalmanach.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

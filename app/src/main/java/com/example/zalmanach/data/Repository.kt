@@ -1,17 +1,18 @@
-package com.example.mojopediadbzedition.data
+package com.example.zalmanach.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import com.example.mojopediadbzedition.data.local.CharacterDatabase
-import com.example.mojopediadbzedition.data.remote.DbzApi
-import com.example.mojopediadbzedition.data.model.Character
-import com.example.mojopediadbzedition.data.model.Characters
+import com.example.zalmanach.data.local.CharacterDatabase
+import com.example.zalmanach.data.remote.DbzApi
+import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.data.model.Characters
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class Repository(
     private val api: DbzApi,
-    private val database: CharacterDatabase) {
+    private val database: CharacterDatabase
+) {
 
     private val _characters: LiveData<List<Character>> = database.characterDao.getAllCharacter()
     val characters: LiveData<List<Character>>

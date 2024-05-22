@@ -1,11 +1,11 @@
-package com.example.mojopediadbzedition.data.local
+package com.example.zalmanach.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.mojopediadbzedition.data.model.Character
+import com.example.zalmanach.data.model.Character
 
 @Dao
 interface CharacterDao {

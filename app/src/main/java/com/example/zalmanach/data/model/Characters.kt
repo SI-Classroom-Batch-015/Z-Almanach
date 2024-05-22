@@ -1,4 +1,4 @@
-package com.example.mojopediadbzedition.data.model
+package com.example.zalmanach.data.model
 
 import com.squareup.moshi.Json
 

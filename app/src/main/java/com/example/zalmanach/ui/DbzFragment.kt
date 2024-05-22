@@ -1,4 +1,4 @@
-package com.example.mojopediadbzedition.ui
+package com.example.zalmanach.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mojopediadbzedition.MainViewModel
-import com.example.mojopediadbzedition.adapter.DbzAdapter
-import com.example.mojopediadbzedition.databinding.FragmentDbzBinding
+import com.example.zalmanach.MainViewModel
+import com.example.zalmanach.adapter.DbzAdapter
+import com.example.zalmanach.databinding.FragmentDbzBinding
 
 class DbzFragment : Fragment() {
 

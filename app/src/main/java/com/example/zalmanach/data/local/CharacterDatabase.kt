@@ -1,10 +1,10 @@
-package com.example.mojopediadbzedition.data.local
+package com.example.zalmanach.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.mojopediadbzedition.data.model.Character
+import com.example.zalmanach.data.model.Character
 
 @Database(entities = [Character::class], version = 1)
 abstract class CharacterDatabase : RoomDatabase() {

@@ -1,4 +1,4 @@
-package com.example.mojopediadbzedition.data.model
+package com.example.zalmanach.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

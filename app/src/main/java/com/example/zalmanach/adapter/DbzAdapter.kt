@@ -1,4 +1,4 @@
-package com.example.mojopediadbzedition.adapter
+package com.example.zalmanach.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
-import com.example.mojopediadbzedition.R
-import com.example.mojopediadbzedition.data.model.Character
-import com.example.mojopediadbzedition.databinding.ListItemDbzBinding
+import com.example.zalmanach.R
+import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.databinding.ListItemDbzBinding
 
 class DbzAdapter(val onCharacterSelected: (Character) -> Unit) : // Callback der bei Klick aufgerufen wird
     RecyclerView.Adapter<DbzAdapter.CharacterViewHolder>() {
