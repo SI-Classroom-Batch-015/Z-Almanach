@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MOJO`pedia DBZ Edition"
+rootProject.name = "Z`Almanach"
 include(":app")
  
