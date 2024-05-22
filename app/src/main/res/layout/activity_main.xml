@@ -9,36 +9,6 @@
     tools:context=".MainActivity"
     android:background="@drawable/dbzhintergrund">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/gray"
-        android:elevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tv_appName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:gravity="start"
-            android:text="@string/app_name_toolbar"
-            android:textSize="28sp"
-            android:textStyle="bold"/>
-
-        <ImageButton
-            android:id="@+id/ibtn_burgerMenu"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="@string/description_imageButton_menu"
-            android:src="@drawable/baseline_menu_24" />
-    </com.google.android.material.appbar.MaterialToolbar>
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
