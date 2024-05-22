@@ -26,7 +26,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             try {
                 repository.getCharacters() // Charaktere aus dem Repository aktualisieren
             } catch (e: Exception) {
-                Log.e(ContentValues.TAG, "Fail Load Characters $e")            }
+                Log.e("MainViewModel", "Fail Load Characters $e")}
         }
     }
 }

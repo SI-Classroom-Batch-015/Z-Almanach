@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".ui.DbzFragment">
 
+    <TextView
+        android:id="@+id/tv_choiseCharacter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="Wähle einen Charakter und erfahre mehr über Ihn"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_dbzFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dbzFragment"
         android:layout_width="match_parent"
@@ -21,16 +35,4 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_choiseCharacter"
         tools:listitem="@layout/list_item_dbz"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-    <TextView
-        android:id="@+id/tv_choiseCharacter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Wähle einen Charakter und erfahre mehr über Ihn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="14sp"
-        android:textStyle="bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
