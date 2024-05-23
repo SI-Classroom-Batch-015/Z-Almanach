@@ -33,8 +33,6 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                //  die Progressbar ist voll wenn der Timer abgelaufen ist
-                binding.pbLadestatusSplash.progress = 100
                 startActivity(Intent(this@SplashActivity,MainActivity::class.java))
                 finish()
             }
