@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@drawable/dbzhintergrund">
+
+    <ImageView
+        android:id="@+id/iv_appLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:contentDescription="@string/description_icon_app"/>
+
+    <ProgressBar
+        android:id="@+id/pb_ladestatusSplash"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="240dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_appLogo"
+        app:layout_constraintStart_toStartOf="@+id/iv_appLogo"
+        app:layout_constraintTop_toBottomOf="@+id/iv_appLogo"
+        android:progressTint="@color/carbon_black"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_splashIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="126dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:strokeColor="@color/transparent"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_appLogo"
+        app:layout_constraintStart_toStartOf="@+id/iv_appLogo"
+        app:layout_constraintTop_toBottomOf="@+id/iv_appLogo">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_intro1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/carbon_black" />
+
+            <TextView
+                android:id="@+id/tv_intro2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/infos_spiel"
+                android:textColor="@color/carbon_black"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/tv_intro3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/spa_und_spannung"
+                android:textColor="@color/carbon_black"
+                android:layout_marginTop="24dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_splashCopyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_copyright"
+        android:textColor="@color/carbon_black" />
+
+        <TextView
+            android:id="@+id/tv_appVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/text_appversion"
+            android:textColor="@color/carbon_black"/>
+
+    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
