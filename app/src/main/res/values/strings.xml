@@ -21,4 +21,6 @@
     <string name="text_copyright">\u00A9 2024 Michael F. Junior</string>
     <string name="text_appversion">Version 1.0.1</string>
     <string name="infos_spiel">Infos, Spiel-</string>
+    <string name="z">Z</string>
+    <string name="lmanach">Àlmanach</string>
 </resources>
