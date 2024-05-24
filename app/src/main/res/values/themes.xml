@@ -5,5 +5,5 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="AppName" parent="ZAlmanach" />
+    <style name="Theme.MOJOpediaDBZEdition" parent="ZAlmanach" />
 </resources>

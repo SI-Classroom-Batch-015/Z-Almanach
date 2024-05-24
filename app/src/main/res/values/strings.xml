@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Z`Almanach</string>
-    <string name="app_name_toolbar">Z`Almanach</string>
     <string name="home">Home</string>
     <string name="dbz">DBZ</string>
     <string name="dbz_detail">DBZ Detail</string>
@@ -18,4 +17,8 @@
     <string name="ki">Ki</string>
     <string name="name">Name</string>
     <string name="character_name">Character Name</string>
+    <string name="spa_und_spannung">Spaß und Spannung</string>
+    <string name="text_copyright">\u00A9 2024 Michael F. Junior</string>
+    <string name="text_appversion">Version 1.0.1</string>
+    <string name="infos_spiel">Infos, Spiel-</string>
 </resources>
