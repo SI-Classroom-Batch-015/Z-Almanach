@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.zalmanach.data.Repository
-import com.example.zalmanach.data.local.CharacterDatabase
+import com.example.zalmanach.data.local.DragonballDatabase
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.remote.DbzApi
 import kotlinx.coroutines.launch
@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     // Instanz der lokalen Datenbank
-    private val database = CharacterDatabase.getDatabase(application)
+    private val database = DragonballDatabase.getDatabase(application)
     // Instanz vom Repo, das die Datenbank- und API-Zugriffe übergeben kriegt
     private val repository: Repository = Repository(DbzApi, database)
 

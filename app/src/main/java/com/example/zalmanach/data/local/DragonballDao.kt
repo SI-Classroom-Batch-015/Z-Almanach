@@ -8,7 +8,7 @@ import androidx.room.Query
 import com.example.zalmanach.data.model.Character
 
 @Dao
-interface CharacterDao {
+interface DragonballDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCharacters(characters: List<Character>)

@@ -2,7 +2,7 @@ package com.example.zalmanach.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import com.example.zalmanach.data.local.CharacterDatabase
+import com.example.zalmanach.data.local.DragonballDatabase
 import com.example.zalmanach.data.remote.DbzApi
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Characters
@@ -11,10 +11,10 @@ import kotlinx.coroutines.withContext
 
 class Repository(
     private val api: DbzApi,
-    private val database: CharacterDatabase
+    private val database: DragonballDatabase
 ) {
 
-    private val _characters: LiveData<List<Character>> = database.characterDao.getAllCharacter()
+    private val _characters: LiveData<List<Character>> = database.dragonballDao.getAllCharacter()
     val characters: LiveData<List<Character>>
         get() = _characters
 
@@ -27,10 +27,10 @@ class Repository(
                 // Extrahieren der Liste von Charakteren aus der API-Antwort
                 val characterList: List<Character> = charactersResponse.listOfCharacters
 
-                database.characterDao.deleteAll()
+                database.dragonballDao.deleteAll()
 
                 // Einfügen der neuen Charaktere in die Datenbank
-                database.characterDao.insertCharacters(characterList)
+                database.dragonballDao.insertCharacters(characterList)
             } catch (e: Exception) {
                 Log.e("Repository", "Error Load characters: ${e.message}")
             }
