@@ -23,7 +23,7 @@ class DbzFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentDbzBinding.inflate(inflater, container, false)
-        viewModel.loadCharacters()
+        viewModel.loadCharacters() // Daten schon mal Laden
         return binding.root
     }
 
@@ -49,6 +49,6 @@ class DbzFragment : Fragment() {
                 )
         }
         binding.rvDbzFragment.adapter = adapter
-        viewModel.characters.observe(viewLifecycleOwner) { adapter.submitList(it) }
+        viewModel.characters.observe(viewLifecycleOwner) { adapter.submitList(it) } // Beobachten und Liste an den Adapter übergeben
     }
 }

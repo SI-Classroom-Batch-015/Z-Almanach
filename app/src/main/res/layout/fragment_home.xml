@@ -16,19 +16,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_z"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/iv_z"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/z"
-            android:textSize="32sp" />
+            android:src="@drawable/baseline_electric_bolt_24"
+            android:textSize="32sp"
+            android:contentDescription="@string/das_ist_ein_z" />
 
         <TextView
             android:id="@+id/tv_almanach"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:text="@string/lmanach"
             android:textSize="28sp" />
     </LinearLayout>
