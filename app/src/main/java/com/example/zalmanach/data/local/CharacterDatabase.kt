@@ -14,7 +14,7 @@ abstract class CharacterDatabase : RoomDatabase() {
 
     companion object {
 
-        // Instanz der Datenbank wird später initialisiert
+        // Instanz der Datenbank wird später initialisiert.
         private lateinit var dbInstance: CharacterDatabase
 
         fun getDatabase(context: Context): CharacterDatabase {
