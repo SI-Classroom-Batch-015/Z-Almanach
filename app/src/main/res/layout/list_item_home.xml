@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/iv_transformationImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_margin="8dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/bild_von_der_transformation_des_characters" />
+</com.google.android.material.card.MaterialCardView>
