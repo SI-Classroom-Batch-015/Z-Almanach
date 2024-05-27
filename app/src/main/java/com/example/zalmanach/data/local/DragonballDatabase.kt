@@ -26,7 +26,8 @@ abstract class DragonballDatabase : RoomDatabase() {
                     context.applicationContext,
                     DragonballDatabase::class.java,
                     "dragonball_db"
-                ).build()
+                ).fallbackToDestructiveMigration()
+                    .build()
             }
             return dbInstance
         }
