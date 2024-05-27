@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
             transformationAdapter.submitList(it)
         }
 
-        val layoutManagerHorizontal = LinearLayoutManager(requireContext())
+        val layoutManagerHorizontal = LinearLayoutManager(requireContext(), LinearLayoutManager. HORIZONTAL, false)
         binding.rvHomePlanets.layoutManager = layoutManagerHorizontal
         val planetAdapter = PlanetAdapter { planet ->
             Toast.makeText(requireContext(), "Planets", Toast.LENGTH_LONG).show()
