@@ -6,6 +6,8 @@ import com.example.zalmanach.data.local.DragonballDatabase
 import com.example.zalmanach.data.remote.DbzApi
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Characters
+import com.example.zalmanach.data.model.Planet
+import com.example.zalmanach.data.model.Planets
 import com.example.zalmanach.data.model.Transformation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -22,6 +24,10 @@ class Repository(
     private val _transformations: LiveData<List<Transformation>> = database.dragonballDao.getAllTransformations()
     val transformations: LiveData<List<Transformation>>
         get() = _transformations
+
+    private val _planets: LiveData<List<Planet>> = database.dragonballDao.getAllPlanets()
+    val planets: LiveData<List<Planet>>
+        get() = _planets
 
     // Fun die asyncron im Hintergrund laufen kann, ohne die UI zu blockieren
     suspend fun getCharacters() {
@@ -45,6 +51,19 @@ class Repository(
                 database.dragonballDao.insertTransformations(transformationList)
             } catch (e: Exception) {
                 Log.e("Reposirotry", "Error Load Transformations: ${e.message}")
+            }
+        }
+    }
+
+    suspend fun getPlanets() {
+        withContext(Dispatchers.IO) {
+            try {
+                val planetResponse: Planets = api.retrofitService.getPlanets()
+                val planetList: List<Planet> = planetResponse.listOfPlanets
+                database.dragonballDao.deleteAllPlanets()
+                database.dragonballDao.insertPlanets(planetList)
+            } catch (e: Exception) {
+                Log.e("Reposirotry", "Error Load Planets: ${e.message}")
             }
         }
     }
