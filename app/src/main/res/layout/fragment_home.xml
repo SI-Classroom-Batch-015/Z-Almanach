@@ -36,6 +36,7 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="wrap_content"
         android:layout_height="160dp"
         android:layout_marginTop="60dp"
@@ -54,12 +55,12 @@
                 android:id="@+id/tv_description_home"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:padding="16dp"
                 android:scrollbars="vertical"
                 android:text="@string/home_intro"
                 android:textColor="@android:color/white"
-                android:textSize="22sp"
-                android:gravity="center"/>
+                android:textSize="22sp" />
         </com.google.android.material.card.MaterialCardView>
     </ScrollView>
 
@@ -100,6 +101,15 @@
         app:layout_constraintTop_toBottomOf="@+id/rv_home_planets"
         android:gravity="center"
         android:lineSpacingExtra="8dp"/>
+
+    <VideoView
+        android:id="@+id/vV_home"
+        android:layout_width="200dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="@+id/scrollView2"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

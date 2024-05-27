@@ -1,14 +1,17 @@
 package com.example.zalmanach.ui
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.MediaController
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zalmanach.MainViewModel
+import com.example.zalmanach.R
 import com.example.zalmanach.adapter.PlanetAdapter
 import com.example.zalmanach.adapter.TransformationAdapter
 import com.example.zalmanach.databinding.FragmentHomeBinding
@@ -63,5 +66,13 @@ class HomeFragment : Fragment() {
         viewModel.planets.observe(viewLifecycleOwner) {
             planetAdapter.submitList(it)
         }
+
+        // VideoView konfi und starten
+        val videoUri: Uri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.dbzopeningintrochalahead)
+        val mediaController = MediaController(requireContext())   // Player für Start/Pause
+        binding.vVHome.setVideoURI(videoUri)
+        binding.vVHome.setMediaController(mediaController)
+        mediaController.setAnchorView(binding.vVHome)
+        binding.vVHome.start()
     }
 }
