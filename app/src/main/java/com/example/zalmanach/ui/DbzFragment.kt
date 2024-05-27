@@ -9,7 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zalmanach.MainViewModel
-import com.example.zalmanach.adapter.DbzAdapter
+import com.example.zalmanach.adapter.CharacterAdapter
 import com.example.zalmanach.databinding.FragmentDbzBinding
 
 class DbzFragment : Fragment() {
@@ -35,7 +35,7 @@ class DbzFragment : Fragment() {
         binding.rvDbzFragment.layoutManager = layoutManager
 
         // Adapter Init und Konfiguriert samt Safe Args
-        val adapter = DbzAdapter { character ->
+        val adapter = CharacterAdapter { character ->
             findNavController()
                 .navigate(
                     DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(

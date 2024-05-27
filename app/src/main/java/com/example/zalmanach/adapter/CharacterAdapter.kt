@@ -10,8 +10,8 @@ import com.example.zalmanach.R
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.databinding.ListItemDbzBinding
 
-class DbzAdapter(val onCharacterSelected: (Character) -> Unit) : // Callback der bei Klick aufgerufen wird
-    RecyclerView.Adapter<DbzAdapter.CharacterViewHolder>() {
+class CharacterAdapter(val onCharacterSelected: (Character) -> Unit) : // Callback der bei Klick aufgerufen wird
+    RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
     private var dataset: List<Character> = emptyList()
 
