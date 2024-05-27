@@ -100,7 +100,8 @@
         app:layout_constraintStart_toStartOf="@+id/rv_home_planets"
         app:layout_constraintTop_toBottomOf="@+id/rv_home_planets"
         android:gravity="center"
-        android:lineSpacingExtra="8dp"/>
+        android:lineSpacingExtra="8dp"
+        android:textStyle="bold"/>
 
     <VideoView
         android:id="@+id/vV_home"
