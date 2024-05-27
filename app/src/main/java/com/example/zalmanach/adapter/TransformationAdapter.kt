@@ -38,7 +38,7 @@ class TransformationAdapter(val onTransformationSelected: (Transformation) -> Un
     override fun onBindViewHolder(holder: TransformationViewHolder, position: Int) {
         val transformation = dataset[position]
 
-        holder.binding.ivTransformationImage.load(transformation.transformationImage) {
+        holder.binding.ivPlanetAndTransformation.load(transformation.transformationImage) {
             error(R.drawable.error404)
             transformations(CircleCropTransformation())
         }
