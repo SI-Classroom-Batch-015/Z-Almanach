@@ -1,6 +1,7 @@
 package com.example.zalmanach.data.remote
 
 import com.example.zalmanach.data.model.Characters
+import com.example.zalmanach.data.model.Planets
 import com.example.zalmanach.data.model.Transformation
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -28,6 +29,9 @@ interface DbzApiService {
 
     @GET("transformations")
     suspend fun getTransformations(): List<Transformation>
+
+    @GET("planets")
+    suspend fun getPlanets(): Planets
 }
 
 // Das Objekt dient als Zugangspunkt für den Rest der App und stellt den API Service zur Verfügung
