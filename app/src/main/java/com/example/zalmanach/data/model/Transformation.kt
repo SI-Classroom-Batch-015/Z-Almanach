@@ -15,5 +15,6 @@ data class Transformation(
     @Json(name = "image")
     val transformationImage: String,
 
+    @Json(name = "ki")
     val transformationKi: String,
 )
