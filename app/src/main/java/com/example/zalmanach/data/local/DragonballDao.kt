@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 
 @Dao
@@ -17,7 +18,7 @@ interface DragonballDao {
     @Query("SELECT * FROM character_table")
     fun getAllCharacter(): LiveData<List<Character>>
 
-    @Query("DELETE from character_table")
+    @Query("DELETE FROM character_table")
     suspend fun deleteAll()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -28,4 +29,13 @@ interface DragonballDao {
 
     @Query("DELETE FROM transformation_table")
     suspend fun deleteAllTransformations()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertPlanets(planets: List<Planet>)
+
+    @Query("SELECT * FROM planets_table")
+    fun getAllPlanets(): LiveData<List<Planet>>
+
+    @Query("DELETE FROM planets_table")
+    suspend fun deleteAllPlanets()
 }
