@@ -35,6 +35,34 @@
             android:textSize="28sp" />
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_marginTop="60dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rv_home_transformations"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/dark_gray"
+            app:cardElevation="8dp">
+
+            <TextView
+                android:id="@+id/tv_description_home"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:padding="16dp"
+                android:scrollbars="vertical"
+                android:text="@string/home_intro"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:gravity="center"/>
+        </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home_transformations"
         android:layout_width="wrap_content"
@@ -61,4 +89,18 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/list_item_home" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/donate"
+        app:layout_constraintEnd_toEndOf="@+id/rv_home_planets"
+        app:layout_constraintStart_toStartOf="@+id/rv_home_planets"
+        app:layout_constraintTop_toBottomOf="@+id/rv_home_planets"
+        android:gravity="center"
+        android:lineSpacingExtra="8dp"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
