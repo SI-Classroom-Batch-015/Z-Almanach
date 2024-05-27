@@ -17,6 +17,7 @@ class Repository(
     private val database: DragonballDatabase
 ) {
 
+    // Live Data Objekte erstellt
     private val _characters: LiveData<List<Character>> = database.dragonballDao.getAllCharacter()
     val characters: LiveData<List<Character>>
         get() = _characters
