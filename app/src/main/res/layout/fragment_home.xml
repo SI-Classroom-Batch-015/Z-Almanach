@@ -19,8 +19,8 @@
 
         <ImageView
             android:id="@+id/iv_z"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/das_ist_ein_z"
             android:src="@drawable/baseline_electric_bolt_24"
@@ -37,7 +37,7 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
         android:layout_marginTop="60dp"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
             <TextView
                 android:id="@+id/tv_description_home"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:scrollbars="vertical"
                 android:text="@string/home_intro"
