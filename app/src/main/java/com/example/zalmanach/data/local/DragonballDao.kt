@@ -38,4 +38,9 @@ interface DragonballDao {
 
     @Query("DELETE FROM planets_table")
     suspend fun deleteAllPlanets()
+
+    // Methode für die Volltextsuche
+    @Query("SELECT * FROM character_table WHERE characterName LIKE :query")
+    fun searchCharacters(query: String): LiveData<List<Character>>
 }
+
