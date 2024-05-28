@@ -30,6 +30,11 @@ class Repository(
     val planets: LiveData<List<Planet>>
         get() = _planets
 
+    // Wird vom ViewModel aufgerufen, um Daten für die Suchergebnisse abzurufen
+    fun searchCharacters(query: String): LiveData<List<Character>> {
+        return database.dragonballDao.searchCharacters("%$query%")
+    }
+
     // Fun die asyncron im Hintergrund laufen kann, ohne die UI zu blockieren
     suspend fun getCharacters() {
         withContext(Dispatchers.IO) {
@@ -47,7 +52,8 @@ class Repository(
     suspend fun getTransformations() {
         withContext(Dispatchers.IO) {
             try {
-                val transformationList: List<Transformation> = api.retrofitService.getTransformations()
+                val transformationList: List<Transformation> =
+                    api.retrofitService.getTransformations()
                 database.dragonballDao.deleteAllTransformations()
                 database.dragonballDao.insertTransformations(transformationList)
             } catch (e: Exception) {
