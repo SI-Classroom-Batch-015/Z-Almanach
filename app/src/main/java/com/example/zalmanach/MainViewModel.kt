@@ -60,4 +60,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun triggerAnimation() {  // Keine Hintergrundop´s
         _startAnimation.value = true
     }
+
+    fun searchCharacters(query: String) : LiveData<List<Character>>{
+        return repository.searchCharacters(query)
+    }
+
 }
