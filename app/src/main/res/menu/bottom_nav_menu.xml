@@ -10,9 +10,6 @@
         android:icon="@drawable/baseline_sports_volleyball_24"
         android:title="@string/dbz"/>
     <item
-        android:enabled="false"
-        android:title="" />
-    <item
         android:id="@+id/favoritsFragment"
         android:icon="@drawable/baseline_favorite_border_24"
         android:title="@string/favorits"/>
