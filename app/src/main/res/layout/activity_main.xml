@@ -23,11 +23,13 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        app:itemBackground="@color/gray"/>
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/carbon_black"
+        app:itemTextColor="@color/carbon_black"
+        android:backgroundTint="@color/carbon_black" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
