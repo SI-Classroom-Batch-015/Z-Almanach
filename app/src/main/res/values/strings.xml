@@ -30,4 +30,13 @@
     <string name="suchbegriff">Suchbegriff</string>
     <string name="suche">Suche</string>
     <string name="fab_button">FAB Button</string>
+    <string name="login">Login</string>
+    <string name="email_eingeben">Email eingeben ...</string>
+    <string name="passwort">Passwort</string>
+    <string name="passwort_vergessen">Passwort Vergessen?</string>
+    <string name="loginb">Login</string>
+    <string name="noch_keinen_account">Noch keinen Account?</string>
+    <string name="hier_registrieren">Hier Registrieren !</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
 </resources>
