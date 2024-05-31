@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        // Prov. Btn ohne Anmeldelogik
+        // Prov. Login Btn ohne Anmeldelogik
         binding.btnLogin.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()

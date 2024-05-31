@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.FavoritsFragment"
-    android:background="@drawable/home">
+    android:background="@drawable/hintergrund">
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
