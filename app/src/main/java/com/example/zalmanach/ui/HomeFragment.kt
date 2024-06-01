@@ -43,14 +43,14 @@ class HomeFragment : Fragment() {
             }
         }
 
-        // Adapter der RV zuweisen, mittels Observe beobachten und die Liste im Adapter aktua.
-        val planetAdapter = PlanetAdapter { planet ->
-            Toast.makeText(requireContext(), "Planets", Toast.LENGTH_LONG).show()
-        }
-        binding.rvHomePlanets.adapter = planetAdapter
-        viewModel.planets.observe(viewLifecycleOwner) {
-            planetAdapter.submitList(it)
-        }
+//        // Adapter der RV zuweisen, mittels Observe beobachten und die Liste im Adapter aktua.
+//        val planetAdapter = PlanetAdapter { planet ->
+//            Toast.makeText(requireContext(), "Planets", Toast.LENGTH_LONG).show()
+//        }
+//        binding.rvHomePlanets.adapter = planetAdapter
+//        viewModel.planets.observe(viewLifecycleOwner) {
+//            planetAdapter.submitList(it)
+//        }
 
         // VideoView konfi und starten
         val videoUri: Uri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.dbzopeningintrochalahead)

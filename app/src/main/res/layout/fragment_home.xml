@@ -72,32 +72,129 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/vorschau"
+        android:layout_marginBottom="4dp"
+        android:text="@string/features"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_home_planets"
-        app:layout_constraintStart_toStartOf="@+id/rv_home_planets" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_home_description_dbz"
+        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_dbz"
+        app:layout_constraintStart_toStartOf="@+id/cv_home_description_dbz" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_home_planets"
-        android:layout_width="316dp"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_home_description_dbz"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:listitem="@layout/list_item_home" />
+        android:layout_marginTop="38dp"
+        android:backgroundTint="@color/carbon_black"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
+
+        <TextView
+            android:id="@+id/tv_description_dbz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="@string/dbz_schau_dir_deine_linblings_charaktere_an"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_home_description_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/carbon_black"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
+
+        <TextView
+            android:id="@+id/tv_description_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="@string/detail_the_how_is_how"
+            android:textColor="@color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_home_description_favorits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="102dp"
+        android:backgroundTint="@color/carbon_black"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
+
+        <TextView
+            android:id="@+id/tv_description_detail_favorits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="@string/favorits_lasse_zwei_charactere_gegen_einander_antreten"
+            android:textColor="@color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_home_description_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="134dp"
+        android:backgroundTint="@color/carbon_black"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
+
+        <TextView
+            android:id="@+id/tv_description_detail_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="@string/search_erkunde_das_dbz_universum"
+            android:textColor="@color/white" />
+    </com.google.android.material.card.MaterialCardView>
 
     <VideoView
         android:id="@+id/vV_home"
         android:layout_width="0dp"
         android:layout_height="168dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/rv_home_planets"
-        app:layout_constraintStart_toStartOf="@+id/rv_home_planets"
-        app:layout_constraintTop_toBottomOf="@+id/rv_home_planets" />
+        android:layout_marginTop="192dp"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
