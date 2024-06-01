@@ -10,20 +10,20 @@
 
     <ImageView
         android:id="@+id/iv_appLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher"
-        android:contentDescription="@string/description_icon_app"/>
+        android:contentDescription="@string/description_icon_app" />
 
     <ProgressBar
         android:id="@+id/pb_ladestatusSplash"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="240dp"
-        android:layout_height="28dp"
+        android:layout_height="36dp"
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_appLogo"
         app:layout_constraintStart_toStartOf="@+id/iv_appLogo"
@@ -34,43 +34,50 @@
         android:id="@+id/cv_splashIntro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="126dp"
+        android:layout_marginTop="120dp"
         app:cardBackgroundColor="@color/transparent"
-        app:strokeColor="@color/carbon_black"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_appLogo"
         app:layout_constraintStart_toStartOf="@+id/iv_appLogo"
-        app:layout_constraintTop_toBottomOf="@+id/iv_appLogo">
+        app:layout_constraintTop_toBottomOf="@+id/iv_appLogo"
+        app:strokeColor="@color/carbon_black">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="16dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/tv_intro1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:text="@string/app_name"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv_intro2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:text="@string/infos_spiel"
                 android:textColor="@color/white"
-                android:layout_marginTop="24dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv_intro3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
                 android:text="@string/spa_und_spannung"
                 android:textColor="@color/white"
-                android:layout_marginTop="24dp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -79,7 +86,7 @@
         android:id="@+id/cv_splashCopyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="24dp"
         app:cardBackgroundColor="@color/transparent"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,28 +94,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/transparent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-    <TextView
-        android:id="@+id/tv_copyright"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_copyright"
-        android:textColor="@color/white" />
-
-        <TextView
-            android:id="@+id/tv_appVersion"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/text_appversion"
-            android:textColor="@color/white"/>
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_copyright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_copyright"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_appVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/text_appversion"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
