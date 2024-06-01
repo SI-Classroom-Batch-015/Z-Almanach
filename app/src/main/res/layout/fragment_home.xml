@@ -42,7 +42,6 @@
         android:layout_width="wrap_content"
         android:layout_height="160dp"
         android:layout_marginTop="32dp"
-        android:background="@color/carbon_black"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
@@ -51,9 +50,11 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/dark_gray"
             app:cardElevation="8dp"
-            android:backgroundTint="@color/carbon_black">
+            android:backgroundTint="@color/carbon_black"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/white"
+            app:cardCornerRadius="8dp">
 
             <TextView
                 android:id="@+id/tv_description_home"
@@ -67,28 +68,6 @@
                 android:textSize="22sp" />
         </com.google.android.material.card.MaterialCardView>
     </ScrollView>
-
-    <VideoView
-        android:id="@+id/vV_home"
-        android:layout_width="0dp"
-        android:layout_height="168dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView"
-        app:layout_constraintStart_toStartOf="@+id/scrollView"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rv_home_transformations"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="48dp"-->
-<!--        android:layout_marginBottom="80dp"-->
-<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/rv_home_planets"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout"-->
-<!--        tools:listitem="@layout/list_item_home" />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -104,12 +83,21 @@
         android:id="@+id/rv_home_planets"
         android:layout_width="316dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="250dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:listitem="@layout/list_item_home" />
+
+    <VideoView
+        android:id="@+id/vV_home"
+        android:layout_width="0dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/rv_home_planets"
+        app:layout_constraintStart_toStartOf="@+id/rv_home_planets"
+        app:layout_constraintTop_toBottomOf="@+id/rv_home_planets" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
