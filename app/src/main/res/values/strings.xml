@@ -35,11 +35,15 @@
     <string name="max_ki">Max. KI</string>
     <string name="ki">Ki</string>
     <string name="name">Name</string>
-    <string name="character_name">Character Name</string>
+    <string name="character_name">Character</string>
 
     <string name="btc_adress">bc1qwn4ca3u22fkkc6rm78puukxy72as9w6m03gdhv</string>
     <string name="search_erkunde_das_dbz_universum">Search, erkunde das DBZ- Universum</string>
     <string name="favorits_lasse_zwei_charactere_gegen_einander_antreten">Favorits, lasse zwei Charactere gegen einander antreten!</string>
     <string name="detail_the_how_is_how">Detail, The How is How!</string>
     <string name="dbz_schau_dir_deine_linblings_charaktere_an">DBZ, schau dir deine Linblings Charaktere an</string>
+    <string name="bild_von_einem_charater">Bild von einem Charater</string>
+    <string name="charaktere">Charaktere</string>
+    <string name="transformation">Transformation</string>
+    <string name="planets">Planets</string>
 </resources>
