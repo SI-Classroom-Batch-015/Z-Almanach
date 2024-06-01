@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
-    android:background="@drawable/dbzhintergrund">
+    android:background="@drawable/hintergrund_b">
 
     <ImageView
         android:id="@+id/iv_appLogo"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="@+id/iv_appLogo"
         app:layout_constraintStart_toStartOf="@+id/iv_appLogo"
         app:layout_constraintTop_toBottomOf="@+id/iv_appLogo"
-        android:progressTint="@color/carbon_black"/>
+        android:progressTint="@color/white"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_splashIntro"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="126dp"
         app:cardBackgroundColor="@color/transparent"
-        app:strokeColor="@color/transparent"
+        app:strokeColor="@color/carbon_black"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_appLogo"
         app:layout_constraintStart_toStartOf="@+id/iv_appLogo"
@@ -54,14 +54,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
-                android:textColor="@color/carbon_black" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_intro2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/infos_spiel"
-                android:textColor="@color/carbon_black"
+                android:textColor="@color/white"
                 android:layout_marginTop="24dp" />
 
             <TextView
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/spa_und_spannung"
-                android:textColor="@color/carbon_black"
+                android:textColor="@color/white"
                 android:layout_marginTop="24dp" />
 
         </LinearLayout>
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_copyright"
-        android:textColor="@color/carbon_black" />
+        android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/tv_appVersion"
@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/text_appversion"
-            android:textColor="@color/carbon_black"/>
+            android:textColor="@color/white"/>
 
     </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
