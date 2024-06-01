@@ -28,7 +28,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Adapter init. und RV hinzufügen
+        // Adapter init. und der RV hinzufügen
         val adapter = SearchAdapter(emptyList())
         binding.rvSearchResult.adapter = adapter
 
