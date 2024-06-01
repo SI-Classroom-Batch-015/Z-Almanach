@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/iv_z"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/das_ist_ein_z"
             android:src="@drawable/baseline_electric_bolt_24"
@@ -52,7 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/dark_gray"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            android:backgroundTint="@color/carbon_black">
 
             <TextView
                 android:id="@+id/tv_description_home"
@@ -62,7 +63,7 @@
                 android:padding="16dp"
                 android:scrollbars="vertical"
                 android:text="@string/home_intro"
-                android:textColor="@android:color/white"
+                android:textColor="@color/white"
                 android:textSize="22sp" />
         </com.google.android.material.card.MaterialCardView>
     </ScrollView>
@@ -70,7 +71,7 @@
     <VideoView
         android:id="@+id/vV_home"
         android:layout_width="0dp"
-        android:layout_height="134dp"
+        android:layout_height="168dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="@+id/scrollView"
@@ -103,7 +104,7 @@
         android:id="@+id/rv_home_planets"
         android:layout_width="316dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="430dp"
+        android:layout_marginTop="450dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
