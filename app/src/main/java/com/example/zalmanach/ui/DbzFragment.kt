@@ -46,7 +46,7 @@ class DbzFragment : Fragment() {
         binding.rvDbzFragmentCharacter.adapter = adapter
         viewModel.characters.observe(viewLifecycleOwner) { adapter.submitList(it) } // Beobachten und Liste an den Adapter übergeben
 
-        // Zum Testen der Recyclervies, Vorbereitung für Transformation und Planets
+        // Zum Testen der Recyclervies und Vorbereitung für Transformation und Planets
         binding.rvDbzFragmentTransformations.adapter = adapter
         binding.rvDbzFragmentPlanets.adapter = adapter
     }
