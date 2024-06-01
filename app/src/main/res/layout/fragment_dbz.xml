@@ -8,20 +8,33 @@
     tools:context=".ui.DbzFragment"
     android:background="@drawable/hintergrund_b">
 
-    <TextView
-        android:id="@+id/tv_choiseCharacter"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_dbz_choiseCharacter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/erkunde_die_dbz_welt"
-        android:textColor="@color/white"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rv_dbzFragment"
+        android:backgroundTint="@color/carbon_black"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
+
+        <TextView
+            android:id="@+id/tv_choiseCharacter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="@string/erkunde_die_dbz_welt"
+            android:textColor="@color/white"
+            android:textSize="26sp"/>
+    </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dbzFragment"
@@ -32,6 +45,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_choiseCharacter"
+        app:layout_constraintTop_toBottomOf="@+id/cv_dbz_choiseCharacter"
         tools:listitem="@layout/list_item_dbz" />
 </androidx.constraintlayout.widget.ConstraintLayout>
