@@ -26,7 +26,7 @@
     <string name="das_ist_ein_z">Das ist ein Z</string>
     <string name="bild_von_der_transformation_des_characters">Bild von der Transformation des Characters</string>
     <string name="home_intro">Für Jung und Alt für jeden Dragonball Fan was dabei. Hier findest du iene Sammlung deiner Lieblingscharacteren und viellerlei anderer Interessanten und Lustigen Informationen und Wissenswertes. Wähle im DetailFragment zwei Charaktere aus und lasse Sie in Favorits gegeneinander antreten und Rate wer Gewinnt! Viel Spaß dein Team vom Z-Almanach :-)</string>
-    <string name="donate">THIS ROCK`s? THANKS´s for the MAI-TAI 🫶 \n bc1qwn4ca3u22fkkc6rm78puukxy72as9w6m03gdhv</string>
+    <string name="donate">THIS ROCK`s? THANKS´s for the MAI-TAI 🫶</string>
     <string name="suchbegriff">Suchbegriff</string>
     <string name="suche">Suche</string>
     <string name="fab_button">FAB Button</string>
@@ -39,4 +39,6 @@
     <string name="hier_registrieren">Hier Registrieren !</string>
     <string name="google">Google</string>
     <string name="facebook">Facebook</string>
+    <string name="btc_adress">bc1qwn4ca3u22fkkc6rm78puukxy72as9w6m03gdhv</string>
+    <string name="vorschau">Vorschau:</string>
 </resources>

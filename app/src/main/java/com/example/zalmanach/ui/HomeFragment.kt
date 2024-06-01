@@ -43,22 +43,7 @@ class HomeFragment : Fragment() {
             }
         }
 
-        // LinearLayoutManager erstellen und RV zuweisen
-        val layoutManagerVertical = LinearLayoutManager(requireContext())
-        binding.rvHomeTransformations.layoutManager = layoutManagerVertical
-
-        // Adapter Objekt erstellt / init und mit dem Lamdaa bei Klick Konfi
-        val transformationAdapter = TransformationAdapter { transformation ->
-            Toast.makeText(requireContext(), "Transformations", Toast.LENGTH_LONG).show()
-        }
-        binding.rvHomeTransformations.adapter = transformationAdapter
-
-        viewModel.transformations.observe(viewLifecycleOwner) {
-            transformationAdapter.submitList(it)
-        }
-
-        val layoutManagerHorizontal = LinearLayoutManager(requireContext(), LinearLayoutManager. HORIZONTAL, false)
-        binding.rvHomePlanets.layoutManager = layoutManagerHorizontal
+        // Adapter der RV zuweisen, mittels Observe beobachten und die Liste im Adapter aktua.
         val planetAdapter = PlanetAdapter { planet ->
             Toast.makeText(requireContext(), "Planets", Toast.LENGTH_LONG).show()
         }
