@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tie_passwort_repeat"
+            android:id="@+id/tie_passwort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/backround_text_input"
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tie_passwort"
+            android:id="@+id/tie_passwort_repeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/backround_text_input"
