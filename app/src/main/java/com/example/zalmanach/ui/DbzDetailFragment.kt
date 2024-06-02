@@ -101,10 +101,10 @@ class DbzDetailFragment : Fragment() {
             }
         }
 
-        // Günstiger Toast falls Daten von der API fehlen
-        if (characterName.isEmpty() && transformationName.isEmpty() && planetName.isEmpty()) {
-            Toast.makeText(requireContext(), "Einige Charakterdaten sind nicht verfügbar", Toast.LENGTH_SHORT).show()
-        }
+//        // Günstiger Toast falls Daten von der API fehlen
+//        if (characterName.isEmpty() && transformationName.isEmpty() && planetName.isEmpty()) {
+//            Toast.makeText(requireContext(), "Einige Charakterdaten sind nicht verfügbar", Toast.LENGTH_SHORT).show()
+//        }
     }
 
     private fun resetViews() {
