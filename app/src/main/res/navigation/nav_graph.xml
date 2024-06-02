@@ -28,10 +28,10 @@
             android:id="@+id/action_dbzDetailFragment_to_dbzFragment"
             app:destination="@id/dbzFragment" />
         <argument
-            android:name="image"
+            android:name="imageCharacter"
             app:argType="string" />
         <argument
-            android:name="name"
+            android:name="nameCharacter"
             app:argType="string" />
         <argument
             android:name="ki"
@@ -43,7 +43,7 @@
             android:name="race"
             app:argType="string" />
         <argument
-            android:name="description"
+            android:name="descriptionCharacterSpain"
             app:argType="string" />
     </fragment>
     <fragment

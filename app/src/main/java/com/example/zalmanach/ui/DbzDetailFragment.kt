@@ -27,12 +27,12 @@ class DbzDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val characterImage = args.image
-        val characterName = args.name
+        val characterImage = args.imageCharacter
+        val characterName = args.nameCharacter
         val ki = args.ki
         val maxKi = args.maxKi
         val race = args.race
-        val description = args.description
+        val characterSpainDescription = args.descriptionCharacterSpain
 
         // Wenn vorhanden werden Daten angezeigt
         binding.apply {
@@ -46,9 +46,9 @@ class DbzDetailFragment : Fragment() {
             tvKi.text = ki
             tvMaxKi.text = maxKi
             tvRace.text = race
-            tvDescription.text = description
+            tvDescription.text = characterSpainDescription
 
-            if (characterName.isNullOrEmpty() || ki.isNullOrEmpty() || maxKi.isNullOrEmpty() || race.isNullOrEmpty() || description.isNullOrEmpty()) {
+            if (characterName.isNullOrEmpty() || ki.isNullOrEmpty() || maxKi.isNullOrEmpty() || race.isNullOrEmpty() || characterSpainDescription.isNullOrEmpty()) {
                 Toast.makeText(requireContext(), "Einige Charakterdaten sind nicht verfügbar", Toast.LENGTH_SHORT).show()
             }
         }
