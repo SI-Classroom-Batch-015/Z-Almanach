@@ -9,6 +9,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.adapter.CharacterAdapter
+import com.example.zalmanach.adapter.PlanetAdapter
+import com.example.zalmanach.adapter.TransformationAdapter
 import com.example.zalmanach.databinding.FragmentDbzBinding
 
 class DbzFragment : Fragment() {
@@ -29,8 +31,8 @@ class DbzFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Adapter Init und Konfiguriert samt Safe Args
-        val adapter = CharacterAdapter { character ->
+        // Adapter für Charactere Init und Konfiguriert samt Safe Args
+        val adapterCharacters = CharacterAdapter { character ->
             findNavController()
                 .navigate(
                     DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(
@@ -51,11 +53,53 @@ class DbzFragment : Fragment() {
                     )
                 )
         }
-        binding.rvDbzFragmentCharacter.adapter = adapter
-        viewModel.characters.observe(viewLifecycleOwner) { adapter.submitList(it) } // Beobachten und Liste an den Adapter übergeben
+        binding.rvDbzFragmentCharacter.adapter = adapterCharacters
+        viewModel.characters.observe(viewLifecycleOwner) { adapterCharacters.submitList(it) } // Beobachten und Liste an den Adapter übergeben
 
-        // Zum Testen der Recyclervies und Vorbereitung für Transformation und Planets
-        binding.rvDbzFragmentTransformations.adapter = adapter
-        binding.rvDbzFragmentPlanets.adapter = adapter
+        // Adapter für Transformationen
+        val adapterTransformations = TransformationAdapter { transformation ->
+            findNavController()
+                .navigate(
+                    DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        transformation.transformationImage,
+                        transformation.transformationName,
+                        transformation.transformationKi,
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                    )
+                )
+        }
+        binding.rvDbzFragmentTransformations.adapter = adapterTransformations
+        viewModel.transformations.observe(viewLifecycleOwner) {adapterTransformations.submitList(it)}
+
+        // Adapter für Planeten
+        val adapterPlanets = PlanetAdapter { planet ->
+            findNavController()
+                .navigate(
+                    DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        planet.planetImage,
+                        planet.planetName,
+                        planet.descriptionPlanetSpain,
+                    )
+                )
+        }
+        binding.rvDbzFragmentPlanets.adapter = adapterPlanets
+        viewModel.planets.observe(viewLifecycleOwner) {adapterPlanets.submitList(it)}
     }
 }
