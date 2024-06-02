@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/iv_characterImage"
+            android:id="@+id/iv_dbzImage"
             android:layout_width="102dp"
             android:layout_height="102dp"
             android:layout_marginTop="8dp"
@@ -29,7 +29,7 @@
             android:contentDescription="@string/bild_von_einem_charater" />
 
         <TextView
-            android:id="@+id/tv_characterName"
+            android:id="@+id/tv_dbzName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -43,7 +43,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_characterImage" />
+            app:layout_constraintTop_toBottomOf="@id/iv_dbzImage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

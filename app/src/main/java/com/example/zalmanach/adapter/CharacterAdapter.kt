@@ -39,11 +39,11 @@ class CharacterAdapter(val onCharacterSelected: (Character) -> Unit) : // Callba
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         val character = dataset[position]
 
-        holder.binding.ivCharacterImage.load(character.characterImage) {
+        holder.binding.ivDbzImage.load(character.characterImage) {
             error(R.drawable.error404)
             transformations(CircleCropTransformation())
         }
-        holder.binding.tvCharacterName.text = character.characterName
+        holder.binding.tvDbzName.text = character.characterName
         holder.itemView.setOnClickListener {
             onCharacterSelected(character)
         }
