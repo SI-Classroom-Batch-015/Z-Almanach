@@ -48,8 +48,8 @@ class DbzFragment : Fragment() {
                         null.toString(),
                         null.toString(),
                         null.toString(),
-                        // isDestroyed ist im grafen auf false gesetzt
                         null.toString(),
+                        false,
                     )
                 )
         }
@@ -73,7 +73,8 @@ class DbzFragment : Fragment() {
                         null.toString(),
                         null.toString(),
                         null.toString(),
-                    )
+                        false,
+                        )
                 )
         }
         binding.rvDbzFragmentTransformations.adapter = adapterTransformations
@@ -96,6 +97,7 @@ class DbzFragment : Fragment() {
                         planet.planetImage,
                         planet.planetName,
                         planet.descriptionPlanetSpain,
+                        planet.isDestroyed,
                     )
                 )
         }
