@@ -43,13 +43,13 @@ class DbzFragment : Fragment() {
                         character.race,
                         character.descriptionSpain,
                         // Für Charactere nicht benötigt
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        false,
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        false
                     )
                 )
         }
@@ -61,19 +61,19 @@ class DbzFragment : Fragment() {
             findNavController()
                 .navigate(
                     DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
                         transformation.transformationImage,
                         transformation.transformationName,
                         transformation.transformationKi,
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        false,
+                        "",
+                        "",
+                        "",
+                        false
                         )
                 )
         }
@@ -85,15 +85,15 @@ class DbzFragment : Fragment() {
             findNavController()
                 .navigate(
                     DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
-                        null.toString(),
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
                         planet.planetImage,
                         planet.planetName,
                         planet.descriptionPlanetSpain,
