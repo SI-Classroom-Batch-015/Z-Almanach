@@ -12,24 +12,25 @@
         android:id="@+id/tv_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="80dp"
         android:text="@string/login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="72dp"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/tv_login"
         app:layout_constraintStart_toStartOf="@+id/tv_login"
         app:layout_constraintTop_toBottomOf="@+id/tv_login"
-        android:textColorHint="@color/white">
+        android:backgroundTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tie_userEmail"
@@ -45,90 +46,52 @@
         android:id="@+id/textInputLayout2"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_login"
-        app:layout_constraintStart_toStartOf="@+id/tv_login"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        android:textColorHint="@color/white">
+        android:layout_marginTop="48dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_passwort_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backround_text_input"
+            android:hint="@string/passwort"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tie_passwort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/backround_text_input"
             android:hint="@string/passwort"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:background="@drawable/backround_text_input"/>
-
-        <TextView
-            android:id="@+id/tv_forgetPasswort"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="24dp"
-            android:text="@string/passwort_vergessen"
-            android:textColor="@color/white" />
+            android:textColorHint="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/backround_btn"
+        android:backgroundTint="@color/carbon_black"
         android:text="@string/login"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-        android:background="@drawable/backround_btn"
-        android:backgroundTint="@color/carbon_black"
-        android:textColor="@color/white" />
-
-    <TextView
-        android:id="@+id/tv_npAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_weight="1"
-        android:text="@string/noch_keinen_account"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/btn_login"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
-
-    <TextView
-        android:id="@+id/tv_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="62dp"
-        android:layout_weight="1"
-        android:text="@string/hier_registrieren"
-        android:textColor="@color/red"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_npAccount"
-        app:layout_constraintStart_toEndOf="@+id/tv_npAccount"
-        app:layout_constraintTop_toTopOf="@+id/tv_npAccount" />
-
-    <Button
-        android:id="@+id/btn_google"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="@string/google"
-        app:layout_constraintStart_toStartOf="@+id/btn_login"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
-        android:background="@drawable/backround_btn"
-        android:backgroundTint="@color/carbon_black"
-        android:textColor="@color/white" />
-
-
-    <Button
-        android:id="@+id/btn_facebook"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="@string/facebook"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_google"
-        app:layout_constraintStart_toEndOf="@+id/btn_google"
-        app:layout_constraintTop_toTopOf="@+id/btn_google"
-        android:background="@drawable/backround_btn"
-        android:backgroundTint="@color/carbon_black"
-        android:textColor="@color/white" />
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
