@@ -34,7 +34,7 @@ class DbzDetailFragment : Fragment() {
         val race = args.race
         val characterSpainDescription = args.descriptionCharacterSpain
 
-        // Wenn vorhanden werden Daten angezeigt
+        // Wenn vorhanden werden Daten angezeigt.
         binding.apply {
             if (characterImage.isNullOrEmpty()) {
                 ivDetailImage.setImageResource(R.drawable.error404)
