@@ -23,7 +23,7 @@
         app:strokeWidth="1dp">
 
         <ImageView
-            android:id="@+id/iv_characterImage"
+            android:id="@+id/iv_detail_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/die_detailansicht_des_ausgew_hlten_charakters"
@@ -33,7 +33,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:id="@+id/tv_characterName"
+        android:id="@+id/tv_detail_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -50,9 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/ki"
-        app:layout_constraintEnd_toEndOf="@+id/tv_characterName"
-        app:layout_constraintStart_toStartOf="@+id/tv_characterName"
-        app:layout_constraintTop_toBottomOf="@+id/tv_characterName"
+        app:layout_constraintEnd_toEndOf="@+id/tv_detail_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_detail_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_name"
         android:textColor="@color/white"
         android:textSize="20sp"/>
 
@@ -62,9 +62,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/is_destroyed"
-        app:layout_constraintEnd_toEndOf="@+id/tv_characterName"
-        app:layout_constraintStart_toStartOf="@+id/tv_characterName"
-        app:layout_constraintTop_toBottomOf="@+id/tv_characterName"
+        app:layout_constraintEnd_toEndOf="@+id/tv_detail_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_detail_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_name"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:visibility="gone"/>

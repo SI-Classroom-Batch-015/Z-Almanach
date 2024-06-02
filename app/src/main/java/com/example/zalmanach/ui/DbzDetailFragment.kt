@@ -37,12 +37,12 @@ class DbzDetailFragment : Fragment() {
         // Wenn vorhanden werden Daten angezeigt
         binding.apply {
             if (characterImage.isNullOrEmpty()) {
-                ivCharacterImage.setImageResource(R.drawable.error404)
+                ivDetailImage.setImageResource(R.drawable.error404)
             } else {
-                ivCharacterImage.load(characterImage)
+                ivDetailImage.load(characterImage)
             }
 
-            tvCharacterName.text = characterName
+            tvDetailName.text = characterName
             tvKi.text = ki
             tvMaxKi.text = maxKi
             tvRace.text = race
