@@ -57,6 +57,19 @@
         android:textSize="20sp"/>
 
     <TextView
+        android:id="@+id/tv_isDestroyed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/is_destroyed"
+        app:layout_constraintEnd_toEndOf="@+id/tv_characterName"
+        app:layout_constraintStart_toStartOf="@+id/tv_characterName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_characterName"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:visibility="gone"/>
+
+    <TextView
         android:id="@+id/tv_maxKi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
