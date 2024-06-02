@@ -40,6 +40,14 @@ class DbzFragment : Fragment() {
                         character.maxKi,
                         character.race,
                         character.descriptionSpain,
+                        // Für Charactere nicht benötigt
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        null.toString(),
+                        // isDestroyed ist im grafen auf false gesetzt
+                        null.toString(),
                     )
                 )
         }

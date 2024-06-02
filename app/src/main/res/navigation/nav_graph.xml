@@ -24,6 +24,7 @@
         android:name="com.example.zalmanach.ui.DbzDetailFragment"
         android:label="fragment_dbz_detail"
         tools:layout="@layout/fragment_dbz_detail" >
+        <!-- Argumente für Charactere -->
         <action
             android:id="@+id/action_dbzDetailFragment_to_dbzFragment"
             app:destination="@id/dbzFragment" />
@@ -44,6 +45,32 @@
             app:argType="string" />
         <argument
             android:name="descriptionCharacterSpain"
+            app:argType="string" />
+
+        <!-- Argumente für Transformationen -->
+        <argument
+            android:name="imageTransformation"
+            app:argType="string" />
+        <argument
+            android:name="nameTransformation"
+            app:argType="string" />
+        <argument
+            android:name="kiTransformation"
+            app:argType="string" />
+
+        <!-- Argumente für Planet -->
+        <argument
+            android:name="imagePlanet"
+            app:argType="string" />
+        <argument
+            android:name="namePlanet"
+            app:argType="string" />
+        <argument
+            android:name="isDestroyed"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="descriptionPlanetSpain"
             app:argType="string" />
     </fragment>
     <fragment
