@@ -48,4 +48,5 @@
     <string name="fan_bilder">Fan Bilder</string>
     <string name="fan_image">Fan Image</string>
     <string name="is_destroyed">Is Destroyed</string>
+    <string name="passwort_wiederholen">Passwort wiederholen</string>
 </resources>
