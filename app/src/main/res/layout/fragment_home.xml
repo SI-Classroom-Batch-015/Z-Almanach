@@ -76,21 +76,21 @@
         android:text="@string/features"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/cv_home_description_dbz"
-        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_dbz"
-        app:layout_constraintStart_toStartOf="@+id/cv_home_description_dbz" />
+        app:layout_constraintBottom_toTopOf="@+id/cv_home_description_detail"
+        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_detail"
+        app:layout_constraintStart_toStartOf="@+id/cv_home_description_detail" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_home_description_dbz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/carbon_black"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView"
-        app:layout_constraintStart_toStartOf="@+id/scrollView"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_search"
+        app:layout_constraintStart_toStartOf="@+id/cv_home_description_search"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_search"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp">
 
@@ -111,13 +111,13 @@
         android:id="@+id/cv_home_description_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="38dp"
         android:backgroundTint="@color/carbon_black"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_dbz"
-        app:layout_constraintStart_toStartOf="@+id/cv_home_description_dbz"
-        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_dbz"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp">
 
@@ -142,9 +142,9 @@
         android:backgroundTint="@color/carbon_black"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_detail"
-        app:layout_constraintStart_toStartOf="@+id/cv_home_description_detail"
-        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_detail"
+        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_dbz"
+        app:layout_constraintStart_toStartOf="@+id/cv_home_description_dbz"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_dbz"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp">
 
@@ -169,9 +169,9 @@
         android:backgroundTint="@color/carbon_black"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_favorits"
-        app:layout_constraintStart_toStartOf="@+id/cv_home_description_favorits"
-        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_favorits"
+        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_detail"
+        app:layout_constraintStart_toStartOf="@+id/cv_home_description_detail"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_detail"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp">
 
