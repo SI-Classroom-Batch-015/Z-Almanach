@@ -1,5 +1,6 @@
 package com.example.zalmanach.ui
 
+import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,11 +10,8 @@ import android.view.ViewGroup
 import android.widget.MediaController
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.R
-import com.example.zalmanach.adapter.PlanetAdapter
-import com.example.zalmanach.adapter.TransformationAdapter
 import com.example.zalmanach.databinding.FragmentHomeBinding
 import com.example.zalmanach.utils.AnimationUtils
 
@@ -43,21 +41,25 @@ class HomeFragment : Fragment() {
             }
         }
 
-//        // Adapter der RV zuweisen, mittels Observe beobachten und die Liste im Adapter aktua.
-//        val planetAdapter = PlanetAdapter { planet ->
-//            Toast.makeText(requireContext(), "Planets", Toast.LENGTH_LONG).show()
-//        }
-//        binding.rvHomePlanets.adapter = planetAdapter
-//        viewModel.planets.observe(viewLifecycleOwner) {
-//            planetAdapter.submitList(it)
-//        }
-
         // VideoView konfi und starten
-        val videoUri: Uri = Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.dbzopeningintrochalahead)
+        val videoUri: Uri =
+            Uri.parse("android.resource://" + requireContext().packageName + "/" + R.raw.dbzopeningintrochalahead)
         val mediaController = MediaController(requireContext())   // Player für Start/Pause
         binding.vVHome.setVideoURI(videoUri)
         binding.vVHome.setMediaController(mediaController)
         mediaController.setAnchorView(binding.vVHome)
         binding.vVHome.start()
+
+        // Setze den OnClickListener für den Logout-Button
+        binding.ivLogout.setOnClickListener {      // Zugriff auf die Anmeldedaten
+            val sharedPreferences = requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+            sharedPreferences.edit().apply {
+                remove("email")
+                remove("password")
+                putBoolean("is_logged_in", false)
+                apply()
+            }
+            Toast.makeText(requireContext(), "Benutzer abgemeldet", Toast.LENGTH_SHORT).show()
+        }
     }
 }
