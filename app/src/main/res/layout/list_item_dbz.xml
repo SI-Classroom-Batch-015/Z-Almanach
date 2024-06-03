@@ -36,7 +36,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="12dp"
-            android:text="@string/character_name"
+            android:text="@string/dbz_itemImage_name"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
