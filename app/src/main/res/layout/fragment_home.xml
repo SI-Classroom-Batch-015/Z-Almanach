@@ -98,26 +98,26 @@
             android:id="@+id/tv_description_dbz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:paddingStart="8dp"
-            android:paddingEnd="8dp"
             android:paddingTop="4dp"
+            android:paddingEnd="8dp"
             android:paddingBottom="4dp"
             android:text="@string/dbz_schau_dir_deine_linblings_charaktere_an"
-            android:textColor="@color/white"
-            android:gravity="center_horizontal"/>
+            android:textColor="@color/white" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_home_description_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/carbon_black"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView"
-        app:layout_constraintStart_toStartOf="@+id/scrollView"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_dbz"
+        app:layout_constraintStart_toStartOf="@+id/cv_home_description_dbz"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_dbz"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp">
 
@@ -138,13 +138,13 @@
         android:id="@+id/cv_home_description_favorits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="102dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/carbon_black"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView"
-        app:layout_constraintStart_toStartOf="@+id/scrollView"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_detail"
+        app:layout_constraintStart_toStartOf="@+id/cv_home_description_detail"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_detail"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp">
 
@@ -165,13 +165,13 @@
         android:id="@+id/cv_home_description_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="134dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/carbon_black"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView"
-        app:layout_constraintStart_toStartOf="@+id/scrollView"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="@+id/cv_home_description_favorits"
+        app:layout_constraintStart_toStartOf="@+id/cv_home_description_favorits"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_description_favorits"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp">
 
@@ -192,9 +192,20 @@
         android:id="@+id/vV_home"
         android:layout_width="0dp"
         android:layout_height="168dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="204dp"
         app:layout_constraintEnd_toEndOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="@+id/scrollView"
         app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+    <ImageView
+        android:id="@+id/iv_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="Logout Button"
+        android:src="@drawable/baseline_logout_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
