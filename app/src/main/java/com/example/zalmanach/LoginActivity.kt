@@ -77,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
         return true
     }
 
-    // ... die Passwortkriterien
+    // ...  die Passwortkriterien
     private fun isPasswordValid(password: String): Boolean {
         return when {
             password.isBlank() || password.contains(" ") -> false
