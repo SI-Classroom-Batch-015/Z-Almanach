@@ -13,7 +13,7 @@ import com.example.zalmanach.databinding.ListItemSearchBinding
 
 class SearchAdapter(
     private var dataset: List<Character>,
-//    private val onCharacterSelcted: (Character) -> Unit
+    private val onCharacterSelcted: (Character) -> Unit
 ) :
     RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
@@ -48,7 +48,7 @@ class SearchAdapter(
         }
         holder.binding.tvSearchResponse.text = character.characterName
         holder.itemView.setOnClickListener {
-//            onCharacterSelcted(character)
+            onCharacterSelcted(character)
         }
     }
 }
