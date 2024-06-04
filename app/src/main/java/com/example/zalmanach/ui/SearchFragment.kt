@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.adapter.SearchAdapter
 import com.example.zalmanach.databinding.FragmentSearchBinding
@@ -29,19 +28,11 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         super.onViewCreated(view, savedInstanceState)
 
         // Adapter init. und der RV hinzufügen
-        val adapter = SearchAdapter(emptyList())
-        binding.rvSearchResult.adapter = adapter
-
+        val adapter = SearchAdapter(emptyList()) { character ->
+            viewModel.selectCharacter(character) // Aufruf der Methode im ViewModel
+        }
         binding.textInput.setOnQueryTextListener(this)
-
         binding.rvSearchResult.adapter = adapter
-        binding.rvSearchResult.addItemDecoration(
-            DividerItemDecoration(
-                requireContext(),
-                DividerItemDecoration.VERTICAL
-            )
-        )
-
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
