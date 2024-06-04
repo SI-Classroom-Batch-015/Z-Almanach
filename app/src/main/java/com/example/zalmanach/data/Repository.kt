@@ -17,7 +17,7 @@ class Repository(
     private val database: DragonballDatabase
 ) {
 
-    // Live Data Objekte erstellt
+    // Live Data Objekte von der db werden ans VM weitergeleitet um die Daten in Echtzeit zu beobachten und sofort zu reagieren
     private val _characters: LiveData<List<Character>> = database.dragonballDao.getAllCharacter()
     val characters: LiveData<List<Character>>
         get() = _characters
@@ -30,12 +30,12 @@ class Repository(
     val planets: LiveData<List<Planet>>
         get() = _planets
 
-    // Wird vom ViewModel aufgerufen, um Daten für die Suchergebnisse abzurufen
+    // Wird vom ViewModel aufgerufen, um Daten für die Suchergebnisse abzurufen, gibt ein LiveD.O. zurück
     fun searchCharacters(query: String): LiveData<List<Character>> {
         return database.dragonballDao.searchCharacters("%$query%")
     }
 
-    // Fun die asyncron im Hintergrund laufen kann, ohne die UI zu blockieren
+    // Daten von der API zu laden und in die Datenbank speichern, Fun die asyncron im Hintergrund laufen kann
     suspend fun getCharacters() {
         withContext(Dispatchers.IO) {
             try {

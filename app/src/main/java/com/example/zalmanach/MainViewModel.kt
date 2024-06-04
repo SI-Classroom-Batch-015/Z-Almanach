@@ -21,7 +21,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     // Instanz vom Repo, das die Datenbank- und API-Zugriffe übergeben kriegt
     private val repository: Repository = Repository(DbzApi, database)
 
-    // Öffentliche Livedata Variable
+    // LiveData erstellt und mit LD aus dem Repo verbunden, dadurch kann in Fragmenten(durch UI-Logik) die Daten observen und auto aktu. sobald sich Daten ändern
     val characters: LiveData<List<Character>> = repository.characters
     val transformations: LiveData<List<Transformation>> = repository.transformations
     val planets: LiveData<List<Planet>> = repository.planets
@@ -29,10 +29,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _startAnimation = MutableLiveData<Boolean>()
     val startAnimation: LiveData<Boolean> get() = _startAnimation
 
+    // Methode um DAten zu laden, werden von Fragmenten aufgerufen
     fun loadCharacters() {
         viewModelScope.launch {
             try {
-                repository.getCharacters() // Charaktere aus dem Repository aktualisieren
+                repository.getCharacters() // Charaktere aus dem Repository holen
             } catch (e: Exception) {
                 Log.e("MainViewModel", "Fail Load Characters ${e.message}")}
         }

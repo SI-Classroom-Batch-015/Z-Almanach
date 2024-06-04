@@ -24,7 +24,10 @@ class DbzFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentDbzBinding.inflate(inflater, container, false)
-        viewModel.loadCharacters() // Daten schon mal Laden
+        // Daten explizit Laden, dadurch sind die Daten immer aktuell, funktioniert auch ohne(Daten bereits lokal in db)
+        viewModel.loadCharacters()
+        viewModel.loadTransformations()
+        viewModel.loadPlanets()
         return binding.root
     }
 
