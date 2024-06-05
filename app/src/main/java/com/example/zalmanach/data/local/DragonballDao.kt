@@ -42,5 +42,11 @@ interface DragonballDao {
     // Methode für die Volltextsuche
     @Query("SELECT * FROM character_table WHERE characterName LIKE :query")
     fun searchCharacters(query: String): LiveData<List<Character>>
+
+    @Query("SELECT * FROM transformation_table WHERE transformationName LIKE :query")
+    fun searchTransformations(query: String): LiveData<List<Transformation>>
+
+    @Query("SELECT * FROM planets_table WHERE planetName LIKE :query")
+    fun searchPlanets(query: String): LiveData<List<Planet>>
 }
 
