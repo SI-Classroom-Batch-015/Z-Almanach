@@ -27,9 +27,6 @@ class DbzDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Die Views sollen jedes mal zurückgesetzt werden
-        resetViews()
-
         // Character Daten
         val characterImage = args.imageCharacter
         val characterName = args.nameCharacter
@@ -101,22 +98,6 @@ class DbzDetailFragment : Fragment() {
             }
         }
 
-//        // Günstiger Toast falls Daten von der API fehlen
-//        if (characterName.isEmpty() && transformationName.isEmpty() && planetName.isEmpty()) {
-//            Toast.makeText(requireContext(), "Einige Charakterdaten sind nicht verfügbar", Toast.LENGTH_SHORT).show()
-//        }
-    }
-
-    private fun resetViews() {
-        binding.apply {
-            ivDetailImage.setImageResource(0)
-            ivDetailImage.visibility = View.GONE
-            tvDetailName.visibility = View.GONE
-            tvKi.visibility = View.GONE
-            tvMaxKi.visibility = View.GONE
-            tvRace.visibility = View.GONE
-            tvDescription.visibility = View.GONE
-            tvIsDestroyed.visibility = View.GONE
-        }
     }
 }
+
