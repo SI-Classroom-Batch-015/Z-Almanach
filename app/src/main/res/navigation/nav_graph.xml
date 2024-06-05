@@ -82,5 +82,9 @@
         android:id="@+id/searchFragment"
         android:name="com.example.zalmanach.ui.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_dbzDetailFragment"
+            app:destination="@id/dbzDetailFragment" />
+    </fragment>
 </navigation>
