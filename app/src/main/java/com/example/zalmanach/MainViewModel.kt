@@ -68,9 +68,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         return repository.searchCharacters(query)
     }
 
-    // Methode zum Auswählen eines Charakters
-    fun selectCharacter(character: Character) {
-        val context = getApplication<Application>().applicationContext
-        Toast.makeText(context, "${character.characterName} ausgewählt! ACTION in PROGRESS", Toast.LENGTH_LONG).show()    }
+//    // Methode zum Auswählen eines Charakters
+//    fun selectCharacter(character: Character) {
+//        val context = getApplication<Application>().applicationContext
+//        Toast.makeText(context, "${character.characterName} ausgewählt! ACTION in PROGRESS", Toast.LENGTH_LONG).show()    }
 
 }

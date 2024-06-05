@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.adapter.SearchAdapter
 import com.example.zalmanach.databinding.FragmentSearchBinding
@@ -29,7 +30,25 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
 
         // Adapter init. und der RV hinzufügen
         val adapter = SearchAdapter(emptyList()) { character ->
-            viewModel.selectCharacter(character) // Aufruf der Methode im ViewModel
+            findNavController()
+                .navigate(
+                    SearchFragmentDirections.actionSearchFragmentToDbzDetailFragment(
+                        character.characterImage,
+                        character.characterName,
+                        character.ki,
+                        character.maxKi,
+                        character.race,
+                        character.descriptionSpain,
+                        // Für Charactere nicht benötigt
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        false
+                    )
+                )
         }
         binding.textInput.setOnQueryTextListener(this)
         binding.rvSearchResult.adapter = adapter
