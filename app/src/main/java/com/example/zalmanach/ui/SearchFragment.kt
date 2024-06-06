@@ -28,49 +28,93 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Adapter init. und der RV hinzufügen
-        val adapter = SearchAdapter(emptyList()) { character ->
-            findNavController()
-                .navigate(
-                    SearchFragmentDirections.actionSearchFragmentToDbzDetailFragment(
-                        character.characterImage,
-                        character.characterName,
-                        character.ki,
-                        character.maxKi,
-                        character.race,
-                        character.descriptionSpain,
-                        // Für Charactere nicht benötigt
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        false
+        //  Adapter Initialisieren und der RecyclerView zuweisen
+        val adapter = SearchAdapter(
+            emptyList(), emptyList(), emptyList(),
+            { character ->
+                findNavController()
+                    .navigate(
+                        DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(
+                            character.characterImage,
+                            character.characterName,
+                            character.ki,
+                            character.maxKi,
+                            character.race,
+                            character.descriptionSpain,
+                            // Für Charactere nicht benötigt
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            false
+                        )
                     )
-                )
-        }
-        binding.textInput.setOnQueryTextListener(this)
+            },
+            { transformation ->
+                findNavController()
+                    .navigate(
+                        DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            transformation.transformationImage,
+                            transformation.transformationName,
+                            transformation.transformationKi,
+                            "",
+                            "",
+                            "",
+                            false
+                        )
+                    )
+            },
+            { planet ->
+                findNavController()
+                    .navigate(
+                        DbzFragmentDirections.actionDbzFragmentToDbzDetailFragment(
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            planet.planetImage,
+                            planet.planetName,
+                            planet.descriptionPlanetSpain,
+                            planet.isDestroyed,
+                        )
+                    )
+            }
+        )
+
+        binding.textInput.setOnQueryTextListener(this) // Setzt den Such-Listener für das Eingabefeld
         binding.rvSearchResult.adapter = adapter
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
-       newText?.let {
-           search(it)
-       }
+        newText?.let { search(it) } // Führt die Suche bei Texteingabeänderung aus
         return true
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        query?.let {
-            search(it)
-        }
+        query?.let { search(it) } // Führt die Suche bei Texteingabe einreichung aus
         return true
     }
+
     private fun search(query: String) {
-        viewModel.searchCharacters(query).observe(viewLifecycleOwner) {
-            it?.let {
-                (binding.rvSearchResult.adapter as SearchAdapter).submitList(it)
+        // Führt die Suchanfragen für Charaktere, Transformationen und Planeten aus und aktualisiert den Adapter
+        viewModel.searchByCharacters(query).observe(viewLifecycleOwner) { characters ->
+            viewModel.searchByTransformations(query).observe(viewLifecycleOwner) { transformations ->
+                viewModel.searchByPlanets(query).observe(viewLifecycleOwner) { planets ->
+                    (binding.rvSearchResult.adapter as SearchAdapter).submitLists(characters, transformations, planets)
+                }
             }
         }
     }
