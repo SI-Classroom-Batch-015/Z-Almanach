@@ -64,13 +64,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // Methode zum Suchen eines Charakters
-    fun searchCharacters(query: String) : LiveData<List<Character>>{
+    fun searchByCharacters(query: String) : LiveData<List<Character>>{
         return repository.searchCharacters(query)
     }
 
-//    // Methode zum Auswählen eines Charakters
-//    fun selectCharacter(character: Character) {
-//        val context = getApplication<Application>().applicationContext
-//        Toast.makeText(context, "${character.characterName} ausgewählt! ACTION in PROGRESS", Toast.LENGTH_LONG).show()    }
+    fun searchByTransformations(query: String) : LiveData<List<Transformation>>{
+        return repository.searchTransformations(query)
+    }
 
+    fun searchByPlanets(query: String) : LiveData<List<Planet>>{
+        return repository.searchPlanets(query)
+    }
 }
