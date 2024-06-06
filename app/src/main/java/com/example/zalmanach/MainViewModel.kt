@@ -27,16 +27,18 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val transformations: LiveData<List<Transformation>> = repository.transformations
     val planets: LiveData<List<Planet>> = repository.planets
 
+    // MutableLiveData zum Steuern von Animationen
     private val _startAnimation = MutableLiveData<Boolean>()
     val startAnimation: LiveData<Boolean> get() = _startAnimation
 
-    // Methode um DAten zu laden, werden von Fragmenten aufgerufen
+    // Methode zum Laden der Charaktere, wird von den Fragmenten aufgerufen
     fun loadCharacters() {
         viewModelScope.launch {
             try {
-                repository.getCharacters() // Charaktere aus dem Repository holen
+                repository.getCharacters() // Charaktere aus dem Repository abrufen
             } catch (e: Exception) {
-                Log.e("MainViewModel", "Fail Load Characters ${e.message}")}
+                Log.e("MainViewModel", "Fehler beim Laden der Charaktere: ${e.message}")
+            }
         }
     }
 
@@ -45,7 +47,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             try {
                 repository.getTransformations()
             } catch (e: Exception) {
-                Log.e(("MainViewModel"), "Fail Load Transformations ${e.message}")
+                Log.e("MainViewModel", "Fehler beim Laden der Transformationen: ${e.message}")
             }
         }
     }
@@ -55,15 +57,16 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             try {
                 repository.getPlanets()
             } catch (e: Exception) {
-                Log.e("MainViewModel", "Fail Load Planets ${e.message}")}
+                Log.e("MainViewModel", "Fehler beim Laden der Planeten: ${e.message}")
+            }
         }
     }
 
-    fun triggerAnimation() {  // Keine Hintergrundop´s
+    fun triggerAnimation() {
         _startAnimation.value = true
     }
 
-    // Methode zum Suchen eines Charakters
+    // Methode zum Suchen von Charakteren basierend auf einer Suchanfrage
     fun searchByCharacters(query: String) : LiveData<List<Character>>{
         return repository.searchCharacters(query)
     }
