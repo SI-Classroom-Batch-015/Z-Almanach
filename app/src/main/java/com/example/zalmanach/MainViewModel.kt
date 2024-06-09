@@ -2,9 +2,9 @@ package com.example.zalmanach
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.zalmanach.data.Repository
@@ -63,14 +63,50 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _startAnimation.value = true
     }
 
-    // Methode zum Suchen eines Charakters
-    fun searchCharacters(query: String) : LiveData<List<Character>>{
+    // Methode zum Suchen von Charakteren
+    fun searchByCharacters(query: String) : LiveData<List<Character>> {
         return repository.searchCharacters(query)
     }
 
-//    // Methode zum Auswählen eines Charakters
-//    fun selectCharacter(character: Character) {
-//        val context = getApplication<Application>().applicationContext
-//        Toast.makeText(context, "${character.characterName} ausgewählt! ACTION in PROGRESS", Toast.LENGTH_LONG).show()    }
+    fun searchByTransformations(query: String) : LiveData<List<Transformation>> {
+        return repository.searchTransformations(query)
+    }
 
+    fun searchByPlanets(query: String) : LiveData<List<Planet>> {
+        return repository.searchPlanets(query)
+    }
+
+    // Methode zum Suchen von Charakteren, Transformationen und Planeten gleichzeitig
+    fun searchByAll(query: String): LiveData<List<Any>> {
+        val results = MediatorLiveData<List<Any>>()
+        val combinedResults = mutableListOf<Any>()
+
+        // Charaktere suchen und zur kombinierten Liste hinzufügen
+        val characters = searchByCharacters(query)
+        results.addSource(characters) { charList ->
+            combinedResults.clear() // Liste leeren
+            charList?.let { combinedResults.addAll(it) } // Charaktere hinzufügen
+            results.value = combinedResults // Ergebnis aktualisieren
+        }
+
+        // Transformationen suchen und zur kombinierten Liste hinzufügen
+        val transformations = searchByTransformations(query)
+        results.addSource(transformations) { transList ->
+            transList?.let {
+                combinedResults.addAll(it)
+                results.value = combinedResults
+            }
+        }
+
+        // Planeten suchen und zur kombinierten Liste hinzufügen
+        val planets = searchByPlanets(query)
+        results.addSource(planets) { planetList ->
+            planetList?.let {
+                combinedResults.addAll(it)
+                results.value = combinedResults
+            }
+        }
+
+        return results
+    }
 }
