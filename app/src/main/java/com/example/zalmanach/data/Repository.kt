@@ -35,6 +35,14 @@ class Repository(
         return database.dragonballDao.searchCharacters("%$query%")
     }
 
+    fun searchTransformations(query: String): LiveData<List<Transformation>> {
+        return database.dragonballDao.searchTransformations("%$query%")
+    }
+
+    fun searchPlanets(query: String): LiveData<List<Planet>> {
+        return database.dragonballDao.searchPlanets("%$query%")
+    }
+
     // Daten von der API zu laden und in die Datenbank speichern, Fun die asyncron im Hintergrund laufen kann
     suspend fun getCharacters() {
         withContext(Dispatchers.IO) {
