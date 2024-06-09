@@ -64,15 +64,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // Methode zum Suchen von Charakteren
-    fun searchByCharacters(query: String) : LiveData<List<Character>> {
+    private fun searchByCharacters(query: String) : LiveData<List<Character>> {
         return repository.searchCharacters(query)
     }
 
-    fun searchByTransformations(query: String) : LiveData<List<Transformation>> {
+    private fun searchByTransformations(query: String) : LiveData<List<Transformation>> {
         return repository.searchTransformations(query)
     }
 
-    fun searchByPlanets(query: String) : LiveData<List<Planet>> {
+    private fun searchByPlanets(query: String) : LiveData<List<Planet>> {
         return repository.searchPlanets(query)
     }
 
