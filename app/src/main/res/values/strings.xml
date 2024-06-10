@@ -49,4 +49,10 @@
     <string name="fan_image">Fan Image</string>
     <string name="is_destroyed">Is Destroyed</string>
     <string name="passwort_wiederholen">Passwort wiederholen</string>
+    <string name="hier_siehst_du_s_mtliche_informationen_nstory_modus_w_hle_deinen_favoriten_zum_spielen_aus">Hier siehst du sämtliche Informationen \nStory Modus wähle deinen Favoriten zum Spielen aus!</string>
+    <string name="name_hardcode">Name</string>
+    <string name="ki_hardcode">KI</string>
+    <string name="is_destroyed_hardcode">Planet</string>
+    <string name="max_ki_hardcode">Max. KI</string>
+    <string name="race_hardcode">Race</string>
 </resources>
