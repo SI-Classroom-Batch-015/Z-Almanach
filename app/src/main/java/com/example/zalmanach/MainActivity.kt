@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Android Studio SHADOW-BUG MaterialBottomBar aufgelöst
-        binding.bottomNavigationView.background = null
+//        binding.bottomNavigationView.background = null
 
         // Verknüpft die Bottom-Navigation-Bar mit dem Navigation Controller des NavHost-Fragments
         val navHost =
