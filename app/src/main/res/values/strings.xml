@@ -56,4 +56,13 @@
     <string name="max_ki_hardcode">Max. KI</string>
     <string name="race_hardcode">Race</string>
     <string name="standart_favorit_element">Standart Favorit Element</string>
+    <string name="deine_gegner">Deine Gegner</string>
+    <string name="hier_bist_du_richtig_wenn_du_action_suchst">Hier bist du richtig wenn du ACTION suchst</string>
+    <string name="dein_gew_hlter_held">Dein gewählter Held</string>
+    <string name="lebenspunkte_start">Lebenspunkte Start</string>
+    <string name="_10000_lp">10000 LP</string>
+    <string name="spiel_starten">Spiel starten</string>
+    <string name="modus">Modus</string>
+    <string name="schwierigkeit">Schwierigkeit</string>
+    <string name="suprise">Suprise</string>
 </resources>

@@ -1,10 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.FavoritsFragment"
-    android:background="@drawable/hintergrund">
+    android:background="@drawable/hintergrund"
+    tools:context=".ui.FavoritsFragment">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_favorite_not"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/carbon_black"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
 
+        <TextView
+            android:id="@+id/tv_favorite_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="@string/hier_bist_du_richtig_wenn_du_action_suchst"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/dein_gew_hlter_held"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="?android:attr/listDivider"
+        android:outlineSpotShadowColor="@color/carbon_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_favorite_not" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/carbon_black"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_character"
+        app:layout_constraintStart_toStartOf="@+id/tv_character"
+        app:layout_constraintTop_toBottomOf="@+id/tv_character"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_dbzImage"
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/bild_von_einem_charater"
+                android:scaleType="fitCenter"
+                android:src="@drawable/songokucracy"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_dbzName"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:maxLines="2"
+                android:text="@string/dbz_itemImage_name"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/iv_dbzImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_lp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/lebenspunkte_start"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/tv_lp_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/_10000_lp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_lp_view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lp_view" />
+
+    <Button
+        android:id="@+id/btn_favorite_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/spiel_starten"
+        app:layout_constraintEnd_toEndOf="@+id/tv_lp_view"
+        app:layout_constraintStart_toStartOf="@+id/tv_lp_view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lp_view" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="409dp"
+        android:layout_height="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="8dp"
+        android:background="?android:attr/listDivider"
+        android:outlineSpotShadowColor="@color/carbon_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <Button
+        android:id="@+id/btn_favorite_modus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/modus"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_favorite_difficulty"
+        app:layout_constraintStart_toStartOf="@+id/divider2"
+        app:layout_constraintTop_toTopOf="@+id/btn_favorite_difficulty" />
+
+    <Button
+        android:id="@+id/btn_favorite_difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/schwierigkeit"
+        app:layout_constraintEnd_toStartOf="@+id/btn_favorite_suprise"
+        app:layout_constraintStart_toEndOf="@+id/btn_favorite_modus"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <Button
+        android:id="@+id/btn_favorite_suprise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/suprise"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_favorite_difficulty"
+        app:layout_constraintEnd_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toTopOf="@+id/btn_favorite_difficulty" />
+
+    <TextView
+        android:id="@+id/tv_villians"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/deine_gegner"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="284dp"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_villians">
+
+        <TableLayout
+            android:id="@+id/tl_favorite_villians"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp">
+
+            <TableRow
+                android:id="@+id/tr_favorite_villians_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_favorite_villians_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_favorite_villians_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_favorite_villians_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_favorite_villians_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_favorite_villians_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+
+                <include layout="@layout/list_item_favorit_villians" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_favorite_villians_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <include layout="@layout/list_item_favorit_villians" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
