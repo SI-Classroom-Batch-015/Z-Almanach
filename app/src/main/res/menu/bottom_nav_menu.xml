@@ -11,7 +11,7 @@
         android:title="@string/dbz"/>
     <item
         android:id="@+id/favoritsFragment"
-        android:icon="@drawable/baseline_favorite_border_24"
+        android:icon="@drawable/baseline_favorite_default"
         android:title="@string/favorits"/>
     <item
         android:id="@+id/searchFragment"
