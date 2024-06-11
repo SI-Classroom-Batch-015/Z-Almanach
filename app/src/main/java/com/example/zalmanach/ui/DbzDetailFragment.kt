@@ -61,6 +61,12 @@ class DbzDetailFragment : Fragment() {
                 tvMaxKi.visibility = View.VISIBLE
                 tvRace.visibility = View.VISIBLE
                 tvDescription.visibility = View.VISIBLE
+
+                // Aktualisiert die Sichtbarkeit der Hardcode-TextViews
+                tvDetailHardcodeName.visibility = if (tvDetailName.visibility == View.VISIBLE) View.VISIBLE else View.GONE
+                tvHardcodeKi.visibility = if (tvKi.visibility == View.VISIBLE) View.VISIBLE else View.GONE
+                tvHardcodeMaxKi.visibility = if (tvMaxKi.visibility == View.VISIBLE) View.VISIBLE else View.GONE
+                tvHardcodeRace.visibility = if (tvRace.visibility == View.VISIBLE) View.VISIBLE else View.GONE
             }
         }
 
@@ -72,9 +78,11 @@ class DbzDetailFragment : Fragment() {
                 tvDetailName.text = transformationName
                 tvKi.text = transformationKi
 
-                // Views sichtbar machen
                 tvDetailName.visibility = View.VISIBLE
                 tvKi.visibility = View.VISIBLE
+
+                tvDetailHardcodeName.visibility = if (tvDetailName.visibility == View.VISIBLE) View.VISIBLE else View.GONE
+                tvHardcodeKi.visibility = if (tvKi.visibility == View.VISIBLE) View.VISIBLE else View.GONE
             }
         }
 
@@ -86,9 +94,11 @@ class DbzDetailFragment : Fragment() {
                 tvDetailName.text = planetName
                 tvDescription.text = planetSpainDescription
 
-                // Views sichtbar machen
                 tvDetailName.visibility = View.VISIBLE
                 tvDescription.visibility = View.VISIBLE
+
+                tvDetailHardcodeName.visibility = if (tvDetailName.visibility == View.VISIBLE) View.VISIBLE else View.GONE
+                tvHardcodeRace.visibility = if (tvRace.visibility == View.VISIBLE) View.VISIBLE else View.GONE
 
                 if (isDestroyed) {
                     tvIsDestroyed.visibility = View.VISIBLE
