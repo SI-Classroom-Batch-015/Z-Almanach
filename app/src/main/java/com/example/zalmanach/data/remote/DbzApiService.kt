@@ -8,6 +8,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 const val BASE_URL = "https://dragonball-api.com/api/"
 
@@ -32,6 +33,9 @@ interface DbzApiService {
 
     @GET("planets")
     suspend fun getPlanets(): Planets
+
+    @GET("characters/{id}")
+    suspend fun getCharacterById(@Path("id") characterId: Int): Character
 }
 
 // Das Objekt dient als Zugangspunkt für den Rest der App und stellt den API Service zur Verfügung
