@@ -48,5 +48,7 @@ interface DragonballDao {
 
     @Query("SELECT * FROM planets_table WHERE planetName LIKE :query")
     fun searchPlanets(query: String): LiveData<List<Planet>>
-}
 
+    @Query("SELECT * FROM character_table WHERE id = :characterId")
+    fun getCharacterById(characterId: Int): LiveData<Character?>
+}
