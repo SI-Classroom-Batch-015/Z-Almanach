@@ -24,7 +24,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/bild_von_einem_charater"
             android:scaleType="fitCenter"
-            android:src="@drawable/songokucracy"
+            android:src="@drawable/goku_anatomy"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
