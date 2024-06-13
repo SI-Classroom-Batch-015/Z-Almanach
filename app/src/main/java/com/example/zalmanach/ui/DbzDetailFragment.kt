@@ -5,14 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import coil.load
+import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.databinding.FragmentDbzDetailBinding
 
 class DbzDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDbzDetailBinding
     private val args: DbzDetailFragmentArgs by navArgs()
+    private val viewModel: MainViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -86,7 +90,7 @@ class DbzDetailFragment : Fragment() {
             }
         }
 
-        // Planeten: Wenn vorhanden, werden Daten angezeigt.
+        // Planeten: Wenn vorhanden, werden Daten angezeigt
         if (planetName.isNotEmpty()) {
             binding.apply {
                 ivDetailImage.load(planetImage)
@@ -105,7 +109,11 @@ class DbzDetailFragment : Fragment() {
                 }
             }
         }
-
+        // Setzt Bild und Namen übers VM im FavoriteFragment
+        binding.ivFavoriteDefault.setOnClickListener {
+            val selectedCharacterImage = args.imageCharacter
+            val selectedCharacterName = args.nameCharacter
+            viewModel.setSelectedCharacter(selectedCharacterImage, selectedCharacterName)
+        }
     }
 }
-
