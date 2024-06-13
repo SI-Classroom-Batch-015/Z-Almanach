@@ -86,7 +86,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/bild_von_einem_charater"
                 android:scaleType="fitCenter"
-                android:src="@drawable/goku_anatomy"
+                android:src="@drawable/songoku_sleep"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -174,16 +174,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/schwierigkeit"
-        app:layout_constraintEnd_toStartOf="@+id/btn_favorite_suprise"
+        app:layout_constraintEnd_toStartOf="@+id/btn_favorite_download"
         app:layout_constraintStart_toEndOf="@+id/btn_favorite_modus"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <Button
-        android:id="@+id/btn_favorite_suprise"
+        android:id="@+id/btn_favorite_download"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:text="@string/suprise"
+        android:text="Download"
         app:layout_constraintBottom_toBottomOf="@+id/btn_favorite_difficulty"
         app:layout_constraintEnd_toEndOf="@+id/divider2"
         app:layout_constraintTop_toTopOf="@+id/btn_favorite_difficulty" />
