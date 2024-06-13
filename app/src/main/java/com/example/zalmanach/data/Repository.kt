@@ -30,7 +30,7 @@ class Repository(
     val planets: LiveData<List<Planet>>
         get() = _planets
 
-    // Wird vom ViewModel aufgerufen, um Daten für die Suchergebnisse abzurufen, gibt ein LiveD.O. zurück
+    // Wird vom ViewModel aufgerufen, um Daten für die Suchergebnisse abzurufen
     fun searchCharacters(query: String): LiveData<List<Character>> {
         return database.dragonballDao.searchCharacters("%$query%")
     }
@@ -41,6 +41,10 @@ class Repository(
 
     fun searchPlanets(query: String): LiveData<List<Planet>> {
         return database.dragonballDao.searchPlanets("%$query%")
+    }
+
+    fun getCharactersByGender(gender: String): LiveData<List<Character>> {
+        return database.dragonballDao.getCharacterByGender(gender)
     }
 
     // Daten von der API zu laden und in die Datenbank speichern, Fun die asyncron im Hintergrund laufen kann
