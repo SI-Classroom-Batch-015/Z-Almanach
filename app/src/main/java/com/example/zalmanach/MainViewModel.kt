@@ -41,7 +41,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val selectedCharacterName: LiveData<String>
         get() = _selectedCharacterName
 
-    private val _villains = MutableLiveData<List<Any>>()
+    private val _villains = MediatorLiveData<List<Any>>()
     val villains: LiveData<List<Any>>
         get() = _villains
 
@@ -68,7 +68,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         results.addSource(characters) { charList ->
             combinedResults.clear()
             charList?.let { combinedResults.addAll(it) } // Charaktere hinzufügen
-            results.value = combinedResults // Ergebnis aktualisieren
+            results.value = combinedResults              // Ergebnis aktualisieren
         }
 
         // Transformationen...
@@ -89,6 +89,28 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
         return results
+    }
+
+    // Transformations LiveData als Referenz fürs Hinzufügen der Daten
+    init {
+        _villains.addSource(transformations) { transformList ->
+            val combinedList = mutableListOf<Any>()                // Neue leere Liste
+            _villains.value?.let { combinedList.addAll(it) }       // Falls Wert da, zur Liste
+            transformList?.let { combinedList.addAll(it) }         // Falls nicht null, zur Liste
+            _villains.value = combinedList                         // Kombi. Liste als neuen Wert der MediatorLD setzen
+        }
+    }
+
+    // Lädt die Methode das Gegner nach "gender" gesucht und gefiltert werden
+    fun getCombinedVillains(gender: String) {
+        val characterByGender = repository.getCharactersByGender(gender)
+        _villains.addSource(characterByGender) { charList ->
+            val combinedList = mutableListOf<Any>()
+            charList?.let { combinedList.addAll(it) }
+            val transformationsList = transformations.value
+            transformationsList?.let { combinedList.addAll(it) }
+            _villains.value = combinedList
+        }
     }
 
     // Daten zu laden, werden in Fragmenten aufgerufen
