@@ -39,7 +39,7 @@ interface DragonballDao {
     @Query("DELETE FROM planets_table")
     suspend fun deleteAllPlanets()
 
-    // Methode für die Volltextsuche
+
     @Query("SELECT * FROM character_table WHERE characterName LIKE :query")
     fun searchCharacters(query: String): LiveData<List<Character>>
 
@@ -50,5 +50,12 @@ interface DragonballDao {
     fun searchPlanets(query: String): LiveData<List<Planet>>
 
     @Query("SELECT * FROM character_table WHERE id = :characterId")
-    fun getCharacterById(characterId: Int): LiveData<Character?>
+    fun searchCharacterById(characterId: Int): LiveData<Character?>
+
+    @Query("SELECT * FROM character_table WHERE characterName = :characterName")
+    fun searchCharacterByName(characterName: String): LiveData<Character?>
+
+    @Query("SELECT * FROM character_table WHERE gender = :gender")
+    fun getCharacterByGender(gender: String): LiveData<List<Character>>
+
 }
