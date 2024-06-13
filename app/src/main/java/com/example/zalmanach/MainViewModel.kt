@@ -28,88 +28,24 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val transformations: LiveData<List<Transformation>> = repository.transformations
     val planets: LiveData<List<Planet>> = repository.planets
 
-    // MutableLiveData für die Animation
+    // MutableLiveData`s
     private val _startAnimation = MutableLiveData<Boolean>()
     val startAnimation: LiveData<Boolean>
         get() = _startAnimation
 
-    // Triggern der Animation
-    fun triggerAnimation() {
-        _startAnimation.value = true // Startet die Ani
-    }
-
-    // MutableLiveData für das ausgewählte Charakterbild
     private val _selectedCharacterImage = MutableLiveData<String>()
     val selectedCharacterImage: LiveData<String>
         get() = _selectedCharacterImage
 
-    // MutableLiveData für den ausgewählten Charakternamen
     private val _selectedCharacterName = MutableLiveData<String>()
     val selectedCharacterName: LiveData<String>
         get() = _selectedCharacterName
 
-    // Setzen des ausgewählten Charakters
-    fun setSelectedCharacter(characterImage: String, characterName: String) {
-        _selectedCharacterImage.value = characterImage
-        _selectedCharacterName.value = characterName
-    }
+    private val _villains = MutableLiveData<List<Any>>()
+    val villains: LiveData<List<Any>>
+        get() = _villains
 
-    // Daten zu laden, werden in Fragmenten aufgerufen
-    fun loadCharacters() {
-        viewModelScope.launch {
-            try {
-                repository.getCharacters() // Charaktere aus dem Repository holen
-            } catch (e: Exception) {
-                Log.e("MainViewModel", "Fail Load Characters ${e.message}")
-            }
-        }
-    }
-
-    fun loadTransformations() {
-        viewModelScope.launch {
-            try {
-                repository.getTransformations()
-            } catch (e: Exception) {
-                Log.e(("MainViewModel"), "Fail Load Transformations ${e.message}")
-            }
-        }
-    }
-
-    fun loadPlanets() {
-        viewModelScope.launch {
-            try {
-                repository.getPlanets()
-            } catch (e: Exception) {
-                Log.e("MainViewModel", "Fail Load Planets ${e.message}")
-            }
-        }
-    }
-
-//    fun searchCharacterByName(characterName: String): LiveData<Character?> {
-//        val resultCharacterByName = MutableLiveData<Character?>()               // Init M.LiveData
-//        viewModelScope.launch {
-//            try {
-//                val character = repository.searchCharacterByName(characterName)
-//                resultCharacterByName.postValue(character)
-//            } catch (e: Exception) {
-//                Log.e("MainViewModel", "Fail Search Character by Name ${e.message}")
-//            }
-//            resultCharacterByName.postValue(null)
-//        }
-//        return resultCharacterByName
-//    }
-
-    //    fun loadCharacterById(characterId: Int) {
-//        viewModelScope.launch {
-//            try {
-//                val characterById = repository.searchCharacterById(characterId)
-//                _selectedCharacter.postValue(characterById)
-//            } catch (e: Exception) {
-//                Log.e("MainViewModel", "Fail Load Character by Id ${e.message}")}
-//        }
-//    }
-
-    // Suchen von Charakteren
+    // Suchen von ...
     private fun searchByCharacters(query: String): LiveData<List<Character>> {
         return repository.searchCharacters(query)
     }
@@ -153,5 +89,47 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
         return results
+    }
+
+    // Daten zu laden, werden in Fragmenten aufgerufen
+    fun loadCharacters() {
+        viewModelScope.launch {
+            try {
+                repository.getCharacters() // Charaktere aus dem Repository holen
+            } catch (e: Exception) {
+                Log.e("MainViewModel", "Fail Load Characters ${e.message}")
+            }
+        }
+    }
+
+    fun loadTransformations() {
+        viewModelScope.launch {
+            try {
+                repository.getTransformations()
+            } catch (e: Exception) {
+                Log.e(("MainViewModel"), "Fail Load Transformations ${e.message}")
+            }
+        }
+    }
+
+    fun loadPlanets() {
+        viewModelScope.launch {
+            try {
+                repository.getPlanets()
+            } catch (e: Exception) {
+                Log.e("MainViewModel", "Fail Load Planets ${e.message}")
+            }
+        }
+    }
+
+    // Triggern der Animation
+    fun triggerAnimation() {
+        _startAnimation.value = true // Startet die Ani
+    }
+
+    // Daten Setzen
+    fun setSelectedCharacter(characterImage: String, characterName: String) {
+        _selectedCharacterImage.value = characterImage
+        _selectedCharacterName.value = characterName
     }
 }
