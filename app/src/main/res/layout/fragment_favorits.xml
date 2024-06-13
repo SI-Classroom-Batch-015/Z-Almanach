@@ -202,7 +202,7 @@
         android:id="@+id/scrollView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -214,10 +214,8 @@
             android:id="@+id/rv_favorite_villains"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginBottom="16dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="5"
-            tools:listitem="@layout/list_item_favorit_villians"/>
+            tools:listitem="@layout/list_item_favorit_villians" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
