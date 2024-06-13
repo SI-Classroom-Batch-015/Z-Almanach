@@ -23,7 +23,7 @@
             android:layout_marginBottom="8dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/bild_von_einem_charater"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:src="@drawable/vegeta_sleep"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
 
         <TextView
             android:id="@+id/tv_favorite_gone_name"
-            android:layout_width="wrap_content"
+            android:layout_width="32sp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:gravity="center_horizontal"
@@ -44,6 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/iv_favorite_villians"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:maxLines="1"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
