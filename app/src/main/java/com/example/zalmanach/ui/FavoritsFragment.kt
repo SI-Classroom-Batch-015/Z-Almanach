@@ -31,11 +31,12 @@ class FavoritsFragment : Fragment() {
         (activity as MainActivity).showBottomNav(false)
 
         // Ausgewählten Character beobachten und die Daten an die UI zu binden
-        viewModel.selectedCharacter.observe(viewLifecycleOwner) { character ->
-            character?.let {
-                binding.tvFavoriteName.text = character.characterName
-                binding.ivFavoriteCharacter.load(character.characterImage)
-            }
+        viewModel.selectedCharacterImage.observe(viewLifecycleOwner) { characterImage ->
+            binding.ivFavoriteCharacter.load(characterImage)
+        }
+
+        viewModel.selectedCharacterName.observe(viewLifecycleOwner) { characterName ->
+            binding.tvFavoriteName.text = characterName
         }
     }
 
