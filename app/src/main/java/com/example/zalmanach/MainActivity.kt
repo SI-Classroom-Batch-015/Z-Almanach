@@ -1,6 +1,7 @@
 package com.example.zalmanach
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -31,5 +32,10 @@ class MainActivity : AppCompatActivity() {
                 binding.fragmentContainerView.findNavController().navigateUp()
             }
         })
+    }
+
+    // Wegen Wiederverwendbarkeit, hier Implementiert und rufe sie in benötigten Fragmenten auf
+    fun showBottomNav(show: Boolean) {
+        binding.bottomNavigationView.visibility = if (show) View.VISIBLE else View.GONE
     }
 }

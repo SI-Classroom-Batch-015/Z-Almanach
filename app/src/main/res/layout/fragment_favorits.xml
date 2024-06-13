@@ -203,9 +203,11 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="wrap_content"
-        android:layout_height="284dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/tv_villians">
@@ -213,8 +215,7 @@
         <TableLayout
             android:id="@+id/tl_favorite_villians"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp">
+            android:layout_height="wrap_content">
 
             <TableRow
                 android:id="@+id/tr_favorite_villians_1"
