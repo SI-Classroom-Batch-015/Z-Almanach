@@ -28,7 +28,7 @@ class FavoritsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Bottom Nav ausblenden, Fun in der Main
+        // Bottom Nav ausblenden, Fun. in der Main
         (activity as MainActivity).showBottomNav(false)
 
         // Daten beobachten und an die UI zu binden
