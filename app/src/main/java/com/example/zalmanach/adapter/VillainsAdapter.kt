@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Transformation
-import com.example.zalmanach.databinding.ListItemFavoritVilliansBinding
+import com.example.zalmanach.databinding.ListItemVillainsBinding
 
 class VillainsAdapter :
     RecyclerView.Adapter<VillainsAdapter.VillainViewHolder>() {
 
     private var dataset: List<Any> = emptyList()
 
-    inner class VillainViewHolder(val binding: ListItemFavoritVilliansBinding) :
+    inner class VillainViewHolder(val binding: ListItemVillainsBinding) :
             RecyclerView.ViewHolder(binding.root)
 
     @SuppressLint("NotifyDataSetChanged")
@@ -25,7 +25,7 @@ class VillainsAdapter :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VillainsAdapter.VillainViewHolder {
-        val binding = ListItemFavoritVilliansBinding.inflate(
+        val binding = ListItemVillainsBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false

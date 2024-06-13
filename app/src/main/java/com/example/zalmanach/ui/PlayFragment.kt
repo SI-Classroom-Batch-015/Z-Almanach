@@ -10,18 +10,18 @@ import coil.load
 import com.example.zalmanach.MainActivity
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.adapter.VillainsAdapter
-import com.example.zalmanach.databinding.FragmentFavoritsBinding
+import com.example.zalmanach.databinding.FragmentPlayBinding
 
-class FavoritsFragment : Fragment() {
+class PlayFragment : Fragment() {
 
-    private lateinit var binding: FragmentFavoritsBinding
+    private lateinit var binding: FragmentPlayBinding
     private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFavoritsBinding.inflate(inflater, container, false)
+        binding = FragmentPlayBinding.inflate(inflater, container, false)
         return binding.root
     }
 
