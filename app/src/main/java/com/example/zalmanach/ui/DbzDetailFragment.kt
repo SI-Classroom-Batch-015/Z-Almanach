@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import coil.load
+import com.example.zalmanach.MainActivity
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.databinding.FragmentDbzDetailBinding
 
@@ -114,6 +115,16 @@ class DbzDetailFragment : Fragment() {
             val selectedCharacterImage = args.imageCharacter
             val selectedCharacterName = args.nameCharacter
             viewModel.setSelectedCharacter(selectedCharacterImage, selectedCharacterName)
+            binding.ivFavoriteSelected.visibility = View.VISIBLE
         }
+
+        // Bottom Nav ausblenden, Fun in der Main
+        (activity as MainActivity).showBottomNav(false)
+    }
+
+    // Bottom Nav wieder einblenden
+    override fun onDestroyView() {
+        super.onDestroyView()
+        (activity as MainActivity).showBottomNav(true)
     }
 }
