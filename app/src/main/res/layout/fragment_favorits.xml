@@ -181,7 +181,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:text="Download"
+        android:text="@string/download"
         app:layout_constraintBottom_toBottomOf="@+id/btn_favorite_difficulty"
         app:layout_constraintEnd_toEndOf="@+id/divider2"
         app:layout_constraintTop_toTopOf="@+id/btn_favorite_difficulty" />
@@ -210,110 +210,14 @@
         app:layout_constraintStart_toStartOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/tv_villians">
 
-        <TableLayout
-            android:id="@+id/tl_favorite_villians"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_favorite_villains"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TableRow
-                android:id="@+id/tr_favorite_villians_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tr_favorite_villians_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tr_favorite_villians_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tr_favorite_villians_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tr_favorite_villians_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tr_favorite_villians_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-
-                <include layout="@layout/list_item_favorit_villians" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tr_favorite_villians_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
-
-                <include layout="@layout/list_item_favorit_villians" />
-            </TableRow>
-        </TableLayout>
+            android:layout_height="0dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="5"
+            tools:listitem="@layout/list_item_favorit_villians"/>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
