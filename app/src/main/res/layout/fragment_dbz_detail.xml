@@ -188,8 +188,7 @@
         android:layout_width="4dp"
         android:layout_height="180dp"
         android:layout_marginTop="16dp"
-        android:background="?android:attr/listDivider"
-        android:outlineAmbientShadowColor="@color/black"
+        android:background="@color/carbon_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_dbzDetail" />
@@ -199,19 +198,17 @@
         android:layout_width="300dp"
         android:layout_height="4dp"
         android:layout_marginTop="56dp"
-        android:background="?android:attr/listDivider"
+        android:background="@color/carbon_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_dbzDetail"
-        android:outlineAmbientShadowColor="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@+id/cv_dbzDetail" />
 
     <View
         android:id="@+id/divider3"
         android:layout_width="300dp"
         android:layout_height="4dp"
         android:layout_marginTop="96dp"
-        android:background="?android:attr/listDivider"
-        android:outlineAmbientShadowColor="@color/black"
+        android:background="@color/carbon_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_dbzDetail" />
@@ -221,8 +218,7 @@
         android:layout_width="300dp"
         android:layout_height="4dp"
         android:layout_marginTop="136dp"
-        android:background="?android:attr/listDivider"
-        android:outlineAmbientShadowColor="@color/black"
+        android:background="@color/carbon_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_dbzDetail" />
@@ -232,8 +228,7 @@
         android:layout_width="300dp"
         android:layout_height="4dp"
         android:layout_marginTop="176dp"
-        android:background="?android:attr/listDivider"
-        android:outlineAmbientShadowColor="@color/black"
+        android:background="@color/carbon_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_dbzDetail" />
