@@ -1,7 +1,6 @@
 package com.example.zalmanach.adapter
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,26 +8,60 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.example.zalmanach.R
 import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.data.model.DbzEntity
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 import com.example.zalmanach.databinding.ListItemSearchBinding
 
 class SearchAdapter(
-    private var dataset: List<Any>,
-    private val onItemSelected: (Any) -> Unit
+    private var dataset: List<DbzEntity>,
+    private val onItemSelected: (DbzEntity) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class CharacterViewHolder(val binding: ListItemSearchBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(character: Character) {
+            binding.ivSearchResponse.load(character.characterImage) {
+                error(R.drawable.error404)
+                transformations(CircleCropTransformation())
+            }
+            binding.tvSearchResponse.text = character.characterName
+            itemView.setOnClickListener {
+                onItemSelected(character)
+            }
+        }
+    }
 
     inner class TransformationViewHolder(val binding: ListItemSearchBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(transformation: Transformation) {
+            binding.ivSearchResponse.load(transformation.transformationImage) {
+                error(R.drawable.error404)
+                transformations(CircleCropTransformation())
+            }
+            binding.tvSearchResponse.text = transformation.transformationName
+            itemView.setOnClickListener {
+                onItemSelected(transformation)
+            }
+        }
+    }
 
     inner class PlanetViewHolder(val binding: ListItemSearchBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(planet: Planet) {
+            binding.ivSearchResponse.load(planet.planetImage) {
+                error(R.drawable.error404)
+                transformations(CircleCropTransformation())
+            }
+            binding.tvSearchResponse.text = planet.planetName
+            itemView.setOnClickListener {
+                onItemSelected(planet)
+            }
+        }
+    }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitList(list: List<Any>) {
+    fun submitList(list: List<DbzEntity>) {
         dataset = list
         notifyDataSetChanged()
     }
@@ -52,7 +85,6 @@ class SearchAdapter(
             is Character -> 0
             is Transformation -> 1
             is Planet -> 2
-            else -> throw IllegalArgumentException("Invalid type of data " + position)
         }
     }
 
@@ -63,39 +95,9 @@ class SearchAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = dataset[position]
         when (holder) {
-            is CharacterViewHolder -> {
-                val character = item as Character
-                holder.binding.ivSearchResponse.load(character.characterImage) {
-                    error(R.drawable.error404)
-                    transformations(CircleCropTransformation())
-                }
-                holder.binding.tvSearchResponse.text = character.characterName
-                holder.itemView.setOnClickListener {
-                    onItemSelected(character)
-                }
-            }
-            is TransformationViewHolder -> {
-                val transformation = item as Transformation
-                holder.binding.ivSearchResponse.load(transformation.transformationImage) {
-                    error(R.drawable.error404)
-                    transformations(CircleCropTransformation())
-                }
-                holder.binding.tvSearchResponse.text = transformation.transformationName
-                holder.itemView.setOnClickListener {
-                    onItemSelected(transformation)
-                }
-            }
-            is PlanetViewHolder -> {
-                val planet = item as Planet
-                holder.binding.ivSearchResponse.load(planet.planetImage) {
-                    error(R.drawable.error404)
-                    transformations(CircleCropTransformation())
-                }
-                holder.binding.tvSearchResponse.text = planet.planetName
-                holder.itemView.setOnClickListener {
-                    onItemSelected(planet)
-                }
-            }
+            is CharacterViewHolder -> holder.bind(item as Character)
+            is TransformationViewHolder -> holder.bind(item as Transformation)
+            is PlanetViewHolder -> holder.bind(item as Planet)
         }
     }
 }
