@@ -10,6 +10,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.zalmanach.data.Repository
 import com.example.zalmanach.data.local.DragonballDatabase
 import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.data.model.DbzEntity
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 import com.example.zalmanach.data.remote.DbzApi
@@ -59,11 +60,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // "searchByAll" wird vom Benuzter im Fragment ausgelöst. MediatorLiveData, kann mehrere andere LiveData-Quellen überwachen
-    fun searchByAll(query: String): LiveData<List<Any>> {
-        val results = MediatorLiveData<List<Any>>()
-        val combinedResults = mutableListOf<Any>()
+    fun searchByAll(query: String): LiveData<List<DbzEntity>> {
+        val results = MediatorLiveData<List<DbzEntity>>()
+        val combinedResults = mutableListOf<DbzEntity>()
 
-        // Charaktere suchen; mit addSource die LiveData-Quelle hinzufügen; und zur kombinierten Liste hinzufügen
+        // Charaktere suchen; mit addSource die LiveData-Quelle; und zur kombinierten Liste hinzufügen
         val characters = searchByCharacters(query)
         results.addSource(characters) { charList ->
             combinedResults.clear()
@@ -149,7 +150,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _startAnimation.value = true // Startet die Ani
     }
 
-    // Daten Setzen
+    // Mehrmals genutzt, "Held" und "Favoriten"
     fun setSelectedCharacter(characterImage: String, characterName: String) {
         _selectedCharacterImage.value = characterImage
         _selectedCharacterName.value = characterName
