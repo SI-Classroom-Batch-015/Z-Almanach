@@ -22,7 +22,7 @@
         app:strokeWidth="1dp">
 
         <TextView
-            android:id="@+id/tv_favorite_intro"
+            android:id="@+id/tv_play_intro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_favorite_character"
+                android:id="@+id/iv_play_character"
                 android:layout_width="94dp"
                 android:layout_height="94dp"
                 android:layout_marginStart="8dp"
@@ -91,7 +91,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/tv_favorite_name"
+                android:id="@+id/tv_play_name"
                 android:layout_width="94dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -104,7 +104,7 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/iv_favorite_character"
+                app:layout_constraintBottom_toTopOf="@+id/iv_play_character"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -135,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_lp_view" />
 
     <Button
-        android:id="@+id/btn_favorite_game"
+        android:id="@+id/btn_play_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -157,34 +157,34 @@
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <Button
-        android:id="@+id/btn_favorite_modus"
+        android:id="@+id/btn_play_modus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/modus"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_favorite_difficulty"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_play_difficulty"
         app:layout_constraintStart_toStartOf="@+id/divider2"
-        app:layout_constraintTop_toTopOf="@+id/btn_favorite_difficulty" />
+        app:layout_constraintTop_toTopOf="@+id/btn_play_difficulty" />
 
     <Button
-        android:id="@+id/btn_favorite_difficulty"
+        android:id="@+id/btn_play_difficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/schwierigkeit"
-        app:layout_constraintEnd_toStartOf="@+id/btn_favorite_download"
-        app:layout_constraintStart_toEndOf="@+id/btn_favorite_modus"
+        app:layout_constraintEnd_toStartOf="@+id/btn_play_download"
+        app:layout_constraintStart_toEndOf="@+id/btn_play_modus"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <Button
-        android:id="@+id/btn_favorite_download"
+        android:id="@+id/btn_play_download"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="@string/download"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_favorite_difficulty"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_play_difficulty"
         app:layout_constraintEnd_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toTopOf="@+id/btn_favorite_difficulty" />
+        app:layout_constraintTop_toTopOf="@+id/btn_play_difficulty" />
 
     <TextView
         android:id="@+id/tv_villians"
@@ -211,7 +211,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_villians">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_favorite_villains"
+            android:id="@+id/rv_play_villains"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

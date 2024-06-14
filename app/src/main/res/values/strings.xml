@@ -5,7 +5,7 @@
     <string name="home">Home</string>
     <string name="dbz">DBZ</string>
     <string name="dbz_detail">DBZ Detail</string>
-    <string name="favorite">Favorits</string>
+    <string name="favorite">Favorite</string>
     <string name="search">Search</string>
 
     <string name="spa_und_spannung">Spaß und Spannung</string>
@@ -68,5 +68,6 @@
     <string name="download">Download</string>
     <string name="play">Play</string>
     <string name="held_w_hlen">Held Wählen</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

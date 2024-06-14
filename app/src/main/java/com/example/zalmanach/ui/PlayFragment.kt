@@ -33,15 +33,15 @@ class PlayFragment : Fragment() {
 
         // Daten beobachten und an die UI zu binden
         viewModel.selectedCharacterImage.observe(viewLifecycleOwner) { characterImage ->
-            binding.ivFavoriteCharacter.load(characterImage)
+            binding.ivPlayCharacter.load(characterImage)
         }
 
         viewModel.selectedCharacterName.observe(viewLifecycleOwner) { characterName ->
-            binding.tvFavoriteName.text = characterName
+            binding.tvPlayName.text = characterName
         }
 
         val villainsAdapter = VillainsAdapter()
-        binding.rvFavoriteVillains.adapter = villainsAdapter
+        binding.rvPlayVillains.adapter = villainsAdapter
 
         // Kombinierte Gegner-Liste aktualisieren und Query-Filter mitgeben
         viewModel.getCombinedVillains("male")
