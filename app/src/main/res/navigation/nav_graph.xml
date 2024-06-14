@@ -72,6 +72,9 @@
         <argument
             android:name="descriptionPlanetSpain"
             app:argType="string" />
+        <action
+            android:id="@+id/action_dbzDetailFragment_to_playFragment"
+            app:destination="@id/playFragment" />
     </fragment>
     <fragment
         android:id="@+id/playFragment"
@@ -87,4 +90,9 @@
             android:id="@+id/action_searchFragment_to_dbzDetailFragment"
             app:destination="@id/dbzDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.zalmanach.ui.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>

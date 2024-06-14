@@ -157,7 +157,7 @@
             android:paddingTop="4dp"
             android:paddingEnd="8dp"
             android:paddingBottom="4dp"
-            android:text="@string/favorits_lasse_zwei_charactere_gegen_einander_antreten"
+            android:text="@string/favorite_lasse_zwei_charactere_gegen_einander_antreten"
             android:textColor="@color/white" />
     </com.google.android.material.card.MaterialCardView>
 

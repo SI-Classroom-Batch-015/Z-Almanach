@@ -5,7 +5,7 @@
     <string name="home">Home</string>
     <string name="dbz">DBZ</string>
     <string name="dbz_detail">DBZ Detail</string>
-    <string name="favorits">Favorits</string>
+    <string name="favorite">Favorits</string>
     <string name="search">Search</string>
 
     <string name="spa_und_spannung">Spaß und Spannung</string>
@@ -38,7 +38,7 @@
 
     <string name="btc_adress">bc1qwn4ca3u22fkkc6rm78puukxy72as9w6m03gdhv</string>
     <string name="search_erkunde_das_dbz_universum">Search, erkunde das DBZ- Universum</string>
-    <string name="favorits_lasse_zwei_charactere_gegen_einander_antreten">Favorits, lasse zwei Charactere gegen einander antreten!</string>
+    <string name="favorite_lasse_zwei_charactere_gegen_einander_antreten">Favorits, lasse zwei Charactere gegen einander antreten!</string>
     <string name="detail_the_how_is_how">Detail, The How is How!</string>
     <string name="dbz_schau_dir_deine_linblings_charaktere_an">DBZ, schau dir deine Linblings Charaktere an</string>
     <string name="bild_von_einem_charater">Bild von einem Charater</string>
@@ -68,6 +68,5 @@
     <string name="download">Download</string>
     <string name="play">Play</string>
     <string name="held_w_hlen">Held Wählen</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
