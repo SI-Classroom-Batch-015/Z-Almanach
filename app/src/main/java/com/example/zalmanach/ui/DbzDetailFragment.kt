@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.example.zalmanach.MainActivity
 import com.example.zalmanach.MainViewModel
+import com.example.zalmanach.R
 import com.example.zalmanach.databinding.FragmentDbzDetailBinding
 
 class DbzDetailFragment : Fragment() {
@@ -110,12 +112,21 @@ class DbzDetailFragment : Fragment() {
                 }
             }
         }
-        // Setzt Bild und Namen übers VM im FavoriteFragment
+        // Setzt Favoriten (Bild und Namen) im FavoriteFragment
         binding.ivFavoriteDefault.setOnClickListener {
             val selectedCharacterImage = args.imageCharacter
             val selectedCharacterName = args.nameCharacter
             viewModel.setSelectedCharacter(selectedCharacterImage, selectedCharacterName)
             binding.ivFavoriteSelected.visibility = View.VISIBLE
+        }
+
+        // Setzt Helden (Bild und Namen) im PlayFragment
+        binding.ivVsDetailToPlay.setOnClickListener {
+            val selectedCharacterImage = args.imageCharacter
+            val selectedCharacterName = args.nameCharacter
+            viewModel.setSelectedCharacter(selectedCharacterImage, selectedCharacterName)
+
+            findNavController().navigate(R.id.action_dbzDetailFragment_to_playFragment)
         }
 
         // Bottom Nav ausblenden, Fun in der Main

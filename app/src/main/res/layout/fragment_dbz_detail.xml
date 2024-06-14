@@ -321,7 +321,7 @@
         app:layout_constraintTop_toTopOf="@+id/cv_dbzDetail" />
 
     <ImageView
-        android:id="@+id/iv_detail_playToAction"
+        android:id="@+id/iv_vs_detailToPlay"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
