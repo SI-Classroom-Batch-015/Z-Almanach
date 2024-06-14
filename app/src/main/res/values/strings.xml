@@ -67,4 +67,7 @@
     <string name="suprise">Suprise</string>
     <string name="download">Download</string>
     <string name="play">Play</string>
+    <string name="held_w_hlen">Held Wählen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
