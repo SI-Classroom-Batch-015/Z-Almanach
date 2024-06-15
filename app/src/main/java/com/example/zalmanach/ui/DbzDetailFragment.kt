@@ -114,17 +114,17 @@ class DbzDetailFragment : Fragment() {
         }
         // Setzt Favoriten (Bild und Namen) im FavoriteFragment
         binding.ivFavoriteDefault.setOnClickListener {
-            val selectedCharacterImage = args.imageCharacter
-            val selectedCharacterName = args.nameCharacter
-            viewModel.setSelectedCharacter(selectedCharacterImage, selectedCharacterName)
+            val favoriteImage = args.imageCharacter
+            val favoriteName = args.nameCharacter
+            viewModel.setFavoriteCharacter(favoriteImage, favoriteName)
             binding.ivFavoriteSelected.visibility = View.VISIBLE
         }
 
-        // Setzt Helden (Bild und Namen) im PlayFragment
+        // Setzt Spiel-Character (Bild und Namen) im PlayFragment
         binding.ivVsDetailToPlay.setOnClickListener {
-            val selectedCharacterImage = args.imageCharacter
-            val selectedCharacterName = args.nameCharacter
-            viewModel.setSelectedCharacter(selectedCharacterImage, selectedCharacterName)
+            val selectedPlayerImage = args.imageCharacter
+            val selectedPlayerName = args.nameCharacter
+            viewModel.setPlayCharacter(selectedPlayerImage, selectedPlayerName)
 
             findNavController().navigate(R.id.action_dbzDetailFragment_to_playFragment)
         }
