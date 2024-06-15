@@ -2,10 +2,10 @@ package com.example.zalmanach.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.zalmanach.R
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Transformation
 import com.example.zalmanach.databinding.ListItemVillainsBinding
@@ -41,21 +41,13 @@ class VillainsAdapter :
         when (villain) {
             is Character -> {
                 holder.binding.ivFavoriteVillians.load(villain.characterImage) {
-                    listener(
-                        onError = { _, _ ->
-                            holder.binding.tvFavoriteGoneName.visibility = View.VISIBLE
-                        }
-                    )
+                    error(R.drawable.error404)
                 }
                 holder.binding.tvFavoriteGoneName.text = villain.characterName
             }
             is Transformation -> {
                 holder.binding.ivFavoriteVillians.load(villain.transformationImage) {
-                    listener(
-                        onError = { _, _ ->
-                            holder.binding.tvFavoriteGoneName.visibility = View.VISIBLE
-                        }
-                    )
+                    error(R.drawable.error404)
                 }
                 holder.binding.tvFavoriteGoneName.text = villain.transformationName
             }
