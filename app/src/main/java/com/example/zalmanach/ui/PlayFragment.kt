@@ -32,11 +32,11 @@ class PlayFragment : Fragment() {
         (activity as MainActivity).showBottomNav(false)
 
         // Daten beobachten und an die UI zu binden
-        viewModel.selectedCharacterImage.observe(viewLifecycleOwner) { characterImage ->
+        viewModel.playCharacterImage.observe(viewLifecycleOwner) { characterImage ->
             binding.ivPlayCharacter.load(characterImage)
         }
 
-        viewModel.selectedCharacterName.observe(viewLifecycleOwner) { characterName ->
+        viewModel.playCharacterName.observe(viewLifecycleOwner) { characterName ->
             binding.tvPlayName.text = characterName
         }
 
