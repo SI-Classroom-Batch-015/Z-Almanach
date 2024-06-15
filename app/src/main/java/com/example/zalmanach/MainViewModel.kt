@@ -18,35 +18,91 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    // Instanz der lokalen Datenbank
+    //  Instanz der lokalen Datenbank
     private val database = DragonballDatabase.getDatabase(application)
 
     // Instanz vom Repo, das die Datenbank- und API-Zugriffe verwaltet
     private val repository: Repository = Repository(DbzApi, database)
 
-    // LiveData erstellt und mit LD aus dem Repo verbunden, dadurch kann in Fragmenten(durch UI-Logik) die Daten observen und auto aktu. sobald sich Daten ändern
+    // LiveData erstellt und mit LD aus dem Repo verbunden
     val characters: LiveData<List<Character>> = repository.characters
     val transformations: LiveData<List<Transformation>> = repository.transformations
     val planets: LiveData<List<Planet>> = repository.planets
 
-    // MutableLiveData`s
+    // --------------- MutableLiveData`s ---------------------------------
     private val _startAnimation = MutableLiveData<Boolean>()
     val startAnimation: LiveData<Boolean>
         get() = _startAnimation
 
-    private val _selectedCharacterImage = MutableLiveData<String>()
-    val selectedCharacterImage: LiveData<String>
-        get() = _selectedCharacterImage
+    private val _favoriteCharacterImage = MutableLiveData<String>()
+    val favoriteCharacterImage: LiveData<String>
+        get() = _favoriteCharacterImage
 
-    private val _selectedCharacterName = MutableLiveData<String>()
-    val selectedCharacterName: LiveData<String>
-        get() = _selectedCharacterName
+    private val _favoriteCharacterName = MutableLiveData<String>()
+    val favoriteCharacterName: LiveData<String>
+        get() = _favoriteCharacterName
+
+    private val _playCharacterImage = MutableLiveData<String>()
+    val playCharacterImage: LiveData<String>
+        get() = _playCharacterImage
+
+    private val _playCharacterName = MutableLiveData<String>()
+    val playCharacterName: LiveData<String>
+        get() = _playCharacterName
 
     private val _villains = MediatorLiveData<List<Any>>()
     val villains: LiveData<List<Any>>
         get() = _villains
 
-    // Suchen von ...
+    // --------------- PlayFragment ----------------------------------------
+    fun setPlayCharacter(characterImage: String, characterName: String) {
+        _playCharacterImage.value = characterImage
+        _playCharacterName.value = characterName
+    }
+
+    // --------------- FavoriteFragment ----------------------------------------
+    fun setFavoriteCharacter(characterImage: String, characterName: String) {
+        _favoriteCharacterImage.value = characterImage
+        _favoriteCharacterName.value = characterName
+    }
+
+    // --------------- HomeFragment - Triggern der Animation ---------------
+    fun triggerAnimation() {
+        _startAnimation.value = true // Startet die Ani
+    }
+
+    // --------------- DbzFragment - Daten dem Repo Laden ------------------
+    fun loadCharacters() {
+        viewModelScope.launch {
+            try {
+                repository.getCharacters() // Charaktere aus dem Repository holen
+            } catch (e: Exception) {
+                Log.e("MainViewModel", "Fail Load Characters ${e.message}")
+            }
+        }
+    }
+
+    fun loadTransformations() {
+        viewModelScope.launch {
+            try {
+                repository.getTransformations()
+            } catch (e: Exception) {
+                Log.e(("MainViewModel"), "Fail Load Transformations ${e.message}")
+            }
+        }
+    }
+
+    fun loadPlanets() {
+        viewModelScope.launch {
+            try {
+                repository.getPlanets()
+            } catch (e: Exception) {
+                Log.e("MainViewModel", "Fail Load Planets ${e.message}")
+            }
+        }
+    }
+
+    // --------------- SearchFragment --------------------------------------
     private fun searchByCharacters(query: String): LiveData<List<Character>> {
         return repository.searchCharacters(query)
     }
@@ -92,6 +148,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         return results
     }
 
+    // --------------- PlayFragment ---------------------------------------
+
     // Transformations LiveData als Referenz fürs Hinzufügen der Daten
     init {
         _villains.addSource(transformations) { transformList ->
@@ -114,45 +172,4 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    // Daten zu laden, werden in Fragmenten aufgerufen
-    fun loadCharacters() {
-        viewModelScope.launch {
-            try {
-                repository.getCharacters() // Charaktere aus dem Repository holen
-            } catch (e: Exception) {
-                Log.e("MainViewModel", "Fail Load Characters ${e.message}")
-            }
-        }
-    }
-
-    fun loadTransformations() {
-        viewModelScope.launch {
-            try {
-                repository.getTransformations()
-            } catch (e: Exception) {
-                Log.e(("MainViewModel"), "Fail Load Transformations ${e.message}")
-            }
-        }
-    }
-
-    fun loadPlanets() {
-        viewModelScope.launch {
-            try {
-                repository.getPlanets()
-            } catch (e: Exception) {
-                Log.e("MainViewModel", "Fail Load Planets ${e.message}")
-            }
-        }
-    }
-
-    // Triggern der Animation
-    fun triggerAnimation() {
-        _startAnimation.value = true // Startet die Ani
-    }
-
-    // Mehrmals genutzt, "Held" und "Favoriten"
-    fun setSelectedCharacter(characterImage: String, characterName: String) {
-        _selectedCharacterImage.value = characterImage
-        _selectedCharacterName.value = characterName
-    }
 }
