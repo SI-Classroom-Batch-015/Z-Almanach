@@ -10,7 +10,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.zalmanach.data.Repository
 import com.example.zalmanach.data.local.DragonballDatabase
 import com.example.zalmanach.data.model.Character
-import com.example.zalmanach.data.model.DbzEntity
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 import com.example.zalmanach.data.remote.DbzApi
@@ -116,9 +115,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // "searchByAll" wird vom Benuzter im Fragment ausgelöst. MediatorLiveData, kann mehrere andere LiveData-Quellen überwachen
-    fun searchByAll(query: String): LiveData<List<DbzEntity>> {
-        val results = MediatorLiveData<List<DbzEntity>>()
-        val combinedResults = mutableListOf<DbzEntity>()
+    fun searchByAll(query: String): LiveData<List<Any>> {
+        val results = MediatorLiveData<List<Any>>()
+        val combinedResults = mutableListOf<Any>()
 
         // Charaktere suchen; mit addSource die LiveData-Quelle; und zur kombinierten Liste hinzufügen
         val characters = searchByCharacters(query)

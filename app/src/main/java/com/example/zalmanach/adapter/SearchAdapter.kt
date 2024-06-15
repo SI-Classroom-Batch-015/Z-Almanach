@@ -8,14 +8,13 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.example.zalmanach.R
 import com.example.zalmanach.data.model.Character
-import com.example.zalmanach.data.model.DbzEntity
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 import com.example.zalmanach.databinding.ListItemSearchBinding
 
 class SearchAdapter(
-    private var dataset: List<DbzEntity>,
-    private val onItemSelected: (DbzEntity) -> Unit
+    private var dataset: List<Any>,
+    private val onItemSelected: (Any) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class CharacterViewHolder(val binding: ListItemSearchBinding) :
@@ -61,7 +60,7 @@ class SearchAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitList(list: List<DbzEntity>) {
+    fun submitList(list: List<Any>) {
         dataset = list
         notifyDataSetChanged()
     }
@@ -85,6 +84,7 @@ class SearchAdapter(
             is Character -> 0
             is Transformation -> 1
             is Planet -> 2
+            else -> throw IllegalArgumentException("Invalid type of data " + position)
         }
     }
 

@@ -7,7 +7,7 @@ import com.squareup.moshi.Json
 @Entity("transformation_table")
 data class Transformation(
     @PrimaryKey(autoGenerate = true)
-    override val id: Int = 0,
+    val id: Int = 0,
 
     @Json(name = "name")
     val transformationName: String,
@@ -17,4 +17,4 @@ data class Transformation(
 
     @Json(name = "ki")
     val transformationKi: String,
-) : DbzEntity
+)

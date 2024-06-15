@@ -7,7 +7,7 @@ import com.squareup.moshi.Json
 @Entity("planets_table")
 data class Planet(
     @PrimaryKey(autoGenerate = true)
-    override val id: Int = 0,
+    val id: Int = 0,
 
     @Json(name = "name")
     val planetName: String,
@@ -19,4 +19,4 @@ data class Planet(
 
     @Json(name = "image")
     val planetImage: String,
-) : DbzEntity
+)
