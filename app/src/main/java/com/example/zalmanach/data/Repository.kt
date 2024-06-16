@@ -6,6 +6,7 @@ import com.example.zalmanach.data.local.DragonballDatabase
 import com.example.zalmanach.data.remote.DbzApi
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Characters
+import com.example.zalmanach.data.model.FavoriteItem
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Planets
 import com.example.zalmanach.data.model.Transformation
@@ -17,7 +18,8 @@ class Repository(
     private val database: DragonballDatabase
 ) {
 
-    // Live Data Objekte von der db werden ans VM weitergeleitet um die Daten in Echtzeit zu beobachten und sofort zu reagieren
+    // ------------------------- Stellt Live Data Objekte fürs ViewModel ---------------------------
+
     private val _characters: LiveData<List<Character>> = database.dragonballDao.getAllCharacter()
     val characters: LiveData<List<Character>>
         get() = _characters
@@ -30,7 +32,11 @@ class Repository(
     val planets: LiveData<List<Planet>>
         get() = _planets
 
-    // Wird vom ViewModel aufgerufen, um Daten für die Suchergebnisse abzurufen
+    private val _favoriteItems: LiveData<List<FavoriteItem>> = database.dragonballDao.getAllFavorites()
+    val favoriteItem: LiveData<List<FavoriteItem>>
+        get() = _favoriteItems
+
+    // ----------------------- Suche in der Datenbank, "return" das Ergebnis -----------------------
     fun searchCharacters(query: String): LiveData<List<Character>> {
         return database.dragonballDao.searchCharacters("%$query%")
     }
@@ -47,7 +53,26 @@ class Repository(
         return database.dragonballDao.getCharacterByGender(gender)
     }
 
-    // Daten von der API zu laden und in die Datenbank speichern, Fun die asyncron im Hintergrund laufen kann
+    fun getFavorites(): LiveData<List<FavoriteItem>> {
+        return database.dragonballDao.getAllFavorites()
+    }
+
+
+    // ---------------------------- Favoriten Hinzufügen und Entfernen -----------------------------
+    suspend fun addToFavorite(favoriteItem: FavoriteItem) {
+        withContext(Dispatchers.IO) {
+            database.dragonballDao.insertFavorite(favoriteItem)
+        }
+    }
+
+    suspend fun removeFromFavorite(itemFavoriteId: Int, itemFavoriteType: String) {
+        withContext(Dispatchers.IO) {
+            database.dragonballDao.deleteFavorite(itemFavoriteId, itemFavoriteType)
+        }
+    }
+
+
+    // ---------------------- API zu laden und in die Datenbank speichern (aSy) --------------------
     suspend fun getCharacters() {
         withContext(Dispatchers.IO) {
             try {
