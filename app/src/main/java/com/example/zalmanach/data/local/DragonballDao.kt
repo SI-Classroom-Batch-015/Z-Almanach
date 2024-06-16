@@ -51,8 +51,8 @@ interface DragonballDao {
     @Query("DELETE FROM planets_table")
     suspend fun deleteAllPlanets()
 
-    @Query("DELETE FROM favorite_table WHERE itemId = :itemId AND itemType = :itemType")
-    suspend fun deleteFavorite(itemId: Int, itemType: String)
+    @Query("DELETE FROM favorite_table WHERE itemFavoriteId = :itemFavoriteId AND itemFavoriteType = :itemFavoriteType")
+    suspend fun deleteFavorite(itemFavoriteId: Int, itemFavoriteType: String)
 
 
     // ------------------------------------------- Suche -------------------------------------------
