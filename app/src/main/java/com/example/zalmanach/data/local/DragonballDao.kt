@@ -6,40 +6,56 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.data.model.FavoriteItem
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 
 @Dao
 interface DragonballDao {
 
+    // ------------------------------ Einfügen der Daten Liste (R/I) -------------------------------
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCharacters(characters: List<Character>)
-
-    @Query("SELECT * FROM character_table")
-    fun getAllCharacter(): LiveData<List<Character>>
-
-    @Query("DELETE FROM character_table")
-    suspend fun deleteAll()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTransformations(transformations: List<Transformation>)
 
-    @Query("SELECT * FROM transformation_table")
-    fun getAllTransformations(): LiveData<List<Transformation>>
-
-    @Query("DELETE FROM transformation_table")
-    suspend fun deleteAllTransformations()
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPlanets(planets: List<Planet>)
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertFavorite(favoriteItem: FavoriteItem)
+
+
+    // ------------------------------ Abfrage der Daten als LiveData -------------------------------
+    @Query("SELECT * FROM character_table")
+    fun getAllCharacter(): LiveData<List<Character>>
+
+    @Query("SELECT * FROM transformation_table")
+    fun getAllTransformations(): LiveData<List<Transformation>>
 
     @Query("SELECT * FROM planets_table")
     fun getAllPlanets(): LiveData<List<Planet>>
 
+    @Query("SELECT * FROM favorite_table")
+    fun getAllFavorites(): LiveData<List<FavoriteItem>>
+
+
+    // ------------------------------------------ Löschen ------------------------------------------
+    @Query("DELETE FROM character_table")
+    suspend fun deleteAll()
+
+    @Query("DELETE FROM transformation_table")
+    suspend fun deleteAllTransformations()
+
     @Query("DELETE FROM planets_table")
     suspend fun deleteAllPlanets()
 
+    @Query("DELETE FROM favorite_table WHERE itemId = :itemId AND itemType = :itemType")
+    suspend fun deleteFavorite(itemId: Int, itemType: String)
 
+
+    // ------------------------------------------- Suche -------------------------------------------
     @Query("SELECT * FROM character_table WHERE characterName LIKE :query")
     fun searchCharacters(query: String): LiveData<List<Character>>
 
