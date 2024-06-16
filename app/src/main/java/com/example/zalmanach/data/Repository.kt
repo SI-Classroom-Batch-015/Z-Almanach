@@ -36,7 +36,7 @@ class Repository(
     val favoriteItem: LiveData<List<FavoriteItem>>
         get() = _favoriteItems
 
-    // ----------------------- Suche in der Datenbank, "return" das Ergebnis -----------------------
+    // ---------------------- Suche in der Datenbank, "return" das Ergebnis ------------------------
     fun searchCharacters(query: String): LiveData<List<Character>> {
         return database.dragonballDao.searchCharacters("%$query%")
     }
