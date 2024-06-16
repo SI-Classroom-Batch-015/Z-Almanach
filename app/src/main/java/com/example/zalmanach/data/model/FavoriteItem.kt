@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class FavoriteItem(
     @PrimaryKey(autoGenerate = true)
 
-    val id: Int = 0,
+    val itemId: Int = 0,
     val itemType: String,
     val itemName: String,
     val itemImage: String,
