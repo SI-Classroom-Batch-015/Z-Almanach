@@ -8,7 +8,7 @@ data class Favorite(
     @PrimaryKey(autoGenerate = true)
     val favoriteId: Int = 0,
 
-    val favoriteType: String,
+    val favoriteType: ItemType,
 
     val favoriteName: String,
 
