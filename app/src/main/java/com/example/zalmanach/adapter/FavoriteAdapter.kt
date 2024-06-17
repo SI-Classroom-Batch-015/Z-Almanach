@@ -3,6 +3,7 @@ package com.example.zalmanach.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
@@ -51,6 +52,18 @@ class FavoriteAdapter(
         // Klicklistener zum Entfernen eines Favoriten
         holder.binding.root.setOnClickListener {
             onItemSelected(favorite)
+        }
+    }
+
+
+    // Erspart viel Boiler-Plate, Vergleicht zwei Elemente in einer Recyclerview
+    class DiffCallback : DiffUtil.ItemCallback<Favorite>() {
+        override fun areItemsTheSame(oldItem: Favorite, newItem: Favorite): Boolean {
+            return oldItem.favoriteId == newItem.favoriteId && oldItem.favoriteType == newItem.favoriteType
+        }
+
+        override fun areContentsTheSame(oldItem: Favorite, newItem: Favorite): Boolean {
+            return oldItem == newItem
         }
     }
 }
