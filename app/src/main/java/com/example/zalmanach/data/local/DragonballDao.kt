@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Favorite
+import com.example.zalmanach.data.model.ItemType
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 
@@ -24,8 +25,7 @@ interface DragonballDao {
     suspend fun insertPlanets(planets: List<Planet>)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertFavorite(favoriteItem: Favorite)
-
+    suspend fun insertFavorite(favorite: Favorite)
 
     // ------------------------------ Abfrage der Daten als LiveData -------------------------------
     @Query("SELECT * FROM character_table")
@@ -73,5 +73,8 @@ interface DragonballDao {
 
     @Query("SELECT * FROM character_table WHERE gender = :gender")
     fun getCharacterByGender(gender: String): LiveData<List<Character>>
+
+    @Query("SELECT * FROM favorite_table WHERE favoriteImage = :favoriteImage AND favoriteName = :favoriteName LIMIT 1")
+    suspend fun findFavoriteByNameAndImage(favoriteImage: String, favoriteName: String): Favorite?
 
 }
