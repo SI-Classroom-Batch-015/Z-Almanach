@@ -10,6 +10,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.zalmanach.data.Repository
 import com.example.zalmanach.data.local.DragonballDatabase
 import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.data.model.Favorite
+import com.example.zalmanach.data.model.ItemType
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 import com.example.zalmanach.data.remote.DbzApi
@@ -17,29 +19,22 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    //  Instanz der lokalen Datenbank
+    // --- Instanz der lokalen Datenbank und Repo, das die Datenbank- und API-Zugriffe verwaltet ---
     private val database = DragonballDatabase.getDatabase(application)
-
-    // Instanz vom Repo, das die Datenbank- und API-Zugriffe verwaltet
     private val repository: Repository = Repository(DbzApi, database)
 
-    // LiveData erstellt und mit LD aus dem Repo verbunden
+
+    // -------------------- LiveData erstellt und mit LD aus dem Repo verbunden --------------------
     val characters: LiveData<List<Character>> = repository.characters
     val transformations: LiveData<List<Transformation>> = repository.transformations
     val planets: LiveData<List<Planet>> = repository.planets
+    val favorits: LiveData<List<Favorite>> = repository.favorits
 
-    // --------------- MutableLiveData`s ---------------------------------
+
+    // ------------------------------------- MutableLiveData`s -------------------------------------
     private val _startAnimation = MutableLiveData<Boolean>()
     val startAnimation: LiveData<Boolean>
         get() = _startAnimation
-
-    private val _favoriteCharacterImage = MutableLiveData<String>()
-    val favoriteCharacterImage: LiveData<String>
-        get() = _favoriteCharacterImage
-
-    private val _favoriteCharacterName = MutableLiveData<String>()
-    val favoriteCharacterName: LiveData<String>
-        get() = _favoriteCharacterName
 
     private val _playCharacterImage = MutableLiveData<String>()
     val playCharacterImage: LiveData<String>
@@ -53,24 +48,29 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val villains: LiveData<List<Any>>
         get() = _villains
 
-    // --------------- PlayFragment ----------------------------------------
-    fun setPlayCharacter(characterImage: String, characterName: String) {
-        _playCharacterImage.value = characterImage
-        _playCharacterName.value = characterName
+    private val _favoriteElements = MediatorLiveData<List<Favorite>>()
+    val favoriteElements: LiveData<List<Favorite>>
+        get() = _favoriteElements
+
+
+    // ------------------------------ Init-Block Start Konfiguration -------------------------------
+    init {  // Transformations LiveData als Referenz fürs Hinzufügen der Daten
+        _villains.addSource(transformations) { transformList ->
+            val combinedList = mutableListOf<Any>()                // Neue leere Liste
+            _villains.value?.let { combinedList.addAll(it) }       // Falls Wert da, zur Liste
+            transformList?.let { combinedList.addAll(it) }         // Falls nicht null, zur Liste
+            _villains.value = combinedList                         // Kombi. Liste als neuen Wert der MediatorLD setzen
+        }
     }
 
-    // --------------- FavoriteFragment ----------------------------------------
-    fun setFavoriteCharacter(characterImage: String, characterName: String) {
-        _favoriteCharacterImage.value = characterImage
-        _favoriteCharacterName.value = characterName
-    }
 
-    // --------------- HomeFragment - Triggern der Animation ---------------
+    // --------------------------- HomeFragment - Triggern der Animation ---------------------------
     fun triggerAnimation() {
         _startAnimation.value = true // Startet die Ani
     }
 
-    // --------------- DbzFragment - Daten dem Repo Laden ------------------
+
+    // ---------------------------- DbzFragment - Daten dem Repo Laden -----------------------------
     fun loadCharacters() {
         viewModelScope.launch {
             try {
@@ -101,7 +101,30 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    // --------------- SearchFragment --------------------------------------
+
+    // ------------------------------------- FavoriteFragment --------------------------------------
+    fun addToFavorite(favorite: Favorite) {
+        viewModelScope.launch {
+            try {
+                repository.addToFavorite(favorite)
+            } catch (e: Exception) {
+                Log.e("MainViewModel", "Failed to add to favorite: ${e.message}")
+            }
+        }
+    }
+
+    fun removeFromFavorite(itemFavoriteId: Int, itemFavoriteType: String) {
+        viewModelScope.launch {
+            try {
+                repository.removeFromFavorite(itemFavoriteId, itemFavoriteType)
+            } catch (e: Exception) {
+                Log.e("MainViewModel", "Failed to remove from favorite: ${e.message}")
+            }
+        }
+    }
+
+
+    // --------------------------------------- SearchFragment --------------------------------------
     private fun searchByCharacters(query: String): LiveData<List<Character>> {
         return repository.searchCharacters(query)
     }
@@ -114,12 +137,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         return repository.searchPlanets(query)
     }
 
-    // "searchByAll" wird vom Benuzter im Fragment ausgelöst. MediatorLiveData, kann mehrere andere LiveData-Quellen überwachen
+    // --Im Fragment ausgelöst. MediatorLiveData, kann mehrere andere LiveData-Quellen überwachen --
     fun searchByAll(query: String): LiveData<List<Any>> {
         val results = MediatorLiveData<List<Any>>()
         val combinedResults = mutableListOf<Any>()
 
-        // Charaktere suchen; mit addSource die LiveData-Quelle; und zur kombinierten Liste hinzufügen
+        // Suchen; mit addSource die LiveData-Quelle; und zur kombinierten Liste hinzufügen
         val characters = searchByCharacters(query)
         results.addSource(characters) { charList ->
             combinedResults.clear()
@@ -147,16 +170,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         return results
     }
 
-    // --------------- PlayFragment ---------------------------------------
 
-    // Transformations LiveData als Referenz fürs Hinzufügen der Daten
-    init {
-        _villains.addSource(transformations) { transformList ->
-            val combinedList = mutableListOf<Any>()                // Neue leere Liste
-            _villains.value?.let { combinedList.addAll(it) }       // Falls Wert da, zur Liste
-            transformList?.let { combinedList.addAll(it) }         // Falls nicht null, zur Liste
-            _villains.value = combinedList                         // Kombi. Liste als neuen Wert der MediatorLD setzen
-        }
+    // --------------------------------------- PlayFragment ----------------------------------------
+    fun setPlayCharacter(characterImage: String, characterName: String) {
+        _playCharacterImage.value = characterImage
+        _playCharacterName.value = characterName
     }
 
     // Lädt die Methode das Gegner nach "gender" gesucht und gefiltert werden
