@@ -5,10 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.zalmanach.data.model.Character
+import com.example.zalmanach.data.model.Favorite
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 
-@Database(entities = [Character::class, Transformation::class, Planet::class], version = 4)
+@Database(entities = [Character::class, Transformation::class, Planet::class, Favorite::class], version = 6)
 abstract class DragonballDatabase : RoomDatabase() {
 
     // DAo Deklarieren
