@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -12,6 +13,8 @@ import coil.load
 import com.example.zalmanach.MainActivity
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.R
+import com.example.zalmanach.data.model.Favorite
+import com.example.zalmanach.data.model.ItemType
 import com.example.zalmanach.databinding.FragmentDbzDetailBinding
 
 class DbzDetailFragment : Fragment() {
@@ -112,13 +115,33 @@ class DbzDetailFragment : Fragment() {
                 }
             }
         }
-        // Setzt Favoriten (Bild und Namen) im FavoriteFragment
-        binding.ivFavoriteDefault.setOnClickListener {
-            val favoriteImage = args.imageCharacter
-            val favoriteName = args.nameCharacter
-            viewModel.setFavoriteCharacter(favoriteImage, favoriteName)
-            binding.ivFavoriteSelected.visibility = View.VISIBLE
+        // -- Entsprechende Favorite-Instanz erstellt und mittels addToFavorite-Methode übergeben --
+        binding.ivSelectedFavorite.setOnClickListener {
+            val favorite = when {
+                characterName.isNotEmpty() -> Favorite(
+                    favoriteType = ItemType.CHARACTER,
+                    favoriteName = characterName,
+                    favoriteImage = characterImage,
+                    favoriteId = 0,
+                    )
+                transformationName.isNotEmpty() -> Favorite(
+                    favoriteType = ItemType.TRANSFORMATION,
+                    favoriteName = transformationName,
+                    favoriteImage = transformationImage,
+                    favoriteId = 0,
+                )
+                planetName.isNotEmpty() -> Favorite(
+                    favoriteType = ItemType.PLANET,
+                    favoriteName = planetName,
+                    favoriteImage = planetImage,
+                    favoriteId = 0,
+                )
+                else -> null
+            }
+            favorite?.let { viewModel.addToFavorite(it) }
+            binding.ivSelectedDefaultFavorite.visibility = View.VISIBLE
         }
+
 
         // Setzt Spiel-Character (Bild und Namen) im PlayFragment
         binding.ivVsDetailToPlay.setOnClickListener {

@@ -297,7 +297,7 @@
     </ScrollView>
 
     <ImageView
-        android:id="@+id/iv_favorite_default"
+        android:id="@+id/iv_selectedFavorite"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="80dp"
@@ -309,7 +309,7 @@
         app:layout_constraintTop_toTopOf="@+id/cv_dbzDetail" />
 
     <ImageView
-        android:id="@+id/iv_favorite_selected"
+        android:id="@+id/iv_selectedDefaultFavorite"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginStart="80dp"
@@ -328,7 +328,7 @@
         android:contentDescription="@string/held_w_hlen"
         android:scaleType="centerCrop"
         android:src="@drawable/vs"
-        app:layout_constraintEnd_toEndOf="@+id/iv_favorite_default"
-        app:layout_constraintStart_toStartOf="@+id/iv_favorite_default"
-        app:layout_constraintTop_toBottomOf="@+id/iv_favorite_default" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_selectedFavorite"
+        app:layout_constraintStart_toStartOf="@+id/iv_selectedFavorite"
+        app:layout_constraintTop_toBottomOf="@+id/iv_selectedFavorite" />
 </androidx.constraintlayout.widget.ConstraintLayout>
