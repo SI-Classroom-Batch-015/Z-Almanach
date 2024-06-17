@@ -6,7 +6,7 @@ import com.example.zalmanach.data.local.DragonballDatabase
 import com.example.zalmanach.data.remote.DbzApi
 import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Characters
-import com.example.zalmanach.data.model.FavoriteItem
+import com.example.zalmanach.data.model.Favorite
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Planets
 import com.example.zalmanach.data.model.Transformation
@@ -32,9 +32,9 @@ class Repository(
     val planets: LiveData<List<Planet>>
         get() = _planets
 
-    private val _favoriteItems: LiveData<List<FavoriteItem>> = database.dragonballDao.getAllFavorites()
-    val favoriteItem: LiveData<List<FavoriteItem>>
-        get() = _favoriteItems
+    private val _favorits: LiveData<List<Favorite>> = database.dragonballDao.getAllFavorites()
+    val favorits: LiveData<List<Favorite>>
+        get() = _favorits
 
     // ---------------------- Suche in der Datenbank, "return" das Ergebnis ------------------------
     fun searchCharacters(query: String): LiveData<List<Character>> {
@@ -53,21 +53,21 @@ class Repository(
         return database.dragonballDao.getCharacterByGender(gender)
     }
 
-    fun getFavorites(): LiveData<List<FavoriteItem>> {
+    fun getFavorites(): LiveData<List<Favorite>> {
         return database.dragonballDao.getAllFavorites()
     }
 
 
     // ---------------------------- Favoriten Hinzufügen und Entfernen -----------------------------
-    suspend fun addToFavorite(favoriteItem: FavoriteItem) {
+    suspend fun addToFavorite(favorite: Favorite) {
         withContext(Dispatchers.IO) {
-            database.dragonballDao.insertFavorite(favoriteItem)
+            database.dragonballDao.insertFavorite(favorite)
         }
     }
 
-    suspend fun removeFromFavorite(itemFavoriteId: Int, itemFavoriteType: String) {
+    suspend fun removeFromFavorite(favoriteId: Int, favoriteType: String) {
         withContext(Dispatchers.IO) {
-            database.dragonballDao.deleteFavorite(itemFavoriteId, itemFavoriteType)
+            database.dragonballDao.deleteFavorite(favoriteId, favoriteType)
         }
     }
 
