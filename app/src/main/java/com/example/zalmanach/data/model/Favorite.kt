@@ -4,11 +4,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "favorite_table")
-data class FavoriteItem(
+data class Favorite(
     @PrimaryKey(autoGenerate = true)
+    val favoriteId: Int = 0,
 
-    val itemFavoriteId: Int = 0,
-    val itemFavoriteType: String,
-    val itemFavoriteName: String,
-    val itemFavoriteImage: String,
+    val favoriteType: String,
+
+    val favoriteName: String,
+
+    val favoriteImage: String,
 )
