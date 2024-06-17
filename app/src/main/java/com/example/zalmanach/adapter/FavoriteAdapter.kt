@@ -7,23 +7,20 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.example.zalmanach.R
-import com.example.zalmanach.data.model.Character
-import com.example.zalmanach.data.model.FavoriteItem
-import com.example.zalmanach.data.model.Planet
-import com.example.zalmanach.data.model.Transformation
+import com.example.zalmanach.data.model.Favorite
 import com.example.zalmanach.databinding.ListItemFavoriteBinding
 
 class FavoriteAdapter(
-    private val onItemSelected: (FavoriteItem) -> Unit
+    private val onItemSelected: (Favorite) -> Unit
 ) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
 
-    private var dataset: List<FavoriteItem> = emptyList()
+    private var dataset: List<Favorite> = emptyList()
 
     inner class FavoriteViewHolder(val binding: ListItemFavoriteBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitList(list: List<FavoriteItem>) {
+    fun submitList(list: List<Favorite>) {
         dataset = list
         notifyDataSetChanged()
     }
@@ -45,11 +42,11 @@ class FavoriteAdapter(
         val favorite = dataset[position]
 
         // Abhängig vom Typ, Bild und Namen setzen
-        holder.binding.ivFavorite.load(favorite.itemFavoriteImage) {
+        holder.binding.ivFavorite.load(favorite.favoriteImage) {
             error(R.drawable.error404)
             transformations(CircleCropTransformation())
         }
-        holder.binding.tvFavoriteName.text = favorite.itemFavoriteName
+        holder.binding.tvFavoriteName.text = favorite.favoriteName
 
         // Klicklistener zum Entfernen eines Favoriten
         holder.binding.root.setOnClickListener {
