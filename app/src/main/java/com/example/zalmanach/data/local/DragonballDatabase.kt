@@ -8,7 +8,7 @@ import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 
-@Database(entities = [Character::class, Transformation::class, Planet::class], version = 3)
+@Database(entities = [Character::class, Transformation::class, Planet::class], version = 4)
 abstract class DragonballDatabase : RoomDatabase() {
 
     // DAo Deklarieren

@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.zalmanach.data.model.Character
-import com.example.zalmanach.data.model.FavoriteItem
+import com.example.zalmanach.data.model.Favorite
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 
@@ -24,7 +24,7 @@ interface DragonballDao {
     suspend fun insertPlanets(planets: List<Planet>)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertFavorite(favoriteItem: FavoriteItem)
+    suspend fun insertFavorite(favoriteItem: Favorite)
 
 
     // ------------------------------ Abfrage der Daten als LiveData -------------------------------
@@ -38,7 +38,7 @@ interface DragonballDao {
     fun getAllPlanets(): LiveData<List<Planet>>
 
     @Query("SELECT * FROM favorite_table")
-    fun getAllFavorites(): LiveData<List<FavoriteItem>>
+    fun getAllFavorites(): LiveData<List<Favorite>>
 
 
     // ------------------------------------------ Löschen ------------------------------------------
@@ -51,7 +51,7 @@ interface DragonballDao {
     @Query("DELETE FROM planets_table")
     suspend fun deleteAllPlanets()
 
-    @Query("DELETE FROM favorite_table WHERE itemFavoriteId = :itemFavoriteId AND itemFavoriteType = :itemFavoriteType")
+    @Query("DELETE FROM favorite_table WHERE favoriteId = :itemFavoriteId")
     suspend fun deleteFavorite(itemFavoriteId: Int, itemFavoriteType: String)
 
 
