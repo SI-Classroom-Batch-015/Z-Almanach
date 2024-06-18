@@ -120,9 +120,10 @@ class DbzDetailFragment : Fragment() {
         }
 
 
-        // --------------------------------- FavoriteFragment bezogen -----------------------------------
+        // ------------------------------- FavoriteFragment bezogen --------------------------------
         // -- Entsprechende Favorite-Instanz erstellt und mittels addToFavorite-Methode übergeben --
         binding.ivSelectedFavorite.setOnClickListener {
+            Toast.makeText(requireContext(), "Favorisiert", Toast.LENGTH_SHORT).show()
             val favorite = when {
                 characterName.isNotEmpty() -> Favorite(
                     favoriteType = ItemType.CHARACTER,
