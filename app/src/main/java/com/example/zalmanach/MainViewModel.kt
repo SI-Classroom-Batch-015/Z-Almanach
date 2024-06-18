@@ -137,7 +137,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         return repository.searchPlanets(query)
     }
 
-    // --Im Fragment ausgelöst. MediatorLiveData, kann mehrere andere LiveData-Quellen überwachen --
+    // ---------------------------- Favorite Fragment, MediatorLiveData ----------------------------
     fun searchByAll(query: String): LiveData<List<Any>> {
         val results = MediatorLiveData<List<Any>>()
         val combinedResults = mutableListOf<Any>()
