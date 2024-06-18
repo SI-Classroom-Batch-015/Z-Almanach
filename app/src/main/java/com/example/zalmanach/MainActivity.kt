@@ -27,6 +27,15 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         binding.bottomNavigationView.setupWithNavController(navHost.navController)
 
+        navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.playFragment -> binding.bottomNavigationView.visibility = View.GONE
+                R.id.dbzDetailFragment -> binding.bottomNavigationView.visibility = View.GONE
+
+                else -> binding.bottomNavigationView.visibility = View.VISIBLE
+            }
+        }
+
         onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 binding.fragmentContainerView.findNavController().navigateUp()

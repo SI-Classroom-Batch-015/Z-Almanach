@@ -158,15 +158,5 @@ class DbzDetailFragment : Fragment() {
 
             findNavController().navigate(R.id.action_dbzDetailFragment_to_playFragment)
         }
-
-        // ------------------------ Bottom Nav ausblenden, Fun in der Main -------------------------
-        (activity as MainActivity).showBottomNav(false)
-    }
-
-
-    // -------------------------------- Bottom Nav wieder einblenden -------------------------------
-    override fun onDestroyView() {
-        super.onDestroyView()
-        (activity as MainActivity).showBottomNav(true)
     }
 }

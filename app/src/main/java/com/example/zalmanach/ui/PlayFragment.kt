@@ -49,10 +49,4 @@ class PlayFragment : Fragment() {
             villainsAdapter.submitList(villains)
         }
     }
-
-    // Bottom Nav wieder einblenden
-    override fun onDestroyView() {
-        super.onDestroyView()
-        (activity as MainActivity).showBottomNav(true)
-    }
 }
