@@ -32,9 +32,9 @@ class Repository(
     val planets: LiveData<List<Planet>>
         get() = _planets
 
-    private val _favorits: LiveData<List<Favorite>> = database.dragonballDao.getAllFavorites()
-    val favorits: LiveData<List<Favorite>>
-        get() = _favorits
+    private val _favorite: LiveData<List<Favorite>> = database.dragonballDao.getAllFavorites()
+    val favorite: LiveData<List<Favorite>>
+        get() = _favorite
 
     // ---------------------- Suche in der Datenbank, "return" das Ergebnis ------------------------
     fun searchCharacters(query: String): LiveData<List<Character>> {

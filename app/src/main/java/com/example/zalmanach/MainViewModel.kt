@@ -28,7 +28,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val characters: LiveData<List<Character>> = repository.characters
     val transformations: LiveData<List<Transformation>> = repository.transformations
     val planets: LiveData<List<Planet>> = repository.planets
-    val favorits: LiveData<List<Favorite>> = repository.favorits
+    val favorite: LiveData<List<Favorite>> = repository.favorite
 
 
     // ------------------------------------- MutableLiveData`s -------------------------------------
@@ -44,13 +44,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val playCharacterName: LiveData<String>
         get() = _playCharacterName
 
+
+    // ------------------------------ MediatorLiveData`s -------------------------------
     private val _villains = MediatorLiveData<List<Any>>()
     val villains: LiveData<List<Any>>
         get() = _villains
 
-    private val _favoriteElements = MediatorLiveData<List<Favorite>>()
+    private val _favoriteMediatorElements = MediatorLiveData<List<Favorite>>()
     val favoriteElements: LiveData<List<Favorite>>
-        get() = _favoriteElements
+        get() = _favoriteMediatorElements
 
 
     // ------------------------------ Init-Block Start Konfiguration -------------------------------
