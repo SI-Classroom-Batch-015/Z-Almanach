@@ -300,7 +300,7 @@
         android:id="@+id/iv_selectedFavorite"
         android:layout_width="54dp"
         android:layout_height="54dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/standart_favorit_element"
         android:src="@drawable/baseline_favorite_default"
@@ -312,11 +312,11 @@
         android:id="@+id/iv_selectedDefaultFavorite"
         android:layout_width="54dp"
         android:layout_height="54dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="124dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/standart_favorit_element"
         android:src="@drawable/baseline_favorite_selected"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/cv_dbzDetail"
         app:layout_constraintTop_toTopOf="@+id/cv_dbzDetail" />
 
