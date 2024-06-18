@@ -35,7 +35,8 @@ class DbzDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Character Daten
+        // ----------------------------- Daten Initialisieren --------------------------------------
+        // Character
         val characterImage = args.imageCharacter
         val characterName = args.nameCharacter
         val ki = args.ki
@@ -54,7 +55,9 @@ class DbzDetailFragment : Fragment() {
         val isDestroyed = args.isDestroyed
         val planetSpainDescription = args.descriptionPlanetSpain
 
-        // Charactere: Wenn vorhanden, werden Daten angezeigt.
+
+        // --------------------------------- DBZFragment bezogen -----------------------------------
+        // Charactere: Wenn vorhanden, werden Daten angezeigt
         if (characterName.isNotEmpty()) {
             binding.apply {
                 ivDetailImage.load(characterImage)
@@ -115,6 +118,9 @@ class DbzDetailFragment : Fragment() {
                 }
             }
         }
+
+
+        // --------------------------------- FavoriteFragment bezogen -----------------------------------
         // -- Entsprechende Favorite-Instanz erstellt und mittels addToFavorite-Methode übergeben --
         binding.ivSelectedFavorite.setOnClickListener {
             val favorite = when {
@@ -143,6 +149,7 @@ class DbzDetailFragment : Fragment() {
         }
 
 
+        // --------------------------------- PlayFragment bezogen -----------------------------------
         // Setzt Spiel-Character (Bild und Namen) im PlayFragment
         binding.ivVsDetailToPlay.setOnClickListener {
             val selectedPlayerImage = args.imageCharacter
@@ -152,11 +159,12 @@ class DbzDetailFragment : Fragment() {
             findNavController().navigate(R.id.action_dbzDetailFragment_to_playFragment)
         }
 
-        // Bottom Nav ausblenden, Fun in der Main
+        // ------------------------ Bottom Nav ausblenden, Fun in der Main -------------------------
         (activity as MainActivity).showBottomNav(false)
     }
 
-    // Bottom Nav wieder einblenden
+
+    // -------------------------------- Bottom Nav wieder einblenden -------------------------------
     override fun onDestroyView() {
         super.onDestroyView()
         (activity as MainActivity).showBottomNav(true)
