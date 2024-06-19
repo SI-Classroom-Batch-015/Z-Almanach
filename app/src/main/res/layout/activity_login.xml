@@ -56,7 +56,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/passwort"
             android:backgroundTint="@color/transparent"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -75,7 +76,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/transparent"
             android:hint="@string/passwort_wiederholen"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

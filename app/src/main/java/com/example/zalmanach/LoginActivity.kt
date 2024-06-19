@@ -11,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.zalmanach.databinding.ActivityLoginBinding
-import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
 
+    // ------------------------ Variablen Deklarieren, später Initialisiert ------------------------
     private lateinit var binding: ActivityLoginBinding
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        // SharedPreferences initialisieren
+        // --------------------------- SharedPreferences initialisieren ----------------------------
         sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
 
         // Prüfen, ob der Benutzer bereits eingeloggt ist und Start der Main, ansonsten -false
@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
+        // ---------------- Die Eingaben des Benutzers in einen String Konvertieren ----------------
         binding.btnLogin.setOnClickListener {
             val email = binding.tieUserEmail.text.toString()
             val password = binding.tiePasswort.text.toString()
@@ -57,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    // Überprüft die Anmeldeinformationen
+    // ---------------------------- Überprüft die Anmeldeinformationen -----------------------------
     private fun isValidateEmailAndPassword(email: String, password: String, passwordRepeat: String): Boolean {
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
