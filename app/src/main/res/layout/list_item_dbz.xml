@@ -7,7 +7,8 @@
     app:cardCornerRadius="8dp"
     app:strokeColor="@color/white"
     app:strokeWidth="1dp"
-    android:backgroundTint="@color/carbon_black">
+    android:backgroundTint="@color/carbon_black"
+    android:alpha="0.78">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"

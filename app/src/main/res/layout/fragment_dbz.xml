@@ -14,13 +14,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/carbon_black"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/white"
-        app:strokeWidth="1dp">
+        app:cardCornerRadius="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:alpha="0.78">
 
         <TextView
             android:id="@+id/tv_choiseCharacter"
@@ -40,13 +44,52 @@
         android:id="@+id/tv_character"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:paddingStart="28dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="2dp"
+        android:paddingBottom="2dp"
         android:text="@string/charaktere"
-        android:textColor="@color/carbon_black"
+        android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_dbz_fragment_character"
-        app:layout_constraintEnd_toEndOf="@+id/rv_dbz_fragment_character"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_transformations"
+        app:layout_constraintEnd_toStartOf="@+id/tv_transformations"
+        app:layout_constraintTop_toTopOf="@+id/tv_transformations" />
+
+    <TextView
+        android:id="@+id/tv_transformations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingStart="12dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="2dp"
+        android:text="@string/transformation"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/cv_dbz_choiseCharacter"
+        app:layout_constraintStart_toStartOf="@+id/cv_dbz_choiseCharacter"
+        app:layout_constraintTop_toBottomOf="@+id/cv_dbz_choiseCharacter" />
+
+    <TextView
+        android:id="@+id/tv_planets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="12dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="2dp"
+        android:text="@string/planets"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_transformations"
+        app:layout_constraintStart_toEndOf="@+id/tv_transformations"
+        app:layout_constraintTop_toTopOf="@+id/tv_transformations"
+        android:layout_marginStart="24dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dbz_fragment_character"
@@ -60,18 +103,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cv_dbz_choiseCharacter"
         tools:listitem="@layout/list_item_dbz" />
 
-    <TextView
-        android:id="@+id/tv_transformations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/transformation"
-        android:textColor="@color/carbon_black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_dbz_fragment_transformations"
-        app:layout_constraintEnd_toEndOf="@+id/rv_dbz_fragment_transformations"
-        app:layout_constraintStart_toStartOf="@+id/rv_dbz_fragment_transformations" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dbz_fragment_transformations"
         android:layout_width="wrap_content"
@@ -84,18 +115,6 @@
         app:layout_constraintStart_toStartOf="@+id/cv_dbz_choiseCharacter"
         app:layout_constraintTop_toBottomOf="@+id/cv_dbz_choiseCharacter"
         tools:listitem="@layout/list_item_dbz" />
-
-    <TextView
-        android:id="@+id/tv_planets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/planets"
-        android:textColor="@color/carbon_black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_dbz_fragment_planets"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/rv_dbz_fragment_planets" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dbz_fragment_planets"
