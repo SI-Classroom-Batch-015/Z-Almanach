@@ -11,7 +11,7 @@ import com.example.zalmanach.data.model.Favorite
 import com.example.zalmanach.databinding.ListItemFavoriteBinding
 
 class FavoriteAdapter(
-    private val onItemSelected: (Favorite) -> Unit
+    private val onItemSelected: (Favorite) -> Unit, // Zum Auswählen
 ) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
 
     private var dataset: List<Favorite> = emptyList()
@@ -56,15 +56,3 @@ class FavoriteAdapter(
         }
     }
 }
-
-//    // Erspart viel Boiler-Plate, Vergleicht zwei Elemente in einer Recyclerview
-//    class DiffCallback : DiffUtil.ItemCallback<Favorite>() {
-//        override fun areItemsTheSame(oldItem: Favorite, newItem: Favorite): Boolean {
-//            return oldItem.favoriteId == newItem.favoriteId && oldItem.favoriteType == newItem.favoriteType
-//        }
-//
-//        override fun areContentsTheSame(oldItem: Favorite, newItem: Favorite): Boolean {
-//            return oldItem == newItem
-//        }
-//    }
-//}

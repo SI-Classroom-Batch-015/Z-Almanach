@@ -45,7 +45,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         get() = _playCharacterName
 
 
-    // ------------------------------ MediatorLiveData`s -------------------------------
+    // ------------------------------------ MediatorLiveData`s -------------------------------------
     private val _villains = MediatorLiveData<List<Any>>()
     val villains: LiveData<List<Any>>
         get() = _villains

@@ -73,8 +73,4 @@ interface DragonballDao {
 
     @Query("SELECT * FROM character_table WHERE gender = :gender")
     fun getCharacterByGender(gender: String): LiveData<List<Character>>
-
-    @Query("SELECT * FROM favorite_table WHERE favoriteImage = :favoriteImage AND favoriteName = :favoriteName LIMIT 1")
-    suspend fun findFavoriteByNameAndImage(favoriteImage: String, favoriteName: String): Favorite?
-
 }
