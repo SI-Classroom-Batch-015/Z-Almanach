@@ -45,23 +45,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         get() = _playCharacterName
 
 
-    // ------------------------------------ MediatorLiveData`s -------------------------------------
+    // ------------------------------------ MediatorLiveData -------------------------------------
     private val _villains = MediatorLiveData<List<Any>>()
     val villains: LiveData<List<Any>>
         get() = _villains
 
-    private val _favoriteMediatorElements = MediatorLiveData<List<Favorite>>()
-    val favoriteElements: LiveData<List<Favorite>>
-        get() = _favoriteMediatorElements
-
 
     // ------------------------------ Init-Block Start Konfiguration -------------------------------
-    init {  // Transformations LiveData als Referenz fürs Hinzufügen der Daten
+    init {
+        // Transformations LiveData als Referenz fürs Hinzufügen der Daten
         _villains.addSource(transformations) { transformList ->
             val combinedList = mutableListOf<Any>()                // Neue leere Liste
             _villains.value?.let { combinedList.addAll(it) }       // Falls Wert da, zur Liste
             transformList?.let { combinedList.addAll(it) }         // Falls nicht null, zur Liste
-            _villains.value = combinedList                         // Kombi. Liste als neuen Wert der MediatorLD setzen
+            _villains.value = combinedList                         // Liste als neuen Wert setzen
         }
     }
 
@@ -72,7 +69,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    // ---------------------------- DbzFragment - Daten dem Repo Laden -----------------------------
+    // -------------------------- DbzFragment - Daten mittels Repo Laden ---------------------------
     fun loadCharacters() {
         viewModelScope.launch {
             try {
@@ -115,10 +112,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun removeFromFavorite(itemFavoriteId: Int, itemFavoriteType: String) {
+    fun removeFromFavorite(favoriteId: Int) {
         viewModelScope.launch {
             try {
-                repository.removeFromFavorite(itemFavoriteId, itemFavoriteType)
+                repository.removeFromFavorite(favoriteId)
             } catch (e: Exception) {
                 Log.e("MainViewModel", "Failed to remove from favorite: ${e.message}")
             }
@@ -179,7 +176,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _playCharacterName.value = characterName
     }
 
-    // Lädt die Methode das Gegner nach "gender" gesucht und gefiltert werden
+    // Lädt das Gegner nach "gender" gesucht und gefiltert werden
     fun getCombinedVillains(gender: String) {
         val characterByGender = repository.getCharactersByGender(gender)
         _villains.addSource(characterByGender) { charList ->
