@@ -26,4 +26,6 @@
     <color name="gold">#FFD700</color>
     <color name="carbon_black">#FF333333</color>
     <color name="transparent">#00000000</color>
+    <color name="cardview">#FF4F5B6C</color>
+
 </resources>
