@@ -19,14 +19,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Android Studio SHADOW-BUG MaterialBottomBar aufgelöst
-//        binding.bottomNavigationView.background = null
-
         // Verknüpft die Bottom-Navigation-Bar mit dem Navigation Controller des NavHost-Fragments
         val navHost =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         binding.bottomNavigationView.setupWithNavController(navHost.navController)
 
+        // BottomNavigationView ausblenden
         navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.playFragment -> binding.bottomNavigationView.visibility = View.GONE
@@ -36,15 +34,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // System Callback
         onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 binding.fragmentContainerView.findNavController().navigateUp()
             }
         })
-    }
-
-    // Wegen Wiederverwendbarkeit, hier Implementiert und rufe sie in benötigten Fragmenten auf
-    fun showBottomNav(show: Boolean) {
-        binding.bottomNavigationView.visibility = if (show) View.VISIBLE else View.GONE
     }
 }
