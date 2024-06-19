@@ -28,7 +28,7 @@
             android:contentDescription="@string/das_ist_ein_z"
             android:src="@drawable/baseline_electric_bolt_24"
             android:textSize="32sp"
-            android:background="@drawable/btn_stroke"/>
+            android:background="@drawable/stroke"/>
 
         <TextView
             android:id="@+id/tv_almanach"
@@ -38,7 +38,7 @@
             android:text="@string/lmanach"
             android:textColor="@color/white"
             android:textSize="28sp"
-            android:background="@drawable/btn_stroke"
+            android:background="@drawable/stroke"
             android:padding="8dp"/>
     </LinearLayout>
 

@@ -5,6 +5,6 @@
     <!-- Wenn der Button gehovert wird (z.B. mit einer Maus oder einem Stylus) -->
     <item android:drawable="@color/white" android:state_hovered="true" />
     <!-- Standardhintergrund -->
-    <item android:drawable="@drawable/btn_stroke" />
+    <item android:drawable="@drawable/stroke" />
 </selector>
 
