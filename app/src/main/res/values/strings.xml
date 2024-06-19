@@ -26,7 +26,7 @@
     <string name="das_ist_ein_z">Das ist ein Z</string>
     <string name="home_intro">Für Jung und Alt für jeden Dragonball Fan was dabei. Hier findest du iene Sammlung deiner Lieblingscharacteren und viellerlei anderer Interessanten und Lustigen Informationen und Wissenswertes.  Viel Spaß dein Team vom Z-Almanach!</string>
     <string name="erkunde_die_dbz_welt">Erkunde die DBZ Welt</string>
-    <string name="features">Feature- Bereiche</string>
+    <string name="features"><u>Feature- Bereiche:</u></string>
 
     <string name="die_detailansicht_des_ausgew_hlten_charakters">Die Detailansicht des ausgewählten Charakters</string>
     <string name="description">Description</string>
