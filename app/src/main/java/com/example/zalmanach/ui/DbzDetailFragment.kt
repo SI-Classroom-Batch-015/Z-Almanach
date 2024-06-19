@@ -146,7 +146,6 @@ class DbzDetailFragment : Fragment() {
                 else -> null
             }
             favorite?.let { viewModel.addToFavorite(it) }
-            binding.ivSelectedDefaultFavorite.visibility = View.VISIBLE
         }
 
 
