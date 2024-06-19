@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Wenn der Button betätigt wird -->
-    <item android:drawable="@color/maroon" android:state_pressed="true" />
+    <item android:drawable="@color/carbon_black" android:state_pressed="true" />
     <!-- Wenn der Button gehovert wird (z.B. mit einer Maus oder einem Stylus) -->
     <item android:drawable="@color/white" android:state_hovered="true" />
     <!-- Standardhintergrund -->
