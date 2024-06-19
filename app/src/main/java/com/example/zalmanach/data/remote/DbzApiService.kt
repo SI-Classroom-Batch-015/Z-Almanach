@@ -12,12 +12,12 @@ import retrofit2.http.Path
 
 const val BASE_URL = "https://dragonball-api.com/api/"
 
-// Moshi konvertiert Serverantworten in Kotlin Objekte
+// ---------------------- Moshi konvertiert Serverantworten in Kotlin Objekte ----------------------
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 
-// Retrofit übernimmt die Kommunikation und übersetzt die Antwort
+// ---------------- Retrofit übernimmt die Kommunikation und übersetzt die Antwort -----------------
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
