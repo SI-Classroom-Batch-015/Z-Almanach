@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.SnapHelper
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.adapter.CharacterAdapter
 import com.example.zalmanach.adapter.PlanetAdapter
@@ -17,6 +19,7 @@ class DbzFragment : Fragment() {
 
     private lateinit var binding: FragmentDbzBinding
     private val viewModel: MainViewModel by activityViewModels()
+    private val snapHelper: SnapHelper = PagerSnapHelper()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,6 +60,7 @@ class DbzFragment : Fragment() {
                 )
         }
         binding.rvDbzFragmentCharacter.adapter = adapterCharacters
+        snapHelper.attachToRecyclerView(binding.rvDbzFragmentCharacter)
         viewModel.characters.observe(viewLifecycleOwner) { adapterCharacters.submitList(it) } // Beobachten und Liste an den Adapter übergeben
 
         // Adapter für Transformationen
@@ -81,6 +85,7 @@ class DbzFragment : Fragment() {
                 )
         }
         binding.rvDbzFragmentTransformations.adapter = adapterTransformations
+        snapHelper.attachToRecyclerView(binding.rvDbzFragmentTransformations)
         viewModel.transformations.observe(viewLifecycleOwner) {adapterTransformations.submitList(it)}
 
         // Adapter für Planeten
@@ -105,6 +110,8 @@ class DbzFragment : Fragment() {
                 )
         }
         binding.rvDbzFragmentPlanets.adapter = adapterPlanets
+        snapHelper.attachToRecyclerView(binding.rvDbzFragmentPlanets)
         viewModel.planets.observe(viewLifecycleOwner) {adapterPlanets.submitList(it)}
     }
 }
+
