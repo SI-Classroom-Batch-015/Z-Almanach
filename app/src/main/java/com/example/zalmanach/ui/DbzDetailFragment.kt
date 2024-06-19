@@ -56,7 +56,7 @@ class DbzDetailFragment : Fragment() {
         val planetSpainDescription = args.descriptionPlanetSpain
 
 
-        // --------------------------------- DBZFragment bezogen -----------------------------------
+        // --------------------------------- DBZFragment Bezug -----------------------------------
         // Charactere: Wenn vorhanden, werden Daten angezeigt
         if (characterName.isNotEmpty()) {
             binding.apply {
@@ -83,7 +83,7 @@ class DbzDetailFragment : Fragment() {
             }
         }
 
-        // Transformationen: Wenn vorhanden, werden Daten angezeigt.
+        // Transformationen
         if (transformationName.isNotEmpty()) {
             binding.apply {
                 ivDetailImage.load(transformationImage)
@@ -99,7 +99,7 @@ class DbzDetailFragment : Fragment() {
             }
         }
 
-        // Planeten: Wenn vorhanden, werden Daten angezeigt
+        // Planeten
         if (planetName.isNotEmpty()) {
             binding.apply {
                 ivDetailImage.load(planetImage)
@@ -120,8 +120,8 @@ class DbzDetailFragment : Fragment() {
         }
 
 
-        // ------------------------------- FavoriteFragment bezogen --------------------------------
-        // -- Entsprechende Favorite-Instanz erstellt und mittels addToFavorite-Methode übergeben --
+        // ------------------------------- FavoriteFragment Bezug --------------------------------
+        // Mit ENUM Typen Unterscheiden, mittels addToFavorite übergeben
         binding.ivSelectedFavorite.setOnClickListener {
             Toast.makeText(requireContext(), "Favorisiert", Toast.LENGTH_SHORT).show()
             val favorite = when {
@@ -150,8 +150,8 @@ class DbzDetailFragment : Fragment() {
         }
 
 
-        // --------------------------------- PlayFragment bezogen -----------------------------------
-        // Setzt Spiel-Character (Bild und Namen) im PlayFragment
+        // --------------------------------- PlayFragment Bezug -----------------------------------
+        // Setzt Spiel-Character
         binding.ivVsDetailToPlay.setOnClickListener {
             val selectedPlayerImage = args.imageCharacter
             val selectedPlayerName = args.nameCharacter

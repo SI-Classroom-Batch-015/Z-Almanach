@@ -11,7 +11,7 @@ import com.example.zalmanach.data.model.Favorite
 import com.example.zalmanach.databinding.ListItemFavoriteBinding
 
 class FavoriteAdapter(
-    private val onItemSelected: (Favorite) -> Unit, // Zum Auswählen
+    private val onItemSelected: (Favorite) -> Unit, // Callback
 ) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
 
     private var dataset: List<Favorite> = emptyList()

@@ -29,7 +29,7 @@ class FavoriteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = FavoriteAdapter { favorite ->
-      //-      viewModel.removeFromFavorite(favorite.favoriteId, favorite.favoriteType)
+           viewModel.removeFromFavorite(favorite.favoriteId)
             Toast.makeText(requireContext(), "Aus Favoriten Entfernt", Toast.LENGTH_SHORT).show()
         }
         binding.rvFavorite.adapter = adapter
