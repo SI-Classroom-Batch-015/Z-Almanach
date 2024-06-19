@@ -19,6 +19,7 @@ class Repository(
 ) {
 
     // ------------------------- Stellt Live Data Objekte fürs ViewModel ---------------------------
+    // Dadurch immer die aktuellen Daten aus der Datenbank
 
     private val _characters: LiveData<List<Character>> = database.dragonballDao.getAllCharacter()
     val characters: LiveData<List<Character>>
@@ -36,7 +37,7 @@ class Repository(
     val favorite: LiveData<List<Favorite>>
         get() = _favorite
 
-    // ---------------------- Suche in der Datenbank, "return" das Ergebnis ------------------------
+    // ------------- Suche mittels "LiveData" in der Datenbank, "return" das Ergebnis --------------
     fun searchCharacters(query: String): LiveData<List<Character>> {
         return database.dragonballDao.searchCharacters("%$query%")
     }
@@ -53,26 +54,22 @@ class Repository(
         return database.dragonballDao.getCharacterByGender(gender)
     }
 
-    fun getFavorites(): LiveData<List<Favorite>> {
-        return database.dragonballDao.getAllFavorites()
-    }
 
-
-    // ---------------------------- Favoriten Hinzufügen und Entfernen -----------------------------
+    // -------------------- Hintergrund Op´s Favoriten Hinzufügen und Entfernen --------------------
     suspend fun addToFavorite(favorite: Favorite) {
         withContext(Dispatchers.IO) {
             database.dragonballDao.insertFavorite(favorite)
         }
     }
 
-    suspend fun removeFromFavorite(favoriteId: Int, favoriteType: String) {
+    suspend fun removeFromFavorite(favoriteId: Int) {
         withContext(Dispatchers.IO) {
-            database.dragonballDao.deleteFavorite(favoriteId, favoriteType)
+            database.dragonballDao.deleteFavorite(favoriteId)
         }
     }
 
 
-    // ---------------------- API zu laden und in die Datenbank speichern (aSy) --------------------
+    // ---------------------- API  Call/Trigger, in Datenbank speichern (aSy) --------------------
     suspend fun getCharacters() {
         withContext(Dispatchers.IO) {
             try {

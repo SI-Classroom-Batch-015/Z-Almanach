@@ -33,9 +33,6 @@ interface DbzApiService {
 
     @GET("planets")
     suspend fun getPlanets(): Planets
-
-    @GET("characters/{id}")
-    suspend fun getCharacterById(@Path("id") characterId: Int): Character
 }
 
 // Das Objekt dient als Zugangspunkt für den Rest der App und stellt den API Service zur Verfügung
