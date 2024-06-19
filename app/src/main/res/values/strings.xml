@@ -10,7 +10,7 @@
 
     <string name="spa_und_spannung">Spaß und Spannung</string>
     <string name="infos_spiel">Infos, Spiel-</string>
-    <string name="lmanach">Àlmanach</string>
+    <string name="lmanach"><u>Àlmanach</u></string>
     <string name="text_copyright">\u00A9 2024 Michael F. Junior</string>
     <string name="text_appversion">Version 1.0.1</string>
 
@@ -42,9 +42,9 @@
     <string name="detail_the_how_is_how">Detail, The How is How!</string>
     <string name="dbz_schau_dir_deine_linblings_charaktere_an">DBZ, schau dir deine Linblings Charaktere an</string>
     <string name="bild_von_einem_charater">Bild von einem Charater</string>
-    <string name="charaktere">Charaktere</string>
-    <string name="transformation">Transformation</string>
-    <string name="planets">Planets</string>
+    <string name="charaktere"><u>Charaktere</u></string>
+    <string name="transformation"><u>Transformation</u></string>
+    <string name="planets"><u>Planets</u></string>
     <string name="fan_bilder">Fan Bilder</string>
     <string name="fan_image">Fan Image</string>
     <string name="is_destroyed">Is Destroyed</string>
@@ -56,11 +56,11 @@
     <string name="max_ki_hardcode">Max. KI</string>
     <string name="race_hardcode">Race</string>
     <string name="standart_favorit_element">Standart Favorit Element</string>
-    <string name="deine_gegner">Deine Gegner</string>
+    <string name="deine_gegner"><u>Deine Gegner</u></string>
     <string name="hier_bist_du_richtig_wenn_du_action_suchst">Hier bist du richtig wenn du ACTION suchst</string>
-    <string name="dein_gew_hlter_held">Dein gewählter Held</string>
-    <string name="lebenspunkte_start">Lebenspunkte Start</string>
-    <string name="_10000_lp">10000 LP</string>
+    <string name="dein_gew_hlter_held"><u>Dein gewählter Held</u></string>
+    <string name="lebenspunkte_start"><u>Lebenspunkte Start</u></string>
+    <string name="_10000_lp"><u>10000 LP</u></string>
     <string name="spiel_starten">Spiel starten</string>
     <string name="modus">Modus</string>
     <string name="schwierigkeit">Schwierigkeit</string>
@@ -68,9 +68,9 @@
     <string name="download">Download</string>
     <string name="play">Play</string>
     <string name="held_w_hlen">Held Wählen</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="deine_favoriten">Deine Favoriten</string>
     <string name="stell_deine_favoriten_zusammen">Stell Deine Favoriten zusammen</string>
     <string name="logout_button">Logout Button</string>
+    <string name="wiki">Wiki</string>
 </resources>

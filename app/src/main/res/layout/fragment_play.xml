@@ -164,43 +164,41 @@
         android:id="@+id/btn_play_modus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/white"
         android:text="@string/modus"
-        android:background="@drawable/backround_btn"
-        android:textColor="@color/white"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:textColor="@color/carbon_black"
         app:layout_constraintBottom_toBottomOf="@+id/btn_play_difficulty"
-        app:layout_constraintStart_toStartOf="@+id/divider2"
-        app:layout_constraintTop_toTopOf="@+id/btn_play_difficulty" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_play_difficulty"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <Button
         android:id="@+id/btn_play_difficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/schwierigkeit"
-        android:background="@drawable/backround_btn"
-        android:textColor="@color/white"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_play_download"
-        app:layout_constraintStart_toEndOf="@+id/btn_play_modus"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/wiki"
+        android:textColor="@color/carbon_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <Button
         android:id="@+id/btn_play_download"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+
+        android:backgroundTint="@color/white"
         android:text="@string/download"
-        android:background="@drawable/backround_btn"
-        android:textColor="@color/white"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:textColor="@color/carbon_black"
         app:layout_constraintBottom_toBottomOf="@+id/btn_play_difficulty"
-        app:layout_constraintEnd_toEndOf="@+id/divider2"
-        app:layout_constraintTop_toTopOf="@+id/btn_play_difficulty" />
+        app:layout_constraintStart_toEndOf="@+id/btn_play_difficulty"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <TextView
         android:id="@+id/tv_villians"
