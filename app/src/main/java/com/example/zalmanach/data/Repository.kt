@@ -18,58 +18,7 @@ class Repository(
     private val database: DragonballDatabase
 ) {
 
-    // ------------------------- Stellt Live Data Objekte fürs ViewModel ---------------------------
-    // Dadurch immer die aktuellen Daten aus der Datenbank
-
-    private val _characters: LiveData<List<Character>> = database.dragonballDao.getAllCharacter()
-    val characters: LiveData<List<Character>>
-        get() = _characters
-
-    private val _transformations: LiveData<List<Transformation>> = database.dragonballDao.getAllTransformations()
-    val transformations: LiveData<List<Transformation>>
-        get() = _transformations
-
-    private val _planets: LiveData<List<Planet>> = database.dragonballDao.getAllPlanets()
-    val planets: LiveData<List<Planet>>
-        get() = _planets
-
-    private val _favorite: LiveData<List<Favorite>> = database.dragonballDao.getAllFavorites()
-    val favorite: LiveData<List<Favorite>>
-        get() = _favorite
-
-    // ------------- Suche mittels "LiveData" in der Datenbank, "return" das Ergebnis --------------
-    fun searchCharacters(query: String): LiveData<List<Character>> {
-        return database.dragonballDao.searchCharacters("%$query%")
-    }
-
-    fun searchTransformations(query: String): LiveData<List<Transformation>> {
-        return database.dragonballDao.searchTransformations("%$query%")
-    }
-
-    fun searchPlanets(query: String): LiveData<List<Planet>> {
-        return database.dragonballDao.searchPlanets("%$query%")
-    }
-
-    fun getCharactersByGender(gender: String): LiveData<List<Character>> {
-        return database.dragonballDao.getCharacterByGender(gender)
-    }
-
-
-    // -------------------- Hintergrund Op´s Favoriten Hinzufügen und Entfernen --------------------
-    suspend fun addToFavorite(favorite: Favorite) {
-        withContext(Dispatchers.IO) {
-            database.dragonballDao.insertFavorite(favorite)
-        }
-    }
-
-    suspend fun removeFromFavorite(favoriteId: Int) {
-        withContext(Dispatchers.IO) {
-            database.dragonballDao.deleteFavorite(favoriteId)
-        }
-    }
-
-
-    // ---------------------- API  Call/Trigger, in Datenbank speichern (aSy) --------------------
+    // -------------------- API  Call/Trigger, Daten in Datenbank speichern (aSy) ------------------
     suspend fun getCharacters() {
         withContext(Dispatchers.IO) {
             try {
@@ -106,6 +55,58 @@ class Repository(
             } catch (e: Exception) {
                 Log.e("Reposirotry", "Error Load Planets: ${e.message}")
             }
+        }
+    }
+
+
+    // ------------------------- Stellt Live Data Objekte fürs ViewModel ---------------------------
+    // Zentraler Punkt der alles Management. Dadurch immer die aktuellen Daten aus der Datenbank
+
+    private val _characters: LiveData<List<Character>> = database.dragonballDao.getAllCharacter()
+    val characters: LiveData<List<Character>>
+        get() = _characters
+
+    private val _transformations: LiveData<List<Transformation>> = database.dragonballDao.getAllTransformations()
+    val transformations: LiveData<List<Transformation>>
+        get() = _transformations
+
+    private val _planets: LiveData<List<Planet>> = database.dragonballDao.getAllPlanets()
+    val planets: LiveData<List<Planet>>
+        get() = _planets
+
+    private val _favorite: LiveData<List<Favorite>> = database.dragonballDao.getAllFavorites()
+    val favorite: LiveData<List<Favorite>>
+        get() = _favorite
+
+    // ----------------------------- Such Funktionen, Triggert den DAO  ----------------------------
+    // Mittels "LiveData" in der Datenbank Suchen und gibt das Ergbenis zurück
+    fun searchCharacters(query: String): LiveData<List<Character>> {
+        return database.dragonballDao.searchCharacters("%$query%")
+    }
+
+    fun searchTransformations(query: String): LiveData<List<Transformation>> {
+        return database.dragonballDao.searchTransformations("%$query%")
+    }
+
+    fun searchPlanets(query: String): LiveData<List<Planet>> {
+        return database.dragonballDao.searchPlanets("%$query%")
+    }
+
+    fun getCharactersByGender(gender: String): LiveData<List<Character>> {
+        return database.dragonballDao.getCharacterByGender(gender)
+    }
+
+
+    // -------------------- Hintergrund Op´s Favoriten Hinzufügen und Entfernen --------------------
+    suspend fun addToFavorite(favorite: Favorite) {
+        withContext(Dispatchers.IO) {
+            database.dragonballDao.insertFavorite(favorite)
+        }
+    }
+
+    suspend fun removeFromFavorite(favoriteId: Int) {
+        withContext(Dispatchers.IO) {
+            database.dragonballDao.deleteFavorite(favoriteId)
         }
     }
 }
