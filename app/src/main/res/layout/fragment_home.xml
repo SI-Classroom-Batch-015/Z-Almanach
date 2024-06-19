@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="8dp"
@@ -66,7 +66,7 @@
                 android:text="@string/home_intro"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
     </ScrollView>
 
     <TextView
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="@+id/cv_home_description_detail"
         app:layout_constraintStart_toStartOf="@+id/cv_home_description_detail" />
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_home_description_dbz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,9 +105,9 @@
             android:paddingBottom="4dp"
             android:text="@string/dbz_schau_dir_deine_linblings_charaktere_an"
             android:textColor="@color/white" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_home_description_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,9 +132,9 @@
             android:paddingBottom="4dp"
             android:text="@string/detail_the_how_is_how"
             android:textColor="@color/white" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_home_description_favorits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -159,9 +159,9 @@
             android:paddingBottom="4dp"
             android:text="@string/favorite_lasse_zwei_charactere_gegen_einander_antreten"
             android:textColor="@color/white" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_home_description_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -186,7 +186,7 @@
             android:paddingBottom="4dp"
             android:text="@string/search_erkunde_das_dbz_universum"
             android:textColor="@color/white" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <VideoView
         android:id="@+id/vV_home"
@@ -203,7 +203,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:contentDescription="Logout Button"
+        android:contentDescription="@string/logout_button"
         android:src="@drawable/baseline_logout_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

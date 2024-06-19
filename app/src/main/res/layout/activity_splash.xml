@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_appLogo"
         android:progressTint="@color/white"/>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_splashIntro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,9 +80,9 @@
                 android:textSize="20sp" />
 
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_splashCopyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,5 +117,5 @@
                 android:textColor="@color/white" />
 
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

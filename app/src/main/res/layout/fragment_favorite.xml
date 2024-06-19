@@ -8,7 +8,7 @@
     android:background="@drawable/hintergrund"
     tools:context=".ui.FavoriteFragment">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_favorite_not"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:text="@string/hier_bist_du_richtig_wenn_du_action_suchst"
             android:textColor="@color/white"
             android:textSize="18sp" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_favorite_none"

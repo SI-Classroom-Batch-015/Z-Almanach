@@ -8,7 +8,7 @@
     tools:context=".ui.DbzDetailFragment"
     android:background="@drawable/hintergrund">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             android:text="@string/erkunde_die_dbz_welt"
             android:textColor="@color/white"
             android:textSize="26sp" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_detail_intro"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="@+id/cv"
         app:layout_constraintTop_toBottomOf="@+id/cv" />
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_dbzDetail"
         android:layout_width="176dp"
         android:layout_height="176dp"
@@ -71,7 +71,7 @@
             android:contentDescription="@string/die_detailansicht_des_ausgew_hlten_charakters"
             android:padding="8dp"
             android:visibility="gone" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_detail_hardcode_name"
@@ -274,7 +274,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cv_dbzDetail">
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/carbon_black"
@@ -293,7 +293,7 @@
                 android:textColor="@color/white"
                 android:visibility="gone"
                 tools:visibility="visible" />
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
     </ScrollView>
 
     <ImageView
