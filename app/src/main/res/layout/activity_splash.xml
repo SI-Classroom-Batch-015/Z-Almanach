@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
-    android:background="@drawable/hintergrund">
+    android:background="@drawable/hintergrund_splash">
 
     <ImageView
         android:id="@+id/iv_appLogo"
@@ -39,21 +39,20 @@
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_appLogo"
         app:layout_constraintStart_toStartOf="@+id/iv_appLogo"
-        app:layout_constraintTop_toBottomOf="@+id/iv_appLogo"
-        app:strokeColor="@color/carbon_black">
+        app:layout_constraintTop_toBottomOf="@+id/iv_appLogo">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/tv_intro1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_margin="24dp"
                 android:text="@string/app_name"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -62,7 +61,6 @@
                 android:id="@+id/tv_intro2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:text="@string/infos_spiel"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -71,10 +69,7 @@
                 android:id="@+id/tv_intro3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
+                android:layout_margin="24dp"
                 android:text="@string/spa_und_spannung"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -88,11 +83,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         app:cardBackgroundColor="@color/transparent"
-        app:cardElevation="0dp"
+        app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/transparent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,16 +100,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_copyright"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tv_appVersion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:text="@string/text_appversion"
-                android:textColor="@color/white" />
-
+                android:textColor="@color/white"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

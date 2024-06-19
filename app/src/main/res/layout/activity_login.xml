@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:background="@drawable/hintergrund">
+    android:background="@drawable/hintergrund_login">
 
     <TextView
         android:id="@+id/tv_login"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="@string/login"
-        android:textColor="@color/white"
+        android:textColor="@color/carbon_black"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:id="@+id/textInputLayout"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="56dp"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/tv_login"
         app:layout_constraintStart_toStartOf="@+id/tv_login"
@@ -35,17 +35,16 @@
             android:id="@+id/tie_userEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/backround_text_input"
             android:hint="@string/email_eingeben"
             android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:backgroundTint="@color/transparent"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="56dp"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/tv_login"
         app:layout_constraintStart_toStartOf="@+id/tv_login"
@@ -55,17 +54,16 @@
             android:id="@+id/tie_passwort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/backround_text_input"
             android:hint="@string/passwort"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:backgroundTint="@color/transparent"
+            android:textColor="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="56dp"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
@@ -75,20 +73,19 @@
             android:id="@+id/tie_passwort_repeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/backround_text_input"
+            android:backgroundTint="@color/transparent"
             android:hint="@string/passwort_wiederholen"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColor="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
-        android:background="@drawable/backround_btn"
+        android:layout_marginTop="432dp"
+        android:backgroundTint="@color/white"
         android:text="@string/login"
-        android:textColor="@color/white"
+        android:textColor="@color/carbon_black"
         app:layout_constraintEnd_toEndOf="@+id/tv_login"
         app:layout_constraintStart_toStartOf="@+id/tv_login"
         app:layout_constraintTop_toTopOf="@+id/tv_login" />
@@ -121,9 +118,9 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
-        android:background="@drawable/backround_btn"
+        android:backgroundTint="@color/white"
         android:text="@string/google"
-        android:textColor="@color/white"
+        android:textColor="@color/carbon_black"
         app:layout_constraintStart_toStartOf="@+id/btn_login"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
@@ -136,6 +133,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/btn_google"
         app:layout_constraintStart_toEndOf="@+id/btn_google"
         app:layout_constraintTop_toTopOf="@+id/btn_google"
-        android:background="@drawable/backround_btn"
-        android:textColor="@color/white" />
+        android:backgroundTint="@color/white"
+        android:textColor="@color/carbon_black" />
 </androidx.constraintlayout.widget.ConstraintLayout>
