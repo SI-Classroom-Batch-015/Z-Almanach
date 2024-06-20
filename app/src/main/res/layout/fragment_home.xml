@@ -22,19 +22,34 @@
         app:layout_constraintBottom_toTopOf="@+id/divider12"
         app:layout_constraintStart_toStartOf="@+id/divider12" />
 
-    <TextView
-        android:id="@+id/tv_almanach"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_dbz_choiseCharacter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="42dp"
-        android:background="@color/cardview"
-        android:padding="8dp"
-        android:text="@string/lmanach"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@+id/divider12"
-        app:layout_constraintEnd_toEndOf="@+id/divider12" />
+        android:layout_marginBottom="48dp"
+        android:alpha="0.78"
+        android:backgroundTint="@color/cardview"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider12"
+        app:layout_constraintEnd_toEndOf="@+id/divider12">
+
+        <TextView
+            android:id="@+id/tv_almanach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="@string/lmanach"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+    </androidx.cardview.widget.CardView>
+
 
     <View
         android:id="@+id/divider12"

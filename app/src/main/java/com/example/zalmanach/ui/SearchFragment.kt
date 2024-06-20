@@ -20,6 +20,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
     private lateinit var binding: FragmentSearchBinding
     private val viewModel: MainViewModel by activityViewModels()
 
+    // ---------------------- Fragment-Layout wird erstellt undinitialisiert -----------------------
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,6 +29,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         return binding.root
     }
 
+    // --- Aufgerufen nachdem die View erstellt wurde, RecyclerView und der Adapter eingerichtet ---
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -35,6 +37,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         val adapter = SearchAdapter(emptyList()) { result ->
             when (result) {
                 is Character -> {
+                    // Navigiert zum Detail-Fragment für Charaktere mit den entsprechenden Daten
                     findNavController()
                         .navigate(
                             SearchFragmentDirections.actionSearchFragmentToDbzDetailFragment(
@@ -100,12 +103,15 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         binding.rvSearchResult.adapter = adapter
     }
 
+    // --------------- Wird aufgerufen wenn der Text in der SearchView geändert wird ---------------
     override fun onQueryTextChange(newText: String?): Boolean {
         newText?.let {
             search(it)
         }
         return true
     }
+
+    // ------------------ Wenn eine Suchanfrage in der SearchView abgeschickt wird -----------------
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         query?.let {
@@ -114,6 +120,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         return true
     }
 
+    // ----- Führt die Suchanfrage durch und aktualisiert die RecyclerView mit den Ergebnissen -----
     private fun search(query: String) {
         viewModel.searchByAll(query).observe(viewLifecycleOwner) { results ->
             results?.let {
