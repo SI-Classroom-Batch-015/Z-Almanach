@@ -20,7 +20,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             tools:srcCompat="@drawable/songokucracy"
-            android:background="@color/carbon_black"/>
+            android:background="@drawable/stroke_villains"/>
 
         <TextView
             android:id="@+id/tv_searchResponse"
