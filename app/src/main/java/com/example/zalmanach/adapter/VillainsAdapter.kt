@@ -10,8 +10,7 @@ import com.example.zalmanach.data.model.Character
 import com.example.zalmanach.data.model.Transformation
 import com.example.zalmanach.databinding.ListItemVillainsBinding
 
-class VillainsAdapter :
-    RecyclerView.Adapter<VillainsAdapter.VillainViewHolder>() {
+class VillainsAdapter : RecyclerView.Adapter<VillainsAdapter.VillainViewHolder>() {
 
     private var dataset: List<Any> = emptyList()
 
@@ -30,14 +29,17 @@ class VillainsAdapter :
             parent,
             false
         )
+        // Erstelltes VillainViewHolder Binding-Objekt zurückgeben
         return  VillainViewHolder(binding)
     }
 
     override fun getItemCount(): Int { return dataset.size }
 
+    // Wenn ein ViewHolder an eine bestimmte Position gebunden werden soll
     override fun onBindViewHolder(holder: VillainsAdapter.VillainViewHolder, position: Int) {
         val villain = dataset[position]
 
+        // Abhängig vom Typ des aktuellen Elements (Character oder Transformation), Daten binden
         when (villain) {
             is Character -> {
                 holder.binding.ivFavoriteVillians.load(villain.characterImage) {

@@ -17,8 +17,10 @@ class SearchAdapter(
     private val onItemSelected: (Any) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    // ---------------------- Für jeden Datentyp, damit Daten gebunden werden ----------------------
     inner class CharacterViewHolder(val binding: ListItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        // Bindet die Daten eines Character-Objekts an die View-Elemente
         fun bind(character: Character) {
             binding.ivSearchResponse.load(character.characterImage) {
                 error(R.drawable.error404)
@@ -59,18 +61,22 @@ class SearchAdapter(
         }
     }
 
+    // ----------- Aktualisiert die Liste der Daten im Adapter und benachrichtigt die RV -----------
     @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<Any>) {
         dataset = list
         notifyDataSetChanged()
     }
 
+    // Wenn RV einen neuen ViewHolder benötigt, um ein Listenelement darzustellen
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        // Listenelement (list_item_search.xml) in ein ListItemSearchBinding-Objekt umgewandeln
         val binding = ListItemSearchBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
+        // Gibt an welcher Datentyp an welcher Position in der Liste ist, passender ViewhHolder
         return when (viewType) {
             0 -> CharacterViewHolder(binding)
             1 -> TransformationViewHolder(binding)
@@ -92,6 +98,8 @@ class SearchAdapter(
         return dataset.size
     }
 
+    // Wird jedes Mal aufgerufen, wenn ein ViewHolder an eine bestimmte Position...
+    // ... damit die richtigen Daten an die richtigen ViewHolder gebunden werden
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = dataset[position]
         when (holder) {

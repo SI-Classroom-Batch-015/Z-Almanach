@@ -50,7 +50,7 @@ class FavoriteAdapter(
         }
         holder.binding.tvFavoriteName.text = favorite.favoriteName
 
-        // Klicklistener zum Entfernen eines Favoriten
+        // Zum Entfernen eines Favoriten
         holder.binding.root.setOnClickListener {
             onItemSelected(favorite)
         }
