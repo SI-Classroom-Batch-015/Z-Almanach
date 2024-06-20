@@ -63,24 +63,23 @@
         android:layout_width="176dp"
         android:layout_height="176dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="144dp"
-        app:cardCornerRadius="18dp"
+        android:layout_marginTop="140dp"
+        android:backgroundTint="@color/cardview"
+        app:cardCornerRadius="2dp"
         app:cardElevation="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/white"
-        app:strokeWidth="2dp"
-        android:backgroundTint="@color/cardview">
+        app:strokeWidth="2dp">
 
         <ImageView
             android:id="@+id/iv_detail_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/carbon_black"
+            android:background="@drawable/stroke_villains"
             android:contentDescription="@string/die_detailansicht_des_ausgew_hlten_charakters"
             android:padding="8dp"
-            android:visibility="gone"
-            android:backgroundTint="@color/cardview"/>
+            android:visibility="gone" />
     </androidx.cardview.widget.CardView>
 
     <TextView

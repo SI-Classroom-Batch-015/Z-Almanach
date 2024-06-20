@@ -2,10 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="4dp"
-    app:strokeColor="@color/white"
     android:backgroundTint="@color/cardview">
 
     <LinearLayout
@@ -20,7 +18,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             tools:srcCompat="@tools:sample/avatars"
-            android:background="@color/carbon_black"/>
+            android:background="@drawable/stroke_villains"/>
 
         <TextView
             android:id="@+id/tv_favorite_name"
