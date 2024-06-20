@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         mediaController.setAnchorView(binding.vVHome)
         binding.vVHome.start()
 
-        // Setze den OnClickListener für den Logout-Button
+        // OnClickListener für den Logout-Button
         binding.ivLogout.setOnClickListener {      // Zugriff auf die Anmeldedaten
             val sharedPreferences = requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
             sharedPreferences.edit().apply {

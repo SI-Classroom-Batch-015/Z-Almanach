@@ -28,7 +28,7 @@ class PlayFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Daten beobachten und an die UI zu binden
+        // Beobachten, bei Änderung Daten an die UI binden
         viewModel.playCharacterImage.observe(viewLifecycleOwner) { characterImage ->
             binding.ivPlayCharacter.load(characterImage)
         }
@@ -41,6 +41,7 @@ class PlayFragment : Fragment() {
         binding.rvPlayVillains.adapter = villainsAdapter
 
         // Kombinierte Gegner-Liste aktualisieren und Query-Filter mitgeben
+        // Dadurch wird die LiveData auto. aktu. und der Adapter anschl. Aktua.
         viewModel.getCombinedVillains("male")
         viewModel.villains.observe(viewLifecycleOwner) { villains ->
             villainsAdapter.submitList(villains)
