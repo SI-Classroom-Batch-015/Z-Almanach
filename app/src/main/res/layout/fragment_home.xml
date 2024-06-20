@@ -8,58 +8,60 @@
     tools:context=".ui.HomeFragment"
     android:background="@drawable/hintergrund">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+
+    <ImageView
+        android:id="@+id/iv_z"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/cardview"
+        android:contentDescription="@string/das_ist_ein_z"
+        android:src="@drawable/baseline_electric_bolt_24"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider12"
+        app:layout_constraintStart_toStartOf="@+id/divider12" />
+
+    <TextView
+        android:id="@+id/tv_almanach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center_vertical"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="42dp"
+        android:background="@color/cardview"
+        android:padding="8dp"
+        android:text="@string/lmanach"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/divider12"
+        app:layout_constraintEnd_toEndOf="@+id/divider12" />
+
+    <View
+        android:id="@+id/divider12"
+        android:layout_width="294dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="148dp"
+        android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:padding="8dp"
-        android:elevation="12dp">
-
-        <ImageView
-            android:id="@+id/iv_z"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/das_ist_ein_z"
-            android:src="@drawable/baseline_electric_bolt_24"
-            android:textSize="32sp"
-            android:background="@drawable/stroke"/>
-
-        <TextView
-            android:id="@+id/tv_almanach"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/lmanach"
-            android:textColor="@color/white"
-            android:textSize="28sp"
-            android:background="@drawable/stroke"
-            android:padding="8dp"/>
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="wrap_content"
         android:layout_height="180dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintEnd_toEndOf="@+id/divider12"
+        app:layout_constraintStart_toStartOf="@+id/divider12"
+        app:layout_constraintTop_toBottomOf="@+id/divider12">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/cardview"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            app:strokeColor="@color/white"
-            app:strokeWidth="1dp">
+            app:cardElevation="8dp">
 
             <TextView
                 android:id="@+id/tv_description_home"
@@ -78,15 +80,15 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="8dp"
         android:text="@string/features"
-        android:textColor="@color/white"
-        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/divider6"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/backround_btn"
-        android:padding="4dp"/>
+        android:padding="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_home_description_dbz"
@@ -221,7 +223,7 @@
         android:layout_width="384dp"
         android:layout_height="4dp"
         android:layout_marginTop="54dp"
-        android:background="@color/carbon_black"
+        android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="@+id/scrollView"
         app:layout_constraintTop_toBottomOf="@+id/scrollView" />
@@ -231,7 +233,7 @@
         android:layout_width="384dp"
         android:layout_height="4dp"
         android:layout_marginTop="32dp"
-        android:background="@color/carbon_black"
+        android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/divider6"
         app:layout_constraintStart_toStartOf="@+id/divider6"
         app:layout_constraintTop_toBottomOf="@+id/divider6" />
@@ -241,7 +243,7 @@
         android:layout_width="384dp"
         android:layout_height="4dp"
         android:layout_marginTop="32dp"
-        android:background="@color/carbon_black"
+        android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/divider8"
         app:layout_constraintStart_toStartOf="@+id/divider8"
         app:layout_constraintTop_toBottomOf="@+id/divider8" />
@@ -251,7 +253,7 @@
         android:layout_width="384dp"
         android:layout_height="4dp"
         android:layout_marginTop="32dp"
-        android:background="@color/carbon_black"
+        android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/divider9"
         app:layout_constraintStart_toStartOf="@+id/divider9"
         app:layout_constraintTop_toBottomOf="@+id/divider9" />
@@ -261,7 +263,7 @@
         android:layout_width="384dp"
         android:layout_height="4dp"
         android:layout_marginTop="32dp"
-        android:background="@color/carbon_black"
+        android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="@+id/divider10"
         app:layout_constraintStart_toStartOf="@+id/divider10"
         app:layout_constraintTop_toBottomOf="@+id/divider10" />

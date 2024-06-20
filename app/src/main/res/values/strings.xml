@@ -69,8 +69,10 @@
     <string name="play">Play</string>
     <string name="held_w_hlen">Held Wählen</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="deine_favoriten">Deine Favoriten</string>
+    <string name="deine_favoriten">Deine Favoriten -> COMING SOON !</string>
     <string name="stell_deine_favoriten_zusammen">Stell Deine Favoriten zusammen</string>
     <string name="logout_button">Logout Button</string>
     <string name="wiki">Wiki</string>
+    <string name="deine_favoritent">Deine Favoritent</string>
+    <string name="action_in_the_house">Action in The House</string>
 </resources>

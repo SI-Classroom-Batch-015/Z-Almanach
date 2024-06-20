@@ -3,7 +3,7 @@
     <!-- Wenn der Button betätigt wird -->
     <item android:drawable="@color/gray" android:state_pressed="true" />
     <!-- Wenn der Button gehovert wird (z.B. mit einer Maus oder einem Stylus) -->
-    <item android:drawable="@color/white" android:state_hovered="true" />
+    <item android:drawable="@color/rubin" android:state_hovered="true" />
     <!-- Standardhintergrund -->
     <item android:drawable="@drawable/stroke" />
 </selector>
