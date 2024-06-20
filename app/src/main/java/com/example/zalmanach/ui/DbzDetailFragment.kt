@@ -150,13 +150,17 @@ class DbzDetailFragment : Fragment() {
 
 
         // --------------------------------- PlayFragment Bezug -----------------------------------
-        // Setzt Spiel-Character
-        binding.ivVsDetailToPlay.setOnClickListener {
-            val selectedPlayerImage = args.imageCharacter
-            val selectedPlayerName = args.nameCharacter
-            viewModel.setPlayCharacter(selectedPlayerImage, selectedPlayerName)
+        // Setzt Spiel-Character, oder Transformation, kein Planet
+        if (characterName.isNotEmpty() || transformationName.isNotEmpty()) {
+            binding.ivVsDetailToPlay.setOnClickListener {
+                val selectedPlayerImage =
+                    if (characterName.isNotEmpty()) characterImage else transformationImage
+                val selectedPlayerName =
+                    if (characterName.isNotEmpty()) characterName else transformationName
+                viewModel.setPlayCharacter(selectedPlayerImage, selectedPlayerName)
 
-            findNavController().navigate(R.id.action_dbzDetailFragment_to_playFragment)
+                findNavController().navigate(R.id.action_dbzDetailFragment_to_playFragment)
+            }
         }
     }
 }
