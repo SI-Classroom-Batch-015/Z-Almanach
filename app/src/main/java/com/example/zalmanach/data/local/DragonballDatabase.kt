@@ -9,15 +9,13 @@ import com.example.zalmanach.data.model.Favorite
 import com.example.zalmanach.data.model.Planet
 import com.example.zalmanach.data.model.Transformation
 
-@Database(entities = [Character::class, Transformation::class, Planet::class, Favorite::class], version = 6)
+@Database(entities = [Character::class, Transformation::class, Planet::class, Favorite::class], version = 4)
 abstract class DragonballDatabase : RoomDatabase() {
 
-    // DAo Deklarieren
     abstract val dragonballDao: DragonballDao
 
     companion object {
 
-        // Instanz der Datenbank wird später initialisiert.
         private lateinit var dbInstance: DragonballDatabase
 
         fun getDatabase(context: Context): DragonballDatabase {
@@ -28,7 +26,7 @@ abstract class DragonballDatabase : RoomDatabase() {
                     context.applicationContext,
                     DragonballDatabase::class.java,
                     "dragonball_db"
-                ).fallbackToDestructiveMigration()    // Löscht die Datenbank bei Schemaänderung
+                ).fallbackToDestructiveMigration()    // Löscht die Datenbank bei Schema-Änderung
                     .build()
             }
             return dbInstance
