@@ -30,7 +30,6 @@ class SplashActivity : AppCompatActivity() {
 
         object: CountDownTimer(3500,30) {
             override fun onTick(millisUntilFinished: Long) {
-                // "onTick" aktualisiert den Fortschritt der Progressbar
                 val progress = ((3500 - millisUntilFinished) / 30).toInt()
                 binding.pbLadestatusSplash.progress = progress
             }
