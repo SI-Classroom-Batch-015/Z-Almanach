@@ -35,7 +35,7 @@ interface DbzApiService {
     suspend fun getPlanets(): Planets
 }
 
-// Das Objekt dient als Zugangspunkt für den Rest der App und stellt den API Service zur Verfügung
+// Dient als Zugangspunkt für den Rest der App und stellt den API Service
 object DbzApi {
     val retrofitService: DbzApiService by lazy { retrofit.create(DbzApiService::class.java) }
 }
