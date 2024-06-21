@@ -40,7 +40,7 @@ class PlayFragment : Fragment() {
         binding.rvPlayVillains.adapter = villainsAdapter
 
         // Kombinierte Gegner-Liste aktualisieren und Query-Filter mitgeben
-        // Dadurch wird die LiveData auto. aktu. und der Adapter anschl. Aktua.
+        // Die LiveData wird auto. aktu. und der Adapter anschl. Aktua.
         viewModel.getCombinedVillains("male")
         viewModel.villains.observe(viewLifecycleOwner) { villains ->
             villainsAdapter.submitList(villains)
