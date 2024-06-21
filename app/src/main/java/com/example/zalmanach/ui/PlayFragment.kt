@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import coil.load
-import com.example.zalmanach.MainActivity
 import com.example.zalmanach.MainViewModel
 import com.example.zalmanach.adapter.VillainsAdapter
 import com.example.zalmanach.databinding.FragmentPlayBinding
